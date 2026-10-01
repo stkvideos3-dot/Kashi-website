@@ -1,0 +1,8 @@
+Fonts self-hosted on this site, all under the SIL Open Font License 1.1
+(https://openfontlicense.org):
+
+- Archivo, by Omnibus-Type
+- Hanken Grotesk, by Hanken Design Co.
+- IBM Plex Mono, by IBM
+
+Files were downloaded from Google Fonts (latin subset, woff2).
