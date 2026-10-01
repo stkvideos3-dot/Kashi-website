@@ -812,7 +812,7 @@
   }
   function initReveals() {
     // stagger siblings inside grids
-    ['.tiles', '.pillars', '.inc-cols', '.timeline', '.cost-grid'].forEach(function (sel) {
+    ['.tiles', '.pillars', '.inc-cols', '.timeline', '.cost-grid', '.plan-steps'].forEach(function (sel) {
       $$(sel).forEach(function (g) { $$('.reveal', g).forEach(function (n, i) { n.style.setProperty('--i', i); }); });
     });
     if ('IntersectionObserver' in window) {

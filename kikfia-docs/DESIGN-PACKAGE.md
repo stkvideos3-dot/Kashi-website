@@ -166,6 +166,18 @@ The page is still complete. The still poster carries all the hero text and butto
 
 ## 6. Every section below the hero (in order, copy verbatim)
 
+### 1b · Your Simple Plan  `#plan`  *(added October 1, 2026 at the owner's request)*
+
+**Layout:** a Morning band right after the hero. The Plan Line drops out of the video and turns into the label, then links three numbered circles from left to right (top to bottom on phones).
+
+- Label: "YOUR SIMPLE PLAN"
+- H2: "You need more space, not more stress."
+- Intro: "Hidden costs. Unclear steps. No answers after the deposit. Kikfia keeps it simple."
+- **1. "Tell us what you need."** "Answer a few quick questions, or book a video call with Kashan."
+- **2. "Get your clear quote."** "Your home, your options and your project costs, all in writing."
+- **3. "Plan delivery and move in."** "We plan each step with you, so you always know what's next."
+- Buttons: **Get Your Project Assessment** · link "Start with the Property Check"
+
 ### 2 · The Homes  `#homes`
 
 **Layout:** category tabs, then a grid of large image cards. Page background: Mist Stone. The Plan Line arrives from the hero and ends at the label.
