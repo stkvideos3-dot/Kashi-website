@@ -88,7 +88,7 @@ window.KIKFIA = {
     posterWidths: [960, 1440, 1920],
     ending: 'assets/img/hero-ending',      // last frame, also used above the form
     mobile: 'assets/img/hero-mobile',      // tall phone image
-    mobileWidths: [480, 608],
+    mobileWidths: [360, 432],
     alt: 'Digital rendering of a modern single-story home and its interior'
   },
 
@@ -116,8 +116,8 @@ window.KIKFIA = {
       name: 'Small Homes',
       text: 'Studio and one-bedroom homes with smart, open layouts that make every square foot count.',
       formValue: 'Small home',
-      image: '',
-      imageAlt: 'Digital rendering of a small modern home in a meadow clearing',
+      image: 'assets/img/cat-small',
+      imageAlt: 'Digital rendering of a compact portable house with cedar and light gray panels in a misty forest clearing',
       assetId: 'C2'
     },
     {
@@ -125,8 +125,8 @@ window.KIKFIA = {
       name: 'Family Homes',
       text: 'Two-bedroom, three-bedroom and larger homes with room for the whole family.',
       formValue: 'Family home',
-      image: '',
-      imageAlt: 'Digital rendering of a larger modern single-story family home',
+      image: 'assets/img/cat-family',
+      imageAlt: 'Digital rendering of a single-story portable home with a cedar entrance and open glass doors at sunrise',
       assetId: 'C3'
     },
     {
@@ -248,6 +248,12 @@ window.KIKFIA = {
     { label: 'Bedroom', image: '', alt: 'Digital rendering of a calm bedroom with a window to the trees', assetId: 'D3' },
     { label: 'Bathroom', image: '', alt: 'Digital rendering of a bathroom with a walk-in shower and oak vanity', assetId: 'D4' },
     { label: 'Home office', image: '', alt: 'Digital rendering of a home office desk facing a garden window', assetId: 'D5' }
+  ],
+
+  /* ---------- 13b. Delivery and installation photos (After You Order) ---------- */
+  process: [
+    { image: 'assets/img/process-delivery', alt: 'Digital rendering of a portable house being delivered on a flatbed truck', caption: 'Delivery: your home travels to your property.' },
+    { image: 'assets/img/process-install', alt: 'Digital rendering of a crane setting a portable house onto a concrete pad in a backyard', caption: 'Installation: it is set onto its prepared base.' }
   ],
 
   /* ---------- 14. Lifestyle images (optional) ---------- */

@@ -510,6 +510,16 @@
     }
     var why = $('[data-render="why-photo"]');
     if (why) { if (L.why && L.why.image) why.appendChild(media(L.why.image, L.why.alt, '(max-width: 1240px) 100vw, 1240px')); else why.remove(); }
+    var proc = $('[data-render="process-photos"]'), P = (D.process || []).filter(function (x) { return x && x.image; });
+    if (proc) {
+      if (!P.length) proc.remove();
+      else {
+        P.forEach(function (x) {
+          proc.appendChild(el('figure', { class: 'proc' }, [media(x.image, x.alt, '(max-width: 720px) 100vw, 600px'), el('figcaption', { text: x.caption || '' })]));
+        });
+        proc.appendChild(el('span', { class: 'render-tag proc-tag', text: 'Renderings' }));
+      }
+    }
     var pc = $('[data-render="pc-photo"]');
     if (pc) { if (L.propertyCheck && L.propertyCheck.image) pc.appendChild(media(L.propertyCheck.image, L.propertyCheck.alt, '480px')); else pc.remove(); }
   }

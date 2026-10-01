@@ -465,6 +465,12 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);
 .tile h3{font-size:19px}
 .tile p{font-size:15.5px;color:var(--text-2)}
 .after-note{margin-top:24px;font-weight:500}
+.process-photos{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-bottom:clamp(28px,3vw,40px)}
+@media (max-width:720px){.process-photos{grid-template-columns:minmax(0,1fr)}}
+.proc{display:grid;gap:10px}
+.proc .media{aspect-ratio:16/9;border-radius:var(--r)}
+.proc figcaption{font-weight:500;font-size:15.5px}
+.proc-tag{top:12px;left:12px;right:auto;bottom:auto}
 
 /* ---------- 9 · kashan ---------- */
 .kashan-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:center}
