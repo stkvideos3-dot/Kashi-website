@@ -108,7 +108,8 @@ Image spots and where they live in `site-data.js`:
 | See What's Inside | `interiors` → each `image` |
 | Property Check photo | `lifestyle.propertyCheck.image` |
 | Why Kikfia photo | `lifestyle.why.image` |
-| Hero, phone hero and the image above the form | `hero` (Claude sets these after the video gate) |
+| Hero video, phone video, still images and the image above the form | `hero` (Claude prepares these files) |
+| Walk-through video in See What's Inside | `insideVideo` (set `video: ''` to hide it) |
 
 ## Add a verified review
 

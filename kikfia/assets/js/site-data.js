@@ -79,17 +79,27 @@ window.KIKFIA = {
   },
 
   /* ---------- 7. Hero media ----------
-     Set by Claude from the owner's approved hero video (October 1, 2026).
-     The video starts at 1.5 s of the original clip, so it opens on the house. */
+     Set by Claude from the owner's drone video (October 1, 2026).
+     A 7 second loop that plays on its own, muted, while the hero is on screen. */
   hero: {
-    video: 'assets/video/hero-scrub.mp4',
-    videoBytes: 5567960,
+    video: 'assets/video/hero-loop.mp4',            // laptops and desktops (1920 x 1080)
+    videoPhone: 'assets/video/hero-loop-phone.mp4', // phones (540 x 960)
     poster: 'assets/img/hero-poster',      // first frame (960, 1440, 1920 wide)
     posterWidths: [960, 1440, 1920],
-    ending: 'assets/img/hero-ending',      // last frame, also used above the form
-    mobile: 'assets/img/hero-mobile',      // tall phone image
-    mobileWidths: [360, 432],
-    alt: 'Digital rendering of a modern single-story home and its interior'
+    mobile: 'assets/img/hero-mobile',      // first frame of the phone video
+    mobileWidths: [360, 540],
+    ending: 'assets/img/hero-ending',      // used above the form
+    alt: 'Digital rendering of a modern single-story portable house with cedar and gray panels'
+  },
+
+  /* ---------- 7b. Inside walk-through video (See What's Inside) ----------
+     The owner's first video: in through the glass door to the living room,
+     kitchen and bedroom. Leave video empty ('') to hide it. */
+  insideVideo: {
+    video: 'assets/video/inside-walk.mp4',
+    poster: 'assets/img/inside-walk',
+    posterWidths: [800, 1280],
+    caption: 'Look inside before you decide: living room, kitchen and bedroom.'
   },
 
   /* ---------- 8. Prices ---------- */

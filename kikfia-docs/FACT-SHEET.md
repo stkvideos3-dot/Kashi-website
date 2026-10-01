@@ -53,8 +53,10 @@ Each line shows where the fact lives (mostly `site-data.js`) and the placeholder
 - [ ] **Legal review date** → `legal.lastUpdated`, then `legal.legalReviewDone: true`
 
 ### Media
-- [x] **Hero video:** the owner's video is in the site (trimmed to open on the house, encoded for scrolling)
-- [ ] **Exterior photo** the owner shared in chat (front of the home, door open): please send it as a **file** so it can replace the phone hero and the image above the form
+- [x] **Hero video:** the owner's drone video plays on its own at the top (7 second seamless loop, with a phone version)
+- [x] **Walk-through video:** the owner's first video now plays in See What's Inside
+- [x] **Owner photos 1 to 5:** Family Homes and Small Homes cards, delivery and installation photos
+- [ ] **Owner photos 6 to 23:** please send them again in one new message, so they arrive as files
 - [ ] **Category images** (6) and **interior images** (5): the owner will supply them later. Until then, each spot shows a marked placeholder.
 - [ ] **Real photo of Kashan** (listed above)
 

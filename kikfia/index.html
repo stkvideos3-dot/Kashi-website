@@ -67,6 +67,8 @@
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
@@ -148,15 +150,14 @@
         <rect x="826" y="675" width="590" height="14" fill="#9C6B43"/>
       </svg>
       <picture class="hero-static" hidden></picture>
-      <div class="hero-poster"></div>
-      <video class="hero-video" muted playsinline preload="none" tabindex="-1" aria-hidden="true" disablepictureinpicture></video>
+      <video class="hero-video" muted playsinline loop preload="none" tabindex="-1" aria-hidden="true" disablepictureinpicture></video>
       <div class="hero-wash"></div>
     </div>
 
-    <div class="band band-1" data-from="0" data-to="0.16">
+    <div class="band band-1">
       <div class="band-inner">
         <p class="eyebrow">Kikfia Custom Portable Houses</p>
-        <h1 class="hero-h1"><span class="h1-soft" aria-hidden="true">Custom Homes. Built Around Your Life.</span><span class="h1-sharp">Custom Homes. Built Around Your Life.</span></h1>
+        <h1 class="hero-h1">Custom Homes. Built Around Your Life.</h1>
         <p class="hero-sub">Explore ADUs, backyard homes, prefab family homes and custom living spaces from Kikfia. Choose your home, make it yours, and see a clear path from first conversation to move-in.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="#start" data-cta="hero_assessment">Get Your Project Assessment</a>
@@ -165,31 +166,9 @@
       </div>
     </div>
 
-    <div class="band band-2" data-from="0.19" data-to="0.33">
-      <p class="band-line"><span class="sr-only">Pick a home. Make it yours.</span><span class="split" data-split aria-hidden="true">Pick a home. Make it yours.</span></p>
-    </div>
-
-    <div class="band band-3" data-from="0.37" data-to="0.58">
-      <p class="band-line"><span class="sr-only">Look inside before you decide.</span><span class="split" data-split aria-hidden="true">Look inside before you decide.</span></p>
-    </div>
-
-    <div class="band band-4 band-settle" data-from="0.78" data-to="1">
-      <div class="band-inner">
-        <p class="settle-line"><span class="sr-only">Clear steps. Clear terms. One person to call.</span><span class="split" data-split aria-hidden="true">Clear steps. Clear terms. One person to call.</span></p>
-        <p class="settle-sub">Tell us about your property, and we'll show you what's possible.</p>
-        <div class="btn-row settle-ctas">
-          <a class="btn btn-primary" href="#start" data-cta="hero_settle_assessment">Get Your Project Assessment</a>
-          <a class="btn btn-ghost" href="#homes" data-cta="hero_settle_explore">Explore Homes</a>
-        </div>
-      </div>
-      <span class="pl-v hero-line" aria-hidden="true"></span>
-    </div>
-
     <span class="render-tag hero-tag">Digital rendering</span>
-    <div class="hero-ring" aria-hidden="true" hidden>
-      <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" class="ring-track"/><circle cx="24" cy="24" r="20" class="ring-fill"/></svg>
-    </div>
-    <a class="scroll-cue" href="#homes" aria-label="Scroll to the homes" hidden><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></a>
+    <button class="vid-toggle hero-toggle" type="button" aria-label="Pause video" hidden><svg class="ic ic-pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="ic ic-play" aria-hidden="true"><use href="#i-play"/></svg></button>
+    <a class="scroll-cue" href="#plan" aria-label="Scroll down"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></a>
   </div>
 </section>
 
@@ -241,6 +220,15 @@
       </div>
       <p class="lede">Open living areas, practical kitchens, quiet bedrooms and clean bathrooms. These renderings show the kind of spaces you can plan with us.</p>
     </header>
+    <figure class="film reveal" data-render="inside-film" hidden>
+      <div class="film-frame">
+        <picture class="film-poster"></picture>
+        <video class="film-video" muted playsinline loop preload="none" tabindex="-1" aria-hidden="true" disablepictureinpicture></video>
+        <span class="render-tag film-tag">Digital rendering</span>
+        <button class="vid-toggle film-toggle" type="button" aria-label="Pause video" hidden><svg class="ic ic-pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="ic ic-play" aria-hidden="true"><use href="#i-play"/></svg></button>
+      </div>
+      <figcaption class="film-cap"></figcaption>
+    </figure>
     <div class="gallery reveal" data-render="interiors">
       <span class="render-tag gallery-tag">Renderings</span>
     </div>

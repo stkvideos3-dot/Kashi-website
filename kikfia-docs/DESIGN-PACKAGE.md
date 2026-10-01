@@ -116,51 +116,35 @@ The fonts are hosted on your own site (not loaded from Google). That makes the p
 
 ---
 
-## 5. The hero (Tier 2, about 10 screens of scroll on laptops and desktops)
+## 5. The hero (one screen, autoplay drone loop)
 
-### What the video shows (three clips joined into one continuous shot)
+*Updated October 1, 2026 at the owner's request: the hero now works like the reference site the owner shared. A video plays on its own behind the headline and repeats. The earlier scroll-driven walk-through moved to See What's Inside.*
 
-*Updated October 1, 2026 at the owner's request: the hero shows the product, outside then inside, not the scenery.*
+### What the video shows
 
-1. **The approach.** Golden sunrise, a beautiful modest single-story home with its glass door open and warm light inside. The camera glides across the lawn and lines up with the open door.
-2. **Through the door.** It rises over the deck steps and passes through the glass door, with a soft golden reflection across the lens, into the bright open living space.
-3. **The arrival.** It drifts through the room, turns gently toward the big window, and comes to rest: the window and garden on the right, the sofa and sunlit floor in front, and a calm wall on the left for the closing words.
+The owner's drone video: a slow half circle around the portable house at golden hour, misty forest behind, glass door open with warm light inside. It's cut to a 7 second loop, and the end blends into the start, so it repeats with no jump. Laptops and tablets get a 1920 x 1080 version (3.5 MB). Phones get a tall 540 x 960 crop of the same shot (0.9 MB).
 
-Every clip starts from the exact last frame of the one before, so the house never changes. The exact prompts are in `ASSET-REQUESTS.md`.
+### Copy (verbatim)
+
+- Label: "Kikfia Custom Portable Houses"
+- H1: "Custom Homes. Built Around Your Life."
+- Text: "Explore ADUs, backyard homes, prefab family homes and custom living spaces from Kikfia. Choose your home, make it yours, and see a clear path from first conversation to move-in."
+- Buttons: **Get Your Project Assessment** · **Explore Homes**
+- Small tag, bottom right: "Digital rendering"
+
+The text rises gently into place on load. There is exactly one H1 on the page.
 
 ### Text over the video
 
-Dark Pine Ink text over bright mist. This is unusual for cinematic sites and suits "clear." Each text block gets a soft mist-colored glow behind it that deepens only while that text is on screen. It gets tested against the busiest frame of the video, and must reach at least 4.5 : 1 for the small text and 3.5 : 1 for the headline.
+Dark Pine Ink text over a soft morning-mist fade on the left side of the video. It's tested on 15 frames across the whole loop, against the darkest pixel behind each text block. Results: headline 5.05 : 1, smaller text 7.3 : 1 on desktop, 4.78 : 1 on phones. All pass.
 
-### Band map
+### Rules
 
-The ranges are starting points. They are checked later by scrolling the way real people do: in quick flicks, not slow drags.
-
-| Band | Scroll range | What the video is doing | Copy (verbatim) | Entrance |
-|---|---|---|---|---|
-| 1 | 0.00 to 0.20 | The home at sunrise, the approach begins | Label: "Kikfia Custom Portable Houses"<br>H1: "Custom Homes. Built Around Your Life."<br>Text: "Explore ADUs, backyard homes, prefab family homes and custom living spaces from Kikfia. Choose your home, make it yours, and see a clear path from first conversation to move-in."<br>Buttons: **Get Your Project Assessment** · **Explore Homes** | **Clearing.** The words sharpen from soft to crisp as the page loads, already on screen before any scroll. On scroll they fade away gently. |
-| 2 | 0.24 to 0.42 | Gliding toward the open glass door | "Pick a home. Make it yours." | **Approach.** The words grow gently into place, moving with the camera. |
-| 3 | 0.46 to 0.64 | Through the door, into the living space | "Look inside before you decide." *(new line, owner to confirm)* | **Step in.** The words slide in from the edge as the camera passes the glass. |
-| 4 (settle) | 0.70 to 1.00 | Drifts through the room and rests by the window | Line: "Clear steps. Clear terms. One person to call."<br>Text: "Tell us about your property, and we'll show you what's possible."<br>Buttons: **Get Your Project Assessment** · **Explore Homes**<br>Small tag, bottom right: "Digital rendering" | **Arrival.** The headline words rise into place one by one, then the text fades in, then the buttons. The Plan Line starts drawing under the buttons and runs down out of the hero. |
-
-There is exactly one H1 on the page: band 1's headline. The settle line is styled large but isn't a second H1.
-
-### Phones and reduced motion (the static hero)
-
-Phones, portrait tablets and visitors who've turned on "reduce motion" get a designed still image instead of the video. They never download the video at all.
-
-- **Image:** a tall sunrise shot of the same home made for phones (asset B1): the home in the lower half, door open and glowing, with sunrise sky above.
-- **Copy (verbatim):**
-  - Label: "Kikfia Custom Portable Houses"
-  - H1: "Custom Homes. Built Around Your Life."
-  - Text: "Explore ADUs, backyard homes, prefab family homes and custom living spaces from Kikfia. Choose your home, make it yours, and see a clear path from first conversation to move-in."
-  - Buttons: **Get Your Project Assessment** · **Explore Homes**
-  - Tag: "Digital rendering"
-- **Layout:** the text sits in the sky at the top. The buttons sit low, at thumb height, and the hero fills about 92% of the screen height.
-
-### If the video can't load
-
-The page is still complete. The still poster carries all the hero text and buttons.
+- **Plays only while on screen.** It pauses when you scroll away or switch tabs, so it doesn't drain the battery.
+- **Pause button** (bottom right) on every screen size, as accessibility rules require for moving video.
+- **Reduce motion or Data Saver:** no autoplay and no video download. The still image of the first frame shows, and the button lets people press play if they want.
+- **Loading:** the still image loads first, then the video starts. If the video can't load, the still stays and the page is complete.
+- **Phones:** the text sits at the top, the buttons sit low at thumb height, and the hero fills about 92% of the screen height. The tag and the pause button sit in the bottom row.
 
 ---
 
@@ -168,7 +152,7 @@ The page is still complete. The still poster carries all the hero text and butto
 
 ### 1b · Your Simple Plan  `#plan`  *(added October 1, 2026 at the owner's request)*
 
-**Layout:** a Morning band right after the hero. The Plan Line drops out of the video and turns into the label, then links three numbered circles from left to right (top to bottom on phones).
+**Layout:** a Morning band right after the hero. The Plan Line starts at the top of the section and turns into the label, then links three numbered circles from left to right (top to bottom on phones).
 
 - Label: "YOUR SIMPLE PLAN"
 - H2: "You need more space, not more stress."
@@ -239,6 +223,7 @@ Nothing is filled in from photos. Empty fields simply don't show.
 - H2: "Picture your life inside."
 - Intro: "Open living areas, practical kitchens, quiet bedrooms and clean bathrooms. These renderings show the kind of spaces you can plan with us."
 - Image labels (mono): "LIVING" · "KITCHEN" · "BEDROOM" · "BATHROOM" · "HOME OFFICE"
+- **Walk-through video** *(added October 1, 2026)*: the owner's first video sits above the gallery. It plays on its own while on screen: in through the glass door to the living room, kitchen and bedroom. It has a pause button and a "Digital rendering" tag. Caption: "Look inside before you decide: living room, kitchen and bedroom."
 
 ### 4 · Build Your Home Your Way  `#customize`
 
@@ -589,13 +574,7 @@ Each has a clear banner: `[LEGAL REVIEW REQUIRED BEFORE LAUNCH]`. A cookie notic
 
 - **Files:** one `index.html` plus `assets/` (`css/`, `js/`, `img/`, `video/`, `fonts/`). Plain HTML, CSS and JavaScript, with no framework and no build step.
 - **One data file:** every changeable fact lives in `assets/js/site-data.js`: brand, contact, Kashan's photo and note, booking link, categories, models, prices (off by default), inclusions, options, reviews, FAQ, social links, form address and analytics IDs. Changing a phone number or a price never needs a redesign.
-- **Hero video loading:**
-  - The video is fetched as one file. Under 8 MB it loads plainly; over 8 MB it streams behind a loading ring that fills honestly.
-  - Smooth eased scrubbing that rests when idle.
-  - Only one seek at a time.
-  - The page only updates when something actually changes.
-- **Captions over video:** paced in scroll distance and checked with a flick test. The 4-layer legibility system is adapted for dark text on light footage and audited against the worst frame.
-- **The five still-hero rules** (phones, portrait tablets, touch portrait, landscape phones, reduced motion) are identical in CSS and JavaScript and update live on rotation.
+- **Videos (hero and walk-through):** muted, looping and set to play inline. They only download and play while on screen, with a pause/play button. They don't autoplay with reduced motion or Data Saver. Each has a still image underneath, so the page is complete without them.
 - **The page is complete without the video.**
 - **Images:** modern formats (AVIF/WebP) with JPEG fallback, sized per screen, lazy-loaded below the fold.
 - **Fonts:** self-hosted, trimmed to the weights above, with the key ones preloaded.
