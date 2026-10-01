@@ -123,6 +123,13 @@ One continuous shot, no cuts. Starting from this image, the camera glides slowly
 One continuous shot, no cuts. Starting from this image, the camera stays almost still while the evening light slowly fades and the warm lights inside the portable house glow brighter. Leaves move gently in a light breeze. The house stays exactly the same. Calm, cozy and realistic real footage. No people, no text, no logos.
 ```
 
+### V6 · Autoplay hero loop (from image 1)
+A calm background video that plays on its own and repeats, like the website you showed me. Settings: 16:9, 1080p, 8 to 10 seconds, audio off, low motion.
+```
+One continuous shot, no cuts. Starting from this image, a drone camera glides very slowly in a smooth half circle around the modern portable house at golden hour, at the height of the roof. The house stays exactly the same: single-story box shape, natural cedar wood in the middle, light gray panels, black window frames, big glass sliding door with warm light inside. Grass and trees move gently in a light breeze, soft sunlight through the trees. Slow, steady and smooth, like a real drone video. Realistic real footage, natural colors. No people, no text, no logos, no watermark.
+```
+Negative (if your tool has a box for it): fast camera, shaking, zoom jumps, warping walls, house changing shape, extra windows, CGI, video game look, cartoon, text, logos.
+
 ---
 
 ## Where each one goes on the site
@@ -135,6 +142,7 @@ One continuous shot, no cuts. Starting from this image, the camera stays almost 
 | 5 to 10 | The Homes: the six category cards |
 | 11 to 15 | See What's Inside gallery |
 | V1, V4 | Optional extra hero clips |
+| V6 | Autoplay hero background (plays and repeats on its own) |
 | 16, V5 | Why Kikfia photo and atmosphere |
 
 **Honesty note:** these are illustrations. The site labels them as digital renderings, and real photos of your real homes replace them whenever you have them.
