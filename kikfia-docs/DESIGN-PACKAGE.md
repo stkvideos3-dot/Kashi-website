@@ -2,7 +2,7 @@
 
 **Status:** ✅ Approved by owner as is (Step 6), October 1, 2026
 **Concept:** A · Clear Morning
-**Hero:** Tier 1, one 6-second shot
+**Hero:** Tier 2, three chained clips (changed from Tier 1 at the owner's request, October 1, 2026)
 **Concept board:** https://claude.ai/artifact/6JkRo3ketn6FsyTTRe61x4
 
 This is the single plan the website gets built from. Every line of copy in quotes below goes on the site **exactly as written**. If you want any wording changed, tell me here, before the build.
@@ -116,17 +116,17 @@ The fonts are hosted on your own site (not loaded from Google). That makes the p
 
 ---
 
-## 5. The hero (Tier 1, about 4 screens of scroll on laptops and desktops)
+## 5. The hero (Tier 2, about 10 screens of scroll on laptops and desktops)
 
-### What the video shows (one continuous 6-second shot)
+### What the video shows (three clips joined into one continuous shot)
 
-*Updated October 1, 2026 at the owner's request: more eye-catching, still completely realistic.*
+*Updated October 1, 2026 at the owner's request: the hero shows the product, outside then inside, not the scenery.*
 
-It's sunrise, and the camera starts just above a sea of soft golden fog lying over a pine valley, with treetops poking through and the sun rising over blue mountains. Through a gap in the fog, the warm glow of a home's windows is just visible. The camera drifts slowly straight down through the fog, which brushes the lens for a dreamy second and then parts. It comes to rest at eye level at the edge of a mirror-still lake. The modern single-story home sits right of center on the far shore: windows glowing amber, golden rays through the pines, mist curling on the water, everything reflected in the lake.
+1. **The approach.** Golden sunrise, a beautiful modest single-story home with its glass door open and warm light inside. The camera glides across the lawn and lines up with the open door.
+2. **Through the door.** It rises over the deck steps and passes through the glass door, with a soft golden reflection across the lens, into the bright open living space.
+3. **The arrival.** It drifts through the room, turns gently toward the big window, and comes to rest: the window and garden on the right, the sofa and sunlit floor in front, and a calm wall on the left for the closing words.
 
-The upper left of the frame stays calm, bright sky the whole way, because that's where the words live.
-
-The exact prompt is in `ASSET-REQUESTS.md`.
+Every clip starts from the exact last frame of the one before, so the house never changes. The exact prompts are in `ASSET-REQUESTS.md`.
 
 ### Text over the video
 
@@ -138,9 +138,10 @@ The ranges are starting points. They are checked later by scrolling the way real
 
 | Band | Scroll range | What the video is doing | Copy (verbatim) | Entrance |
 |---|---|---|---|---|
-| 1 | 0.00 to 0.30 | Above a sea of golden fog at sunrise, the home glowing through a gap | Label: "Kikfia Custom Portable Houses"<br>H1: "Custom Homes. Built Around Your Life."<br>Text: "Explore ADUs, backyard homes, prefab family homes and custom living spaces from Kikfia. Choose your home, make it yours, and see a clear path from first conversation to move-in."<br>Buttons: **Get Your Project Assessment** · **Explore Homes** | **Mist clearing.** The words sharpen from soft to crisp as the page loads, already on screen before any scroll. On scroll they fade away gently. |
-| 2 | 0.35 to 0.62 | Descending through the fog, which brushes the lens | "Pick a home. Make it yours." | **Drift down.** The words settle downward into place, moving with the camera. |
-| 3 (settle) | 0.68 to 1.00 | The fog parts; rests at eye level, home mirrored in the lake | Line: "Clear steps. Clear terms. One person to call."<br>Text: "Tell us about your property, and we'll show you what's possible."<br>Buttons: **Get Your Project Assessment** · **Explore Homes**<br>Small tag, bottom right: "Digital rendering" | **Arrival.** The headline words rise into place one by one, then the text fades in, then the buttons. The Plan Line starts drawing under the buttons and runs down out of the hero. |
+| 1 | 0.00 to 0.20 | The home at sunrise, the approach begins | Label: "Kikfia Custom Portable Houses"<br>H1: "Custom Homes. Built Around Your Life."<br>Text: "Explore ADUs, backyard homes, prefab family homes and custom living spaces from Kikfia. Choose your home, make it yours, and see a clear path from first conversation to move-in."<br>Buttons: **Get Your Project Assessment** · **Explore Homes** | **Clearing.** The words sharpen from soft to crisp as the page loads, already on screen before any scroll. On scroll they fade away gently. |
+| 2 | 0.24 to 0.42 | Gliding toward the open glass door | "Pick a home. Make it yours." | **Approach.** The words grow gently into place, moving with the camera. |
+| 3 | 0.46 to 0.64 | Through the door, into the living space | "Look inside before you decide." *(new line, owner to confirm)* | **Step in.** The words slide in from the edge as the camera passes the glass. |
+| 4 (settle) | 0.70 to 1.00 | Drifts through the room and rests by the window | Line: "Clear steps. Clear terms. One person to call."<br>Text: "Tell us about your property, and we'll show you what's possible."<br>Buttons: **Get Your Project Assessment** · **Explore Homes**<br>Small tag, bottom right: "Digital rendering" | **Arrival.** The headline words rise into place one by one, then the text fades in, then the buttons. The Plan Line starts drawing under the buttons and runs down out of the hero. |
 
 There is exactly one H1 on the page: band 1's headline. The settle line is styled large but isn't a second H1.
 
@@ -148,7 +149,7 @@ There is exactly one H1 on the page: band 1's headline. The settle line is style
 
 Phones, portrait tablets and visitors who've turned on "reduce motion" get a designed still image instead of the video. They never download the video at all.
 
-- **Image:** a tall sunrise shot made for phones (asset B1): the home glowing on the far shore of a mirror lake in the lower third, with sunrise sky above.
+- **Image:** a tall sunrise shot of the same home made for phones (asset B1): the home in the lower half, door open and glowing, with sunrise sky above.
 - **Copy (verbatim):**
   - Label: "Kikfia Custom Portable Houses"
   - H1: "Custom Homes. Built Around Your Life."

@@ -17,19 +17,19 @@ Everything stays **completely realistic**: real light, real places and real mate
 | | Count |
 |---|---|
 | **Images for you to generate** | 15 |
-| **Videos for you to generate** | 1 (6 seconds) |
+| **Videos for you to generate** | 3 short clips (5 to 6 seconds each), joined by Claude into one hero video |
 | **Real photos only you can provide** | 1 required (Kashan), 1 optional (logo), real home media whenever you have it |
 | **Images I make myself from approved assets** | 3 (hero poster, hero ending frame, social share image) |
-| **Total generated assets** | 16 (inside the 20 to 25 budget, which leaves room for re-dos) |
+| **Total generated assets** | 18 (inside the 20 to 25 budget, which leaves room for re-dos) |
 
-**MUST-HAVE (14):** A1, A2, B1, C1 to C6, D1 to D5. Plus the real photo G1.
+**MUST-HAVE (16):** A1, Clips 1 to 3, B1, C1 to C6, D1 to D5. Plus the real photo G1.
 **NICE-TO-HAVE (2):** E1, E2. Plus G2 (logo) and G3 (real home media).
 
 ### Recommended creation order
 
-1. **A1** (hero starting image). Send it and wait for my ✅.
-2. **A2** (hero video, made FROM the approved A1). Send it and wait for my ✅. **This is the video gate.**
-3. **B1** (phone hero). I'll send you the approved ending frame to use as a reference.
+1. **A1** (hero starting image, exterior). Send it and wait for my ✅.
+2. **Clip 1** from A1, then **Clip 2** and **Clip 3**, each made from the last-frame PNG I send you. Each clip passes its own **video gate**.
+3. **B1** (phone hero), made from the approved A1.
 4. **C1 to C6** (category images). Make them any time and send them together.
 5. **D1 to D5** (interiors). Make them any time and send them together.
 6. **E1, E2** (optional).
@@ -79,123 +79,163 @@ Every asset should look like it was shot on the same magical sunrise by the same
 
 ---
 
-## A. Hero (desktop scroll video)
+## A. Hero (desktop scroll video): the home, outside then inside
 
-### A1 · Hero starting image
+*Updated October 1, 2026 at the owner's request: the hero shows the product, not the scenery. The approved plan is 3 short clips joined into one smooth shot (Tier 2).*
+
+**How the chain works (this is what stops the house from changing):**
+1. You make **A1**, the starting image. I check it.
+2. You make **Clip 1 from A1**. I check it, cut out its **last frame** as a full-quality PNG, and send it to you.
+3. You make **Clip 2 from that PNG**. I check it and send you its last frame.
+4. You make **Clip 3 from that PNG**. I check it.
+5. I join the three clips into one seamless scroll video (about 18 seconds of scroll).
+
+Every clip starts exactly where the last one ended, so it's the same house and the same room the whole way.
+
+**Settings for every clip:** image-to-video, **5 or 6 seconds** (not 10), 1080p, 16:9, **audio off**, no presets or style templates.
+
+**The home (the same in every clip):** a modern single-story prefab home of about 1,000 sq ft.
+- **Outside:** one long rectangular volume, a low-slope shed roof with a slim dark edge, natural cedar cladding framing a central entrance bay, smooth warm-gray panels on both sides, black-framed windows, a wide black-framed glass sliding door in the center and a two-step cedar deck.
+- **Inside:** one bright open-plan living, kitchen and dining space under a gently sloped ceiling, sized to match the outside. Not a mansion.
+
+### A1 · Hero starting image (exterior)
 
 | | |
 |---|---|
 | 1. ID | A1 |
 | 2. Filename | `A1-hero-start.png` |
-| 3. Website location | Hero, first frame of the scroll video (desktop and laptop) |
-| 4. Purpose | The opening "wow": above a sea of golden fog, with the home glowing below |
+| 3. Website location | Hero, first frame (desktop), and the base for the phone hero |
+| 4. Purpose | The product hero shot: the home glowing at golden sunrise, door open, inviting you in |
 | 5. Type | Image |
 | 6. Aspect ratio | 16:9 |
 | 7. Minimum resolution | 1920 × 1080 (2560 × 1440 or "2K" preferred) |
-| 8. to 11. | n/a |
 | 16. Priority | **MUST-HAVE · make first** |
 | 17. Source | **AI OK** |
 
 **12. Full prompt**
 ```
-Breathtaking aerial view at sunrise from just above a sea of soft glowing fog that fills a forested valley, dark pine treetops rising through the fog like islands. The sun is just rising over distant layered blue mountains at the right, sending soft golden rays across the top of the fog. Through a thin gap in the mist at the right-center of the frame, the warm amber glow of tall windows and the cedar roof edge of a modern single-story home are just visible beside the silver edge of a still lake. The home is a clean rectangular volume with a low-slope shed roof and a slim dark edge, vertical cedar wood cladding paired with smooth warm-gray panels and tall black-framed windows, realistic and buildable. The image is composed as the first moment of a slow, straight downward camera descent through the fog to the lakeshore. The upper left third of the frame is calm, luminous pale morning sky blending softly into the fog, part of one continuous scene from edge to edge. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural, not oversaturated. A real drone photograph, not a render: award-winning aerial photography, true-to-life colors, real light and real textures, crisp detail, fine film grain, 16:9. No text, no logos, no lettering anywhere.
+A real photograph of a beautiful modern single-story prefab home at golden sunrise, seen from the front lawn at eye level. The home sits slightly right of center and fills about two thirds of the frame width. It is about 1,000 square feet: one long rectangular volume with a low-slope shed roof and a slim dark fascia, vertical natural cedar cladding framing a central entrance bay, smooth warm-gray panels on both sides, black-framed windows, and a wide black-framed glass sliding door at the center, partly open, above a two-step cedar deck. Warm amber light glows from inside, and through the glass you can see a bright, inviting living room with a linen sofa and pale oak floors. Pale stepping stones lead across a neat, dewy lawn to the deck. Soft golden sunlight from the right rakes across the cedar, and soft morning mist lingers in the trees behind. The upper left of the frame is calm, soft morning sky above the treeline, part of one continuous scene. Composed as the first moment of a slow forward glide toward the glass door. Realistic, buildable and well-proportioned. Palette of warm cedar, warm gray, black frames, deep pine green, sage and soft golden light, rich but natural. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 16:9. No text, no logos, no lettering anywhere.
 ```
 
 **13. Negative prompt**
 ```
-text, letters, numbers, words, signage, logos, brand marks, watermarks, captions, warped walls, bent or curved windows, impossible rooflines, extra doors, floating objects, melted or merged shapes, fantasy architecture, castle, mansion, multi-story house, swimming pool, multiple houses, people, cars, roads, power lines, cartoon, illustration, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, plastic look, oversaturated colors, orange color cast, excessive gold, HDR halos, harsh lens flare streaks, heavy vignette, fisheye, tilted horizon, black bars, empty black areas, night, storm
+text, letters, numbers, words, signage, logos, brand marks, watermarks, house numbers, warped walls, bent or curved windows, impossible rooflines, extra doors, doors to nowhere, floating objects, melted or merged shapes, fantasy architecture, mansion, multi-story house, swimming pool, people, cars, power lines, clutter, cartoon, illustration, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, plastic look, oversaturated colors, orange color cast, excessive gold, HDR halos, harsh lens flare streaks, heavy vignette, fisheye, tilted verticals, night
 ```
 
 **14. Start-image instruction:** None. This IS the starting image (text-to-image).
 
 **15. Acceptance checklist**
-- [ ] The opening says "wow": a sea of fog, treetops poking through, the sun rising on the right
-- [ ] The home's warm glowing windows are visible but small, right of center
-- [ ] Upper-left third is calm, bright sky and fog, with no trees or sun there (the headline goes there)
 - [ ] Looks like a real photograph, not a render
-- [ ] One home only, believable and modest, with no castle or mansion look
-- [ ] No people, cars, roads, text or logos anywhere (zoom in)
-- [ ] Golden but natural, not orange
+- [ ] The home is the star: big, clear, slightly right of center
+- [ ] Modest and buildable, about 1,000 sq ft, with no mansion look
+- [ ] The glass door is open, with a warm, inviting room visible inside
+- [ ] Straight walls, a believable roof and no extra doors
+- [ ] Calm sky in the upper left (the headline goes there)
+- [ ] No people, cars, text or logos (zoom in)
 
----
-
-### A2 · Hero scroll video
+### A2 · Clip 1: the approach (from A1)
 
 | | |
 |---|---|
-| 1. ID | A2 |
-| 2. Filename | `A2-hero-video.mp4` |
-| 3. Website location | Hero, plays forward and backward with scroll (laptops and desktops) |
-| 4. Purpose | The cinematic hook: dive down through glowing fog to a home reflected in a mirror lake |
-| 5. Type | Video, image-to-video |
-| 6. Aspect ratio | 16:9 |
-| 7. Minimum resolution | 1920 × 1080 (1080p). 4K is not needed. |
-| 8. Duration | 6 seconds |
-| 9. Frame rate | 24 fps (30 fps is also fine) |
-| 10. Format | MP4 |
-| 11. Audio | None |
-| 16. Priority | **MUST-HAVE · make second, from the approved A1** |
+| 1. ID | A2-1 |
+| 2. Filename | `A2-clip1.mp4` |
+| 4. Purpose | Glide toward the home and line up with the open glass door |
+| 5. to 11. | Video, image-to-video · 16:9 · 1080p · 5 or 6 s · 24 fps · MP4 · no audio |
+| 16. Priority | **MUST-HAVE** |
 | 17. Source | **AI OK** |
 
 **12. Full prompt**
 ```
-One continuous shot, no cuts. A slow, steady, cinematic drone descent straight down from above a sea of golden morning fog to eye level at the edge of a still lake. As the camera sinks into the fog, soft white mist drifts past the lens for a brief, dreamy moment of softness, then parts to reveal the scene below. The modern single-story home on the far lakeshore stays right of center the whole time and grows clearer as the mist thins: vertical cedar cladding, smooth warm-gray panels, tall black-framed windows glowing with warm amber light from inside. Golden sunrise rays stream through the pine trees from the back right, wisps of mist curl slowly across the mirror-still water, and the glowing windows and the trees reflect in the lake. The scene stays alive throughout: drifting fog, gentle ripples, leaves moving in a light breeze. The home stays perfectly solid and unchanged: same shape, same roofline, same windows, straight vertical lines. The shot ends at rest at eye level just above the water's edge: the home sits right of center, mirrored in the calm lake, warm light glowing in its windows, golden sunlight on the cedar, tall pines framing it, soft mist on the water, and calm luminous sky filling the upper left of the frame. The final second is almost still, with only gentle mist and ripple movement. It must look like real drone footage, not CGI: true-to-life colors, real light, real textures, natural physics, cinematic and awe-inspiring. No text, no logos, no lettering anywhere.
+One continuous shot, no cuts, no dissolves. Starting exactly from this image, the camera glides slowly and steadily forward across the lawn toward the home, following the stepping stones and gently curving so the open glass sliding door moves to the center of the frame. The home stays exactly the same house as in the start image the whole time: same shed roof, same cedar entrance bay, same gray panels, same windows, same deck. The scene stays alive: soft mist drifts in the trees behind, the grass and leaves move slightly in a light breeze, golden sunlight shifts gently on the cedar, and warm light glows inside. The camera keeps moving to the very last frame: it ends mid-glide just in front of the two-step deck, with the open glass sliding door centered and filling the middle of the frame and the bright living room visible inside. Smooth, steady gimbal motion. It must look like real footage, not CGI: true-to-life colors, real light, natural physics. No text, no logos, no lettering anywhere.
 ```
 
 **13. Negative prompt**
 ```
-cuts, scene change, camera moving up, camera moving sideways, spinning, fast motion, shaking, zoom jumps, the house changing shape, warping roof, bending walls, windows appearing or disappearing, extra doors, a second house, mansion, people, animals, boats, cars, birds flying at camera, flickering lights, strobing, morphing trees, text, letters, logos, watermarks, signage, oversaturated colors, orange color cast, cartoon, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, black frames
+cuts, dissolve, crossfade, double exposure, scene change, morphing, the house changing shape or size, a different house, a second house, a different room, furniture changing, camera moving up, camera moving backward, spinning, fast motion, shaking, zoom jumps, mansion, oversized luxury interior, huge kitchen island, chandelier, people, pets, animals, cars, flickering lights, strobing, text, letters, logos, watermarks, signage, screens showing content, oversaturated colors, orange color cast, cartoon, 3D render look, CGI, video game look, surreal, black frames
 ```
 
-**14. Start-image instruction:** Use the approved **A1** as the starting frame (image-to-video). Settings: 1080p, 6 seconds, 16:9, standard mode, audio off. Don't use presets or style templates.
+**14. Start image:** the approved **A1**.
 
-**If your tool can't start from an image,** paste this text-to-video version instead (less predictable):
+**15. Checklist:** real-looking footage · same house from start to end · smooth forward motion, no jumps · ends still moving, with the door centered · no people, text or logos.
+
+### A2 · Clip 2: through the door (from the PNG I send you)
+
+| | |
+|---|---|
+| 1. ID | A2-2 |
+| 2. Filename | `A2-clip2.mp4` |
+| 4. Purpose | Step through the glass door into the living space |
+| 5. to 11. | Video, image-to-video · 16:9 · 1080p · 5 or 6 s · 24 fps · MP4 · no audio |
+| 16. Priority | **MUST-HAVE** |
+| 17. Source | **AI OK** |
+
+**12. Full prompt**
 ```
-One continuous shot, no cuts. It opens with a breathtaking aerial view at sunrise just above a sea of soft glowing fog filling a forested valley, dark pine treetops rising through the fog, the sun rising over layered blue mountains at the right, and through a gap in the mist at right-center the warm glowing windows of a modern single-story home beside a still lake. The home has a low-slope shed roof with a slim dark edge, vertical cedar cladding, smooth warm-gray panels and tall black-framed windows. A slow, steady, cinematic drone descent straight down through the fog to eye level at the lake's edge: soft mist drifts past the lens for a brief dreamy moment, then parts. The home stays right of center the whole time, perfectly solid and unchanged, its windows glowing warm amber and reflected in the mirror-still water, golden rays streaming through the pines, mist curling over the lake. The shot ends at rest at eye level, the home right of center mirrored in the calm lake, calm luminous sky filling the upper left of the frame. The final second is almost still. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold. It must look like real drone footage, not CGI: true-to-life colors, real light and textures, cinematic, 16:9. No text, no logos, no lettering anywhere.
+One continuous shot, no cuts, no dissolves. Starting exactly from this image, the camera continues the same slow forward glide at the same speed, rising gently over the cedar deck steps and passing through the open glass sliding door into the bright living room. As it crosses the glass threshold, a soft golden reflection sweeps across the lens for a brief moment. Inside, the room opens up: pale oak floors, warm white walls, a gently sloped ceiling, a linen sofa with sage and soft teal cushions, a wool rug, a light oak coffee table, and an open kitchen with sage-green cabinets and oak shelves at the back, with golden sunbeams streaming in through large black-framed windows. The room's size matches the modest single-story home seen from outside: one bright open-plan living, kitchen and dining space, not a mansion. The camera keeps moving to the very last frame: it ends mid-glide in the middle of the living room, heading toward the large window on the far side. Smooth, steady gimbal motion. It must look like real footage, not CGI: true-to-life colors, real light, natural physics. No text, no logos, no lettering anywhere.
 ```
 
-**15. Acceptance checklist** (I check frames at 0s, 3s and 6s, plus the full clip)
-- [ ] Looks like real drone footage, not CGI
-- [ ] One continuous shot, with no cuts or jumps
-- [ ] The camera moves **down** through the fog, at a steady speed
-- [ ] The fog moment feels dreamy and soft, not a flash or a pop
-- [ ] The home keeps the same shape, roof and window count from start to end
-- [ ] The window glow stays steady, with no flicker
-- [ ] The ending holds still, with the home mirrored in the lake
-- [ ] The upper left stays calm and bright, so the words stay readable
-- [ ] No people, boats, birds, text, logos or extra buildings
+**13. Negative prompt**
+```
+cuts, dissolve, crossfade, double exposure, scene change, morphing, the house changing shape or size, a different house, a second house, a different room, furniture changing, camera moving up, camera moving backward, spinning, fast motion, shaking, zoom jumps, mansion, oversized luxury interior, huge kitchen island, chandelier, people, pets, animals, cars, flickering lights, strobing, text, letters, logos, watermarks, signage, screens showing content, oversaturated colors, orange color cast, cartoon, 3D render look, CGI, video game look, surreal, black frames
+```
+
+**14. Start image:** the **last frame of Clip 1**, as a PNG that I send you. Don't use a screenshot.
+
+**15. Checklist:** real-looking footage · same door and deck as Clip 1 at the start · the room size makes sense for the house · furniture stays the same, with nothing melting or popping in · ends still moving · no people, text or logos.
+
+### A2 · Clip 3: the arrival (from the PNG I send you)
+
+| | |
+|---|---|
+| 1. ID | A2-3 |
+| 2. Filename | `A2-clip3.mp4` |
+| 4. Purpose | Drift through the room and come to rest on a calm, beautiful final frame |
+| 5. to 11. | Video, image-to-video · 16:9 · 1080p · 5 or 6 s · 24 fps · MP4 · no audio |
+| 16. Priority | **MUST-HAVE** |
+| 17. Source | **AI OK** |
+
+**12. Full prompt**
+```
+One continuous shot, no cuts, no dissolves. Starting exactly from this image, the camera continues the same slow forward glide, then eases into a gentle turn toward the large black-framed window that looks out to the garden and trees in golden morning light, slowing down smoothly until it comes to rest. The room stays exactly the same: same sofa, same kitchen, same floors and ceiling. Steam curls from a ceramic mug on the coffee table, sheer curtains move slightly, and sunbeams drift slowly across the floor. The shot ends at rest on a composed, calm frame: the big window and the garden view on the right side of the frame, the linen sofa and sunlit oak floor in front, and a calm warm-white wall with soft daylight across the left third of the frame. The final second is almost still, with only the steam and the curtains moving. It must look like real footage, not CGI: true-to-life colors, real light, natural physics. No text, no logos, no lettering anywhere.
+```
+
+**13. Negative prompt**
+```
+cuts, dissolve, crossfade, double exposure, scene change, morphing, the house changing shape or size, a different house, a second house, a different room, furniture changing, camera moving up, camera moving backward, spinning, fast motion, shaking, zoom jumps, mansion, oversized luxury interior, huge kitchen island, chandelier, people, pets, animals, cars, flickering lights, strobing, text, letters, logos, watermarks, signage, screens showing content, oversaturated colors, orange color cast, cartoon, 3D render look, CGI, video game look, surreal, black frames
+```
+
+**14. Start image:** the **last frame of Clip 2**, as a PNG that I send you.
+
+**15. Checklist:** real-looking footage · same room as Clip 2 · smooth slowdown · **the last second rests** · a calm wall on the left third (the closing headline goes there) · no people, text or logos.
 
 ---
 
 ## B. Phone hero
 
-### B1 · Phone hero still
+### B1 · Phone hero still (exterior)
 
 | | |
 |---|---|
 | 1. ID | B1 |
 | 2. Filename | `B1-hero-mobile.png` |
 | 3. Website location | Hero on phones and portrait tablets, and for reduced-motion visitors |
-| 4. Purpose | The first thing phone visitors see. It has to stop the thumb. |
+| 4. Purpose | The first thing phone visitors see: the home, glowing and inviting |
 | 5. Type | Image |
 | 6. Aspect ratio | 9:16 (tall) |
 | 7. Minimum resolution | 1080 × 1920 (1440 × 2560 preferred) |
-| 16. Priority | **MUST-HAVE · after A2 is ✅** |
+| 16. Priority | **MUST-HAVE · after A1 is ✅** |
 | 17. Source | **AI OK** |
 
 **12. Full prompt**
 ```
-Stunning vertical sunrise photograph. A modern single-story home sits on the far shore of a mirror-still lake in the lower third of a tall frame, slightly right of center, its tall black-framed windows glowing warm amber and perfectly reflected in the water. The home has a low-slope shed roof with a slim dark edge, vertical cedar wood cladding, smooth warm-gray panels and a wood deck at the water's edge; realistic, buildable and modest. Golden sunrise rays stream through tall dark pines behind it, and soft mist curls across the water in the foreground. The upper half of the frame is a calm luminous sunrise sky, pale gold fading to soft blue with a few soft clouds, part of one continuous scene from edge to edge. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural, not oversaturated. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 9:16 vertical. No text, no logos, no lettering anywhere.
+A real photograph of this exact modern single-story prefab home at golden sunrise, in a tall vertical frame. The home sits in the lower half of the frame, seen from the front lawn at a gentle three-quarter angle: the same shed roof with a slim dark edge, natural cedar entrance bay, warm-gray panels, black-framed windows and the open glass sliding door glowing with warm light, with a two-step cedar deck and pale stepping stones across a dewy lawn. Soft golden sunlight rakes across the cedar. The upper half of the frame is a calm, soft sunrise sky above tall pines, part of one continuous scene. Realistic, buildable and well-proportioned. Palette of warm cedar, warm gray, black frames, deep pine green, sage and soft golden light, rich but natural. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 9:16 vertical. No text, no logos, no lettering anywhere.
 ```
 
-**13. Negative prompt**
-```
-text, letters, numbers, words, signage, logos, watermarks, warped walls, bent or curved windows, impossible rooflines, extra doors, floating objects, melted shapes, fantasy architecture, mansion, multi-story house, multiple houses, people, boats, cars, power lines, cartoon, illustration, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, oversaturated colors, orange color cast, HDR halos, heavy vignette, fisheye, tilted verticals, night
-```
+**13. Negative prompt:** the same as A1.
 
-**14. Start-image instruction:** I'll send you the approved hero **ending frame** as a PNG. Use it as an image reference (or extend/outpaint it to 9:16) so the home matches the video.
+**14. Start-image instruction:** use the approved **A1** as an image reference (or extend/outpaint it to 9:16), so it's the same home.
 
-**15. Checklist:** same home as the video's ending · home in the lower third, sky in the upper half · reflection makes sense · no people, text or logos.
+**15. Checklist:** looks like a real photo · same home as A1 · home in the lower half, sky in the upper half · no people, text or logos.
 
 ---
 

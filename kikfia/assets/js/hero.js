@@ -17,8 +17,9 @@
   var cue = hero.querySelector('.scroll-cue');
   var staticPic = hero.querySelector('.hero-static');
   var art = hero.querySelector('.hero-art');
-  var bands = Array.prototype.slice.call(hero.querySelectorAll('.band')).map(function (b) {
-    return { el: b, a: parseFloat(b.getAttribute('data-from')), b: parseFloat(b.getAttribute('data-to')), first: b.classList.contains('band-1'), last: b.classList.contains('band-3'), op: -1, k: -1, live: null };
+  var bandEls = Array.prototype.slice.call(hero.querySelectorAll('.band'));
+  var bands = bandEls.map(function (b, i) {
+    return { el: b, a: parseFloat(b.getAttribute('data-from')), b: parseFloat(b.getAttribute('data-to')), first: i === 0, last: i === bandEls.length - 1, op: -1, k: -1, live: null };
   });
 
   /* ---------- split band text into words (seeded, identical every load) ---------- */
