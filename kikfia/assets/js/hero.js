@@ -49,12 +49,12 @@
   var hasVideo = !!H.video;
 
   /* ---------- static hero image (phones, tablets, reduced motion) ---------- */
-  var SIZES_M = [720, 1080, 1440], SIZES_D = [960, 1440, 1920];
+  var SIZES_M = H.mobileWidths || [720, 1080, 1440], SIZES_D = H.posterWidths || [960, 1440, 1920];
   function srcset(base, ws, ext) { return ws.map(function (w) { return base + '-' + w + '.' + ext + ' ' + w + 'w'; }).join(', '); }
   var staticFor = null;
   function setStatic() {
     var narrow = NARROW.some(function (m) { return m.matches; });
-    var base = narrow ? (H.mobile || H.ending) : (H.ending || H.mobile);
+    var base = narrow ? (H.mobile || H.poster) : (H.poster || H.mobile);
     if (!base || staticFor === base) return;
     staticFor = base;
     var ws = base === H.mobile ? SIZES_M : SIZES_D;
@@ -66,7 +66,7 @@
     });
     var img = doc.createElement('img');
     img.alt = ''; img.decoding = 'async'; img.fetchPriority = 'high';
-    img.src = base + '-' + ws[1] + '.jpg'; img.srcset = srcset(base, ws, 'jpg'); img.sizes = '100vw';
+    img.src = base + '-' + ws[ws.length > 1 ? 1 : 0] + '.jpg'; img.srcset = srcset(base, ws, 'jpg'); img.sizes = '100vw';
     img.onload = function () { if (art) art.style.visibility = 'hidden'; };
     staticPic.appendChild(img);
     staticPic.hidden = false;
@@ -106,7 +106,7 @@
       var op = inE * (1 - outE);
       var ramp = parseFloat(bd.el.getAttribute('data-ramp')) || Math.min(0.025, (bd.b - bd.a) * 0.35);
       var k = Math.min(1, Math.max(0, (p - bd.a) / ramp));
-      if (bd.last) k = Math.min(1, Math.max(0, (p - bd.a) / Math.max(0.0001, (1 - bd.a) * 0.8)));
+      if (bd.last) k = Math.min(1, Math.max(0, (p - bd.a) / Math.max(0.0001, (1 - bd.a) * 0.6)));
       if (bd.first) k = Math.max(k, loadK);
       if (Math.abs(op - bd.op) > 0.004) { bd.el.style.setProperty('--op', op.toFixed(3)); bd.op = op; }
       if (Math.abs(k - bd.k) > 0.008 || (k === 1 && bd.k !== 1) || (k === 0 && bd.k !== 0)) { bd.el.style.setProperty('--k', k.toFixed(3)); bd.k = k; }

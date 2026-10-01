@@ -78,14 +78,18 @@ window.KIKFIA = {
     linkedin: ''
   },
 
-  /* ---------- 7. Hero media ---------- */
+  /* ---------- 7. Hero media ----------
+     Set by Claude from the owner's approved hero video (October 1, 2026).
+     The video starts at 1.5 s of the original clip, so it opens on the house. */
   hero: {
-    video: '',            // Set by Claude after your hero video passes inspection
-    videoBytes: 0,        // Exact file size, set by Claude
-    poster: '',           // First frame of the video
-    ending: '',           // Last frame of the video (also used near the form)
-    mobile: '',           // The tall phone image
-    alt: 'Digital rendering of a modern single-story home in morning light'
+    video: 'assets/video/hero-scrub.mp4',
+    videoBytes: 5567960,
+    poster: 'assets/img/hero-poster',      // first frame (960, 1440, 1920 wide)
+    posterWidths: [960, 1440, 1920],
+    ending: 'assets/img/hero-ending',      // last frame, also used above the form
+    mobile: 'assets/img/hero-mobile',      // tall phone image
+    mobileWidths: [480, 608],
+    alt: 'Digital rendering of a modern single-story home and its interior'
   },
 
   /* ---------- 8. Prices ---------- */

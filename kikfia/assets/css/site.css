@@ -39,6 +39,7 @@
 html{overflow-x:hidden;background:var(--canvas);color:var(--ink);scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{overflow-x:hidden;margin:0;font:400 17px/1.6 var(--f-body);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 html,body{overflow-x:clip}
+body{background:transparent}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 img,svg,video,picture{display:block;max-width:100%}
 img{height:auto}
@@ -192,13 +193,16 @@ body.lock{overflow:hidden}
 @keyframes cue{0%,100%{transform:translateY(-2px)}50%{transform:translateY(4px)}}
 
 /* scrub mode: only when the page has a video AND no still-hero gate matches (JS adds .scrub) */
-.scrub .hero{height:1000vh}
+.scrub .hero{height:800vh}
 .scrub .hero-stage{position:sticky;top:0;height:100vh;min-height:0;display:block}
 .scrub .band{position:absolute;inset:0;display:flex;align-items:center;padding:var(--header-h) 0 40px;opacity:var(--op,0);pointer-events:none}
 .scrub .band.live .btn{pointer-events:auto}
 .scrub .band-2,.scrub .band-3,.scrub .band-4{display:flex}
-.scrub .band::before{content:"";position:absolute;inset:-4%;pointer-events:none;opacity:calc(.25 + .75 * var(--k,1));background:radial-gradient(ellipse 58% 56% at 27% 50%,rgba(238,241,238,var(--scrim,.7)) 0%,rgba(238,241,238,calc(var(--scrim,.7) * .62)) 46%,rgba(238,241,238,0) 76%)}
-.scrub .band-1{padding-top:var(--header-h)}
+.scrub .band::before{content:"";position:absolute;inset:-4%;pointer-events:none;opacity:calc(.25 + .75 * var(--k,1));background:radial-gradient(ellipse 58% 56% at 27% var(--sy,50%),rgba(238,241,238,var(--scrim,.7)) 0%,rgba(238,241,238,calc(var(--scrim,.7) * .62)) 46%,rgba(238,241,238,0) 76%)}
+.scrub .band-1{padding-top:var(--header-h);--scrim:.88}
+.hero .btn-ghost{background:rgba(246,248,246,.78);border-color:rgba(19,40,38,.4)}
+.hero .btn-ghost:hover{background:rgba(246,248,246,.95);border-color:var(--ink)}
+.scrub .band-2,.scrub .band-3,.scrub .band-4{align-items:flex-start;padding-top:calc(var(--header-h) + 7vh);--sy:30%}
 .scrub .h1-soft{opacity:calc(1 - var(--k,1))}
 .scrub .h1-sharp{opacity:var(--k,1)}
 .scrub .band-1 .hero-sub,.scrub .band-1 .btn-row,.scrub .band-1 .eyebrow{opacity:clamp(0,(var(--k,1) - .35) * 2.2,1)}
@@ -230,7 +234,7 @@ body.lock{overflow:hidden}
   .band-1{align-items:stretch;padding-top:calc(var(--header-h) + 8px);padding-bottom:52px}
   .band-1 .band-inner{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
   .band-1 .btn-row{margin-top:auto;width:100%;flex-direction:column;align-items:stretch;padding-top:24px}
-  .hero-wash{background:linear-gradient(180deg,rgba(238,241,238,.86) 0%,rgba(238,241,238,.55) 34%,rgba(238,241,238,0) 58%,rgba(238,241,238,0) 70%,rgba(238,241,238,.5) 100%)}
+  .hero-wash{background:linear-gradient(180deg,rgba(238,241,238,.94) 0%,rgba(238,241,238,.84) 42%,rgba(238,241,238,.4) 58%,rgba(238,241,238,0) 68%,rgba(238,241,238,0) 74%,rgba(238,241,238,.55) 100%)}
   .render-tag{bottom:auto;top:calc(var(--header-h) + 2px);right:var(--gutter)}
   .hero-tag{top:auto;bottom:14px;right:50%;transform:translateX(50%)}
 }
