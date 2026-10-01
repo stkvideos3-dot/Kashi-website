@@ -120,11 +120,13 @@ The fonts are hosted on your own site (not loaded from Google). That makes the p
 
 ### What the video shows (one continuous 6-second shot)
 
-The camera starts above the treetops in soft morning mist. It drifts slowly straight down through a thin layer of mist, and the mist thins as the sun reaches the trees and glass. It comes to rest at eye level across a lawn, looking at a modern single-story home sitting right of center in clear morning light.
+*Updated October 1, 2026 at the owner's request: more eye-catching, still completely realistic.*
 
-The upper left of the frame stays calm sky and mist the whole way, because that's where the words live.
+It's sunrise, and the camera starts just above a sea of soft golden fog lying over a pine valley, with treetops poking through and the sun rising over blue mountains. Through a gap in the fog, the warm glow of a home's windows is just visible. The camera drifts slowly straight down through the fog, which brushes the lens for a dreamy second and then parts. It comes to rest at eye level at the edge of a mirror-still lake. The modern single-story home sits right of center on the far shore: windows glowing amber, golden rays through the pines, mist curling on the water, everything reflected in the lake.
 
-The exact prompt comes in `ASSET-REQUESTS.md` (Step 7).
+The upper left of the frame stays calm, bright sky the whole way, because that's where the words live.
+
+The exact prompt is in `ASSET-REQUESTS.md`.
 
 ### Text over the video
 
@@ -136,9 +138,9 @@ The ranges are starting points. They are checked later by scrolling the way real
 
 | Band | Scroll range | What the video is doing | Copy (verbatim) | Entrance |
 |---|---|---|---|---|
-| 1 | 0.00 to 0.30 | Above the treetops, soft mist | Label: "Kikfia Custom Portable Houses"<br>H1: "Custom Homes. Built Around Your Life."<br>Text: "Explore ADUs, backyard homes, prefab family homes and custom living spaces from Kikfia. Choose your home, make it yours, and see a clear path from first conversation to move-in."<br>Buttons: **Get Your Project Assessment** · **Explore Homes** | **Mist clearing.** The words sharpen from soft to crisp as the page loads, already on screen before any scroll. On scroll they fade away gently. |
-| 2 | 0.35 to 0.62 | Descending through the mist layer | "Pick a home. Make it yours." | **Drift down.** The words settle downward into place, moving with the camera. |
-| 3 (settle) | 0.68 to 1.00 | Mist thins, sun on the glass, rests at eye level | Line: "Clear steps. Clear terms. One person to call."<br>Text: "Tell us about your property, and we'll show you what's possible."<br>Buttons: **Get Your Project Assessment** · **Explore Homes**<br>Small tag, bottom right: "Digital rendering" | **Arrival.** The headline words rise into place one by one, then the text fades in, then the buttons. The Plan Line starts drawing under the buttons and runs down out of the hero. |
+| 1 | 0.00 to 0.30 | Above a sea of golden fog at sunrise, the home glowing through a gap | Label: "Kikfia Custom Portable Houses"<br>H1: "Custom Homes. Built Around Your Life."<br>Text: "Explore ADUs, backyard homes, prefab family homes and custom living spaces from Kikfia. Choose your home, make it yours, and see a clear path from first conversation to move-in."<br>Buttons: **Get Your Project Assessment** · **Explore Homes** | **Mist clearing.** The words sharpen from soft to crisp as the page loads, already on screen before any scroll. On scroll they fade away gently. |
+| 2 | 0.35 to 0.62 | Descending through the fog, which brushes the lens | "Pick a home. Make it yours." | **Drift down.** The words settle downward into place, moving with the camera. |
+| 3 (settle) | 0.68 to 1.00 | The fog parts; rests at eye level, home mirrored in the lake | Line: "Clear steps. Clear terms. One person to call."<br>Text: "Tell us about your property, and we'll show you what's possible."<br>Buttons: **Get Your Project Assessment** · **Explore Homes**<br>Small tag, bottom right: "Digital rendering" | **Arrival.** The headline words rise into place one by one, then the text fades in, then the buttons. The Plan Line starts drawing under the buttons and runs down out of the hero. |
 
 There is exactly one H1 on the page: band 1's headline. The settle line is styled large but isn't a second H1.
 
@@ -146,7 +148,7 @@ There is exactly one H1 on the page: band 1's headline. The settle line is style
 
 Phones, portrait tablets and visitors who've turned on "reduce motion" get a designed still image instead of the video. They never download the video at all.
 
-- **Image:** a portrait version of the final frame, made for phones (asset B in the asset list). The home sits in the lower third with sky above.
+- **Image:** a tall sunrise shot made for phones (asset B1): the home glowing on the far shore of a mirror lake in the lower third, with sunrise sky above.
 - **Copy (verbatim):**
   - Label: "Kikfia Custom Portable Houses"
   - H1: "Custom Homes. Built Around Your Life."

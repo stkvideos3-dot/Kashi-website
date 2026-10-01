@@ -1,6 +1,16 @@
-# Kikfia Asset Requests
+# Kikfia Asset Requests (v2: eye-catching edition)
 
 Everything the website needs in images and video. For each item you get: the exact prompt to paste, what to avoid, the size, and the checklist I'll use to accept or reject it.
+
+**What changed in v2:** every prompt is rebuilt to stop the scroll:
+- golden sunrise light
+- a sea of glowing fog
+- warm-lit windows against cool mist
+- mirror lake reflections
+- sunbeams
+- one "wow" detail per image
+
+Everything stays **completely realistic**: real light, real places and real materials, like photos from a top architecture magazine. The homes stay modest, real and buildable. The light and the setting do the wowing.
 
 ## At a glance
 
@@ -9,7 +19,7 @@ Everything the website needs in images and video. For each item you get: the exa
 | **Images for you to generate** | 15 |
 | **Videos for you to generate** | 1 (6 seconds) |
 | **Real photos only you can provide** | 1 required (Kashan), 1 optional (logo), real home media whenever you have it |
-| **Images I make myself from approved assets** | 3 (hero poster, hero ending frame, social share image). Nothing for you to do. |
+| **Images I make myself from approved assets** | 3 (hero poster, hero ending frame, social share image) |
 | **Total generated assets** | 16 (inside the 20 to 25 budget, which leaves room for re-dos) |
 
 **MUST-HAVE (14):** A1, A2, B1, C1 to C6, D1 to D5. Plus the real photo G1.
@@ -17,17 +27,17 @@ Everything the website needs in images and video. For each item you get: the exa
 
 ### Recommended creation order
 
-1. **A1** (hero starting image). Send it to me and wait for my ✅ before making the video.
-2. **A2** (hero video, made from the approved A1). Send it and wait for my ✅. **This is the video gate.**
+1. **A1** (hero starting image). Send it and wait for my ✅.
+2. **A2** (hero video, made FROM the approved A1). Send it and wait for my ✅. **This is the video gate.**
 3. **B1** (phone hero). I'll send you the approved ending frame to use as a reference.
-4. **C1 to C6** (the six category images). Send them together.
-5. **D1 to D5** (the five interiors). Send them together.
-6. **E1, E2** (optional lifestyle images).
+4. **C1 to C6** (category images). Make them any time and send them together.
+5. **D1 to D5** (interiors). Make them any time and send them together.
+6. **E1, E2** (optional).
 7. **G1** (Kashan's real photo). Send it any time.
 
 ### How to send them to me
 
-Drag the files into this chat. Send the **original download** from your tool: full size, PNG or the highest-quality JPG, and the MP4 for video. Not a screenshot, not a screen recording and not a file re-saved by WhatsApp or Instagram.
+Drag the files into this chat. Send the **original download** from your tool: PNG or the highest-quality JPG, and the MP4 for video. Not a screenshot, not a screen recording and not a file re-saved by WhatsApp or Instagram.
 
 ### What I do with each one
 
@@ -38,30 +48,32 @@ Drag the files into this chat. Send the **original download** from your tool: fu
   - people
   - hidden text and logos
   - lighting
-  - whether it matches the Kikfia world below
-- For the video, I also pull the first, middle and last frames, and check:
+  - whether it matches the Kikfia world
+  - **realism: would a stranger believe this is a real photo?** If not, it's a redo.
+- For the video, I pull the first, middle and last frames, and check:
   - that the motion stays continuous
-  - the camera direction
-  - that the home keeps the same shape the whole time
+  - that the camera moves down
+  - that the home keeps the same shape
   - that the ending holds still
 - You get a clear **✅ ACCEPTED**, or **❌ REDO** with a corrected prompt.
-- If one idea fails three times, I change the idea instead of the prompt.
-- Approved files get resized and compressed for the web, so you never upload anything to the site yourself.
+- If one idea fails three times, I change the idea.
 
 ---
 
-## The Kikfia world (why every prompt repeats the same words)
+## The Kikfia world (repeated in every prompt on purpose)
 
-Every asset must look like it was shot on the same morning by the same photographer. That's why each prompt repeats this world on purpose:
+Every asset should look like it was shot on the same magical sunrise by the same photographer:
 
-- **Light:** early morning, soft low sun from the back right, thin mist lifting, gentle shadows.
-- **Palette:** misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows, warm cedar wood. Natural, never oversaturated.
-- **Architecture:** modern single-story homes with clean rectangular volumes and low-slope shed roofs with a slim dark edge. Vertical cedar-tone wood cladding with smooth pale warm-gray panels, large dark-framed windows, glass sliding doors and simple wood decks. Real, buildable and in correct proportion.
-- **Camera:** full-frame, natural perspective, straight vertical lines, fine natural grain, editorial architecture photography.
-- **People:** none, or one or two far away and natural, faces never visible.
+- **Light:** sunrise. A soft golden sun low behind the trees, glowing morning mist, dew sparkling, gentle sunbeams.
+- **The hook:** warm amber light glowing from inside the home against cool blue-green mist. Warm against cool is what makes people stop scrolling.
+- **Palette:** deep pine green, sage, misty blue-teal, pale stone and warm cedar gold. Rich but natural, never orange and never oversaturated.
+- **Architecture:** modern single-story homes with clean rectangular lines and low-slope shed roofs with a slim dark edge. Vertical cedar cladding with smooth warm-gray panels, tall black-framed windows and wide glass sliding doors onto wood decks. Modest, real and buildable. Never a mansion.
+- **Completely realistic:** every image must look like a real photograph by a real photographer. Real light, real materials, real textures, real proportions. Never CGI, never fantasy, never "too perfect".
+- **Camera:** award-winning editorial architecture photography on a full-frame camera, crisp detail, straight vertical lines, fine film grain.
+- **People:** none, or one person far away and seen from behind.
 - **Always:** "No text, no logos, no lettering anywhere."
 
-**Important honesty rule:**
+**Honesty rule:**
 - These images are illustrations. The site labels them as digital renderings, and no image is ever presented as a real Kikfia model, customer project or completed home.
 - Kashan's photo is never generated.
 
@@ -76,37 +88,34 @@ Every asset must look like it was shot on the same morning by the same photograp
 | 1. ID | A1 |
 | 2. Filename | `A1-hero-start.png` |
 | 3. Website location | Hero, first frame of the scroll video (desktop and laptop) |
-| 4. Purpose | Locks the look of the home and the scene before the video is made |
+| 4. Purpose | The opening "wow": above a sea of golden fog, with the home glowing below |
 | 5. Type | Image |
 | 6. Aspect ratio | 16:9 |
 | 7. Minimum resolution | 1920 × 1080 (2560 × 1440 or "2K" preferred) |
-| 8. Duration | n/a |
-| 9. Frame rate | n/a |
-| 10. Format | PNG preferred, or highest-quality JPG |
-| 11. Audio | n/a |
+| 8. to 11. | n/a |
 | 16. Priority | **MUST-HAVE · make first** |
 | 17. Source | **AI OK** |
 
 **12. Full prompt**
 ```
-Aerial view from just above the treetops on a still early morning, looking forward and slightly down across mature green trees toward a lawn clearing in the middle distance. The image is composed as the first moment of a slow, straight downward camera movement that will descend through a thin layer of morning mist to eye level. In the right-center distance, partly veiled by soft mist, sits a modern single-story home: a clean rectangular volume with a low-slope shed roof and a slim dark fascia, vertical cedar-tone wood cladding paired with smooth pale warm-gray panels, large dark-framed windows, a dark-framed glass sliding door and a simple wood deck. Realistic, buildable and structurally coherent, with correct proportions. Soft low sun rising from the back right, warm light catching the top of the mist, gentle shadows. A soft band of morning mist drifts between the treetops and the lawn. The upper left third of the frame is calm, pale, softly lit morning sky blending into distant hazy treetops, part of one continuous scene from edge to edge. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial architectural photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 16:9. No text, no logos, no lettering anywhere.
+Breathtaking aerial view at sunrise from just above a sea of soft glowing fog that fills a forested valley, dark pine treetops rising through the fog like islands. The sun is just rising over distant layered blue mountains at the right, sending soft golden rays across the top of the fog. Through a thin gap in the mist at the right-center of the frame, the warm amber glow of tall windows and the cedar roof edge of a modern single-story home are just visible beside the silver edge of a still lake. The home is a clean rectangular volume with a low-slope shed roof and a slim dark edge, vertical cedar wood cladding paired with smooth warm-gray panels and tall black-framed windows, realistic and buildable. The image is composed as the first moment of a slow, straight downward camera descent through the fog to the lakeshore. The upper left third of the frame is calm, luminous pale morning sky blending softly into the fog, part of one continuous scene from edge to edge. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural, not oversaturated. A real drone photograph, not a render: award-winning aerial photography, true-to-life colors, real light and real textures, crisp detail, fine film grain, 16:9. No text, no logos, no lettering anywhere.
 ```
 
 **13. Negative prompt**
 ```
-text, letters, numbers, words, signage, logos, brand marks, watermarks, captions, warped walls, bent or curved windows, impossible rooflines, extra doors, doors to nowhere, floating objects, melted or merged shapes, fantasy architecture, multiple houses, people, cars, roads, power lines, cartoon, illustration, 3D render look, plastic look, oversaturated colors, HDR halos, harsh lens flare, heavy vignette, fisheye, tilted horizon, black bars, empty black areas, snow, night, storm
+text, letters, numbers, words, signage, logos, brand marks, watermarks, captions, warped walls, bent or curved windows, impossible rooflines, extra doors, floating objects, melted or merged shapes, fantasy architecture, castle, mansion, multi-story house, swimming pool, multiple houses, people, cars, roads, power lines, cartoon, illustration, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, plastic look, oversaturated colors, orange color cast, excessive gold, HDR halos, harsh lens flare streaks, heavy vignette, fisheye, tilted horizon, black bars, empty black areas, night, storm
 ```
 
-**14. Start-image instruction:** None. This IS the starting image. Text-to-image.
+**14. Start-image instruction:** None. This IS the starting image (text-to-image).
 
 **15. Acceptance checklist**
-- [ ] One home only, right of center, partly in mist
-- [ ] The roof, walls and windows are straight, square and believable
-- [ ] Upper-left third is calm, pale sky and haze, with no dark trees or bright sun there
-- [ ] A soft mist band sits between the treetops and the lawn
-- [ ] Morning light from the back right, warm but soft
-- [ ] No people, cars, roads, signs, text or logos anywhere (zoom in)
-- [ ] Colors match the Kikfia world, not orange or oversaturated
+- [ ] The opening says "wow": a sea of fog, treetops poking through, the sun rising on the right
+- [ ] The home's warm glowing windows are visible but small, right of center
+- [ ] Upper-left third is calm, bright sky and fog, with no trees or sun there (the headline goes there)
+- [ ] Looks like a real photograph, not a render
+- [ ] One home only, believable and modest, with no castle or mansion look
+- [ ] No people, cars, roads, text or logos anywhere (zoom in)
+- [ ] Golden but natural, not orange
 
 ---
 
@@ -116,39 +125,45 @@ text, letters, numbers, words, signage, logos, brand marks, watermarks, captions
 |---|---|
 | 1. ID | A2 |
 | 2. Filename | `A2-hero-video.mp4` |
-| 3. Website location | Hero, plays forward and backward with scroll (laptops and desktops only) |
-| 4. Purpose | The cinematic opening: mist clears and a home comes into clear light |
+| 3. Website location | Hero, plays forward and backward with scroll (laptops and desktops) |
+| 4. Purpose | The cinematic hook: dive down through glowing fog to a home reflected in a mirror lake |
 | 5. Type | Video, image-to-video |
 | 6. Aspect ratio | 16:9 |
 | 7. Minimum resolution | 1920 × 1080 (1080p). 4K is not needed. |
 | 8. Duration | 6 seconds |
 | 9. Frame rate | 24 fps (30 fps is also fine) |
 | 10. Format | MP4 |
-| 11. Audio | None (turn audio off if your tool offers it) |
-| 16. Priority | **MUST-HAVE · make second, only after A1 is ✅** |
+| 11. Audio | None |
+| 16. Priority | **MUST-HAVE · make second, from the approved A1** |
 | 17. Source | **AI OK** |
 
 **12. Full prompt**
 ```
-One continuous shot, no cuts. The camera descends slowly and steadily straight down, from just above the treetops to eye level across the lawn, keeping the modern single-story home right of center the whole time and tilting gently so the horizon stays level. On the way down, the camera passes through a thin layer of morning mist: soft wisps drift across the lens for a brief moment of softness, then clear. The scene stays alive throughout: leaves move slightly in a light breeze, the mist drifts and thins, and the low sun from the back right slowly warms the scene and reaches the glass of the home. The home stays perfectly solid and unchanged: same shape, same roofline, same windows, straight vertical lines, cedar-tone wood and pale warm-gray panels. The shot ends at rest: at eye level from across a dewy lawn, the home sits right of center in clear morning light, the sun glinting softly on its large windows, the wood deck in front, mature trees framing it, and calm pale sky with soft haze filling the upper left of the frame. The final second is almost still, with only gentle leaf and mist movement. Realistic, natural colors, cinematic architectural film. No text, no logos, no lettering anywhere.
+One continuous shot, no cuts. A slow, steady, cinematic drone descent straight down from above a sea of golden morning fog to eye level at the edge of a still lake. As the camera sinks into the fog, soft white mist drifts past the lens for a brief, dreamy moment of softness, then parts to reveal the scene below. The modern single-story home on the far lakeshore stays right of center the whole time and grows clearer as the mist thins: vertical cedar cladding, smooth warm-gray panels, tall black-framed windows glowing with warm amber light from inside. Golden sunrise rays stream through the pine trees from the back right, wisps of mist curl slowly across the mirror-still water, and the glowing windows and the trees reflect in the lake. The scene stays alive throughout: drifting fog, gentle ripples, leaves moving in a light breeze. The home stays perfectly solid and unchanged: same shape, same roofline, same windows, straight vertical lines. The shot ends at rest at eye level just above the water's edge: the home sits right of center, mirrored in the calm lake, warm light glowing in its windows, golden sunlight on the cedar, tall pines framing it, soft mist on the water, and calm luminous sky filling the upper left of the frame. The final second is almost still, with only gentle mist and ripple movement. It must look like real drone footage, not CGI: true-to-life colors, real light, real textures, natural physics, cinematic and awe-inspiring. No text, no logos, no lettering anywhere.
 ```
 
 **13. Negative prompt**
 ```
-cuts, scene change, camera moving up, camera moving sideways, fast motion, shaking, zoom jumps, the house changing shape, warping roof, bending walls, windows appearing or disappearing, extra doors, a second house, people, animals, cars, birds flying at camera, flickering light, strobing, morphing trees, text, letters, logos, watermarks, signage, oversaturated colors, cartoon, 3D render look, black frames
+cuts, scene change, camera moving up, camera moving sideways, spinning, fast motion, shaking, zoom jumps, the house changing shape, warping roof, bending walls, windows appearing or disappearing, extra doors, a second house, mansion, people, animals, boats, cars, birds flying at camera, flickering lights, strobing, morphing trees, text, letters, logos, watermarks, signage, oversaturated colors, orange color cast, cartoon, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, black frames
 ```
 
-**14. Start-image instruction:** Use the approved **A1** image as the starting frame (image-to-video). Settings: 1080p, 6 seconds, 16:9, standard mode, no audio. If your tool offers presets or style templates, don't use them. Use this prompt exactly.
+**14. Start-image instruction:** Use the approved **A1** as the starting frame (image-to-video). Settings: 1080p, 6 seconds, 16:9, standard mode, audio off. Don't use presets or style templates.
+
+**If your tool can't start from an image,** paste this text-to-video version instead (less predictable):
+```
+One continuous shot, no cuts. It opens with a breathtaking aerial view at sunrise just above a sea of soft glowing fog filling a forested valley, dark pine treetops rising through the fog, the sun rising over layered blue mountains at the right, and through a gap in the mist at right-center the warm glowing windows of a modern single-story home beside a still lake. The home has a low-slope shed roof with a slim dark edge, vertical cedar cladding, smooth warm-gray panels and tall black-framed windows. A slow, steady, cinematic drone descent straight down through the fog to eye level at the lake's edge: soft mist drifts past the lens for a brief dreamy moment, then parts. The home stays right of center the whole time, perfectly solid and unchanged, its windows glowing warm amber and reflected in the mirror-still water, golden rays streaming through the pines, mist curling over the lake. The shot ends at rest at eye level, the home right of center mirrored in the calm lake, calm luminous sky filling the upper left of the frame. The final second is almost still. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold. It must look like real drone footage, not CGI: true-to-life colors, real light and textures, cinematic, 16:9. No text, no logos, no lettering anywhere.
+```
 
 **15. Acceptance checklist** (I check frames at 0s, 3s and 6s, plus the full clip)
+- [ ] Looks like real drone footage, not CGI
 - [ ] One continuous shot, with no cuts or jumps
-- [ ] The camera moves **down**, not up or sideways, at a steady speed
+- [ ] The camera moves **down** through the fog, at a steady speed
+- [ ] The fog moment feels dreamy and soft, not a flash or a pop
 - [ ] The home keeps the same shape, roof and window count from start to end
-- [ ] The mist passes like a soft veil and clears, without flashing or popping
-- [ ] Light warms smoothly, without flicker
-- [ ] The upper left stays calm sky the whole way, so the words stay readable
-- [ ] The last half-second is nearly still (the "resting" ending)
-- [ ] No people, cars, birds, text, logos or extra buildings appear
+- [ ] The window glow stays steady, with no flicker
+- [ ] The ending holds still, with the home mirrored in the lake
+- [ ] The upper left stays calm and bright, so the words stay readable
+- [ ] No people, boats, birds, text, logos or extra buildings
 
 ---
 
@@ -160,243 +175,219 @@ cuts, scene change, camera moving up, camera moving sideways, fast motion, shaki
 |---|---|
 | 1. ID | B1 |
 | 2. Filename | `B1-hero-mobile.png` |
-| 3. Website location | Hero on phones and portrait tablets, and for visitors with reduced motion |
-| 4. Purpose | A designed still that phone visitors see instead of the video |
+| 3. Website location | Hero on phones and portrait tablets, and for reduced-motion visitors |
+| 4. Purpose | The first thing phone visitors see. It has to stop the thumb. |
 | 5. Type | Image |
 | 6. Aspect ratio | 9:16 (tall) |
 | 7. Minimum resolution | 1080 × 1920 (1440 × 2560 preferred) |
-| 8. to 11. | n/a |
-| 16. Priority | **MUST-HAVE · make third, after A2 is ✅** |
+| 16. Priority | **MUST-HAVE · after A2 is ✅** |
 | 17. Source | **AI OK** |
 
 **12. Full prompt**
 ```
-Eye-level view across a dewy green lawn on an early morning. A modern single-story home sits in the lower third of a tall vertical frame, slightly right of center: a clean rectangular volume with a low-slope shed roof and a slim dark fascia, vertical cedar-tone wood cladding paired with smooth pale warm-gray panels, large dark-framed windows with soft sun glinting on the glass, a dark-framed glass sliding door and a simple wood deck. Realistic, buildable and structurally coherent, with correct proportions. Mature trees frame the home on both sides. Soft low sun from the back right, thin mist lifting above the lawn. The upper half of the frame is calm, pale morning sky with soft haze above the treetops, part of one continuous scene from edge to edge. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial architectural photography, full-frame camera, natural perspective, straight vertical lines, fine natural grain, 9:16 vertical. No text, no logos, no lettering anywhere.
+Stunning vertical sunrise photograph. A modern single-story home sits on the far shore of a mirror-still lake in the lower third of a tall frame, slightly right of center, its tall black-framed windows glowing warm amber and perfectly reflected in the water. The home has a low-slope shed roof with a slim dark edge, vertical cedar wood cladding, smooth warm-gray panels and a wood deck at the water's edge; realistic, buildable and modest. Golden sunrise rays stream through tall dark pines behind it, and soft mist curls across the water in the foreground. The upper half of the frame is a calm luminous sunrise sky, pale gold fading to soft blue with a few soft clouds, part of one continuous scene from edge to edge. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural, not oversaturated. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 9:16 vertical. No text, no logos, no lettering anywhere.
 ```
 
 **13. Negative prompt**
 ```
-text, letters, numbers, words, signage, logos, brand marks, watermarks, warped walls, bent or curved windows, impossible rooflines, extra doors, floating objects, melted shapes, fantasy architecture, multiple houses, people, cars, power lines, cartoon, illustration, 3D render look, oversaturated colors, HDR halos, heavy vignette, fisheye, tilted verticals, dark sky, night
+text, letters, numbers, words, signage, logos, watermarks, warped walls, bent or curved windows, impossible rooflines, extra doors, floating objects, melted shapes, fantasy architecture, mansion, multi-story house, multiple houses, people, boats, cars, power lines, cartoon, illustration, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, oversaturated colors, orange color cast, HDR halos, heavy vignette, fisheye, tilted verticals, night
 ```
 
-**14. Start-image instruction:** I'll send you the approved hero **ending frame** as a PNG. Use it as an image reference (or "extend/outpaint" it to 9:16) so the home matches the video exactly.
+**14. Start-image instruction:** I'll send you the approved hero **ending frame** as a PNG. Use it as an image reference (or extend/outpaint it to 9:16) so the home matches the video.
 
-**15. Acceptance checklist**
-- [ ] Same home as the video's ending: shape, colors, windows
-- [ ] Home in the lower third, sky in the upper half (room for the headline)
-- [ ] Straight verticals, a believable roof and no extra doors
-- [ ] No people, text or logos
+**15. Checklist:** same home as the video's ending · home in the lower third, sky in the upper half · reflection makes sense · no people, text or logos.
 
 ---
 
 ## C. Category images (The Homes section)
 
-All six use **4:3**, **minimum 1600 × 1200** (2048 × 1536 preferred), PNG or highest-quality JPG. They're images, so fields 8 to 11 don't apply. All are **AI OK** and **MUST-HAVE**.
+All six use **4:3**, **minimum 1600 × 1200** (2048 × 1536 preferred), PNG or highest-quality JPG. All are **AI OK** and **MUST-HAVE**. Each one has its own "wow" so the six cards don't look the same.
 
 **Shared negative prompt for C1 to C6:**
 ```
-text, letters, numbers, words, signage, logos, brand marks, watermarks, house numbers, warped walls, bent or curved windows, impossible rooflines, extra doors, doors to nowhere, floating objects, melted or merged shapes, fantasy architecture, unrealistic people, distorted faces, cars, license plates, power lines, clutter, toys, cartoon, illustration, 3D render look, plastic look, oversaturated colors, HDR halos, harsh lens flare, heavy vignette, fisheye, tilted verticals, snow, night
+text, letters, numbers, words, signage, logos, brand marks, watermarks, house numbers, warped walls, bent or curved windows, impossible rooflines, extra doors, doors to nowhere, floating objects, melted or merged shapes, fantasy architecture, mansion, multi-story house, swimming pool, unrealistic people, distorted faces, cars, license plates, power lines, clutter, cartoon, illustration, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, plastic look, oversaturated colors, orange color cast, excessive gold, HDR halos, harsh lens flare streaks, heavy vignette, fisheye, tilted verticals, night
 ```
 
 **Shared acceptance checklist for C1 to C6:**
-- [ ] One clear home, believable and buildable, with no warped lines
-- [ ] Doors and windows make sense: no extra doors and no doors to nowhere
-- [ ] Same morning light, palette and materials as the hero
+- [ ] Looks like a real photograph, not a render
+- [ ] One clear, believable, modest home, with no warped lines
+- [ ] Doors and windows make sense
+- [ ] Its own "wow" is there (see each one) and still looks real
 - [ ] Room around the home so cropping to cards doesn't cut the roof
-- [ ] No people (except where stated), cars, text, numbers or logos
+- [ ] No people, cars, text, numbers or logos (zoom in)
 
-### C1 · ADU & Backyard Homes
-1. ID: C1 · 2. Filename: `C1-category-adu.png` · 3. Location: The Homes, card 1 · 4. Purpose: the leading category, a backyard home behind a main house · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
-
-**12. Prompt**
-```
-A compact modern backyard home, an accessory dwelling unit, in the rear yard of a typical American single-family house, seen at eye level from the back garden on an early morning. The backyard home is a single-story rectangular volume with a low-slope shed roof and a slim dark fascia, vertical cedar-tone wood cladding paired with smooth pale warm-gray panels, a large dark-framed glass sliding door and a small wood deck with two steps. The corner of the main house is visible at the left edge, softly out of focus. A short path of pale stepping stones crosses a green lawn to the deck. Mature trees and a simple wood fence behind. Realistic, buildable and structurally coherent, with correct proportions. Soft low morning sun from the back right, thin mist lifting, gentle shadows. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial architectural photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:3. No text, no logos, no lettering anywhere.
-```
-**14. Start image:** none (text-to-image).
-
-### C2 · Small Homes
-1. ID: C2 · 2. `C2-category-small.png` · 3. The Homes, card 2 · 4. Studio and one-bedroom homes · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
+### C1 · ADU & Backyard Homes · wow: a glowing backyard retreat
+1. ID: C1 · 2. `C1-category-adu.png` · 3. The Homes, card 1 · 4. Backyard home behind a family house · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 16. **MUST-HAVE** · 17. **AI OK**
 
 **12. Prompt**
 ```
-A small modern single-story home, about the size of a studio or one-bedroom home, standing in a quiet meadow clearing at the edge of a pine forest on an early morning, seen at eye level from a slight angle. A clean rectangular volume with a low-slope shed roof and a slim dark fascia, vertical cedar-tone wood cladding paired with smooth pale warm-gray panels, one large dark-framed corner window, a dark-framed glass entry door and a small wood deck. Tall native grasses and a narrow mown path lead to the deck. Realistic, buildable and structurally coherent, with correct proportions. Soft low morning sun from the back right, thin mist lifting between the trees, gentle shadows. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial architectural photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:3. No text, no logos, no lettering anywhere.
+A charming modern backyard home, an accessory dwelling unit, glowing at golden sunrise in the lush back garden of a classic American family house. A single-story rectangular volume with a low-slope shed roof and a slim dark edge, vertical cedar wood cladding paired with smooth warm-gray panels, and a wide black-framed glass sliding door through which warm amber light glows onto a small cedar deck with two simple lounge chairs and potted olive trees. A path of pale stepping stones winds through dewy lawn and soft flowering beds toward it, and the corner of the main house is softly out of focus at the left edge. The low golden sun backlights the garden, morning mist lifts between the trees, and dew sparkles on the grass. Realistic, buildable and well-proportioned. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:3. No text, no logos, no lettering anywhere.
 ```
-**14. Start image:** none.
 
-### C3 · Family Homes
-1. ID: C3 · 2. `C3-category-family.png` · 3. The Homes, card 3 · 4. Larger two- and three-bedroom homes, so Kikfia never looks ADU-only · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
-
-**12. Prompt**
-```
-A larger modern single-story family home on a wide green lot on an early morning, seen at eye level from the front lawn at a gentle three-quarter angle. A long rectangular home made of two connected volumes with low-slope shed roofs and slim dark fascias, vertical cedar-tone wood cladding paired with smooth pale warm-gray panels, a row of large dark-framed windows, a dark-framed glass entry door and a wide wood deck along the front. A simple pale gravel driveway with no cars, young trees and native plantings. Mature trees behind. Realistic, buildable and structurally coherent, with correct proportions for a three-bedroom home. Soft low morning sun from the back right, thin mist lifting, gentle shadows. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial architectural photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:3. No text, no logos, no lettering anywhere.
-```
-**14. Start image:** none.
-
-### C4 · Guest & Vacation Homes
-1. ID: C4 · 2. `C4-category-guest.png` · 3. The Homes, card 4 · 4. A getaway or guest home · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
+### C2 · Small Homes · wow: alone in a golden wildflower meadow
+1. ID: C2 · 2. `C2-category-small.png` · 3. The Homes, card 2 · 4. Studio and one-bedroom homes · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 16. **MUST-HAVE** · 17. **AI OK**
 
 **12. Prompt**
 ```
-A modern single-story guest and vacation home on a gentle slope above a calm lake at the edge of pine woods on an early morning, seen at eye level from the lakeside. A clean rectangular volume with a low-slope shed roof and a slim dark fascia, vertical cedar-tone wood cladding paired with smooth pale warm-gray panels, a wide dark-framed glass sliding door opening onto a wood deck that faces the water. Soft mist rising off the lake surface. Realistic, buildable and structurally coherent, with correct proportions. Soft low morning sun from the back right, gentle shadows, still water with soft reflections. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal water and warm cedar wood, natural and not oversaturated. Realistic editorial architectural photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:3. No text, no logos, no lettering anywhere.
+A small modern studio home standing alone in a meadow of tall grass and wildflowers at sunrise, layered blue mountains and soft morning mist behind it. A compact single-story volume with a low-slope shed roof and a slim dark edge, vertical cedar wood cladding paired with smooth warm-gray panels, one tall black-framed corner window glowing with warm amber light, and a small wood deck. The low sun backlights the meadow so every blade of grass glows gold, and a narrow mown path leads the eye to the deck. Realistic, buildable and well-proportioned. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:3. No text, no logos, no lettering anywhere.
 ```
-**14. Start image:** none.
 
-### C5 · Office & Studio Spaces
-1. ID: C5 · 2. `C5-category-studio.png` · 3. The Homes, card 5 · 4. A backyard office or studio · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
-
-**12. Prompt**
-```
-A compact modern backyard studio and home office in a green garden on an early morning, seen at eye level from across the lawn. A small single-story rectangular volume with a low-slope shed roof and a slim dark fascia, vertical cedar-tone wood cladding paired with smooth pale warm-gray panels, and one full-height dark-framed glass wall. Through the glass, softly visible, a simple light oak desk, a plain chair and a small potted plant, no screens with content. A few pale stepping stones lead to a small wood step. Mature trees and a simple wood fence behind. Realistic, buildable and structurally coherent, with correct proportions. Soft low morning sun from the back right, thin mist lifting, gentle shadows. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial architectural photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:3. No text, no logos, no lettering anywhere.
-```
-**14. Start image:** none.
-
-### C6 · Custom Homes
-1. ID: C6 · 2. `C6-category-custom.png` · 3. The Homes, card 6 · 4. A distinctive custom design · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
+### C3 · Family Homes · wow: every window glowing at dawn blue hour
+1. ID: C3 · 2. `C3-category-family.png` · 3. The Homes, card 3 · 4. Larger two- and three-bedroom homes · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 16. **MUST-HAVE** · 17. **AI OK**
 
 **12. Prompt**
 ```
-A distinctive modern single-story custom home with an L-shaped plan wrapping a pale stone patio, on a gently sloping green lot on an early morning, seen at eye level from the lawn at a three-quarter angle. Two connected rectangular wings with low-slope shed roofs at different heights and slim dark fascias, vertical cedar-tone wood cladding paired with smooth pale warm-gray panels, large dark-framed windows and a wide dark-framed glass sliding door opening onto the patio. Native grasses and mature trees around. Realistic, buildable and structurally coherent, with correct proportions and clean right angles. Soft low morning sun from the back right, thin mist lifting, gentle shadows. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial architectural photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:3. No text, no logos, no lettering anywhere.
+A spacious modern single-story family home photographed at dawn blue hour, just before sunrise, every tall black-framed window glowing warm amber against the cool blue-teal morning sky. A long, low home of two connected rectangular wings with low-slope shed roofs and slim dark edges, vertical cedar wood cladding paired with smooth warm-gray panels, and a wide wood deck along the front. A pale stone path, still wet from overnight rain, reflects the glowing windows. Young trees and native grasses around, and the first pink-gold light touches the treetops behind. No cars. Realistic, buildable, with correct proportions for a three-bedroom home. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:3. No text, no logos, no lettering anywhere.
 ```
-**14. Start image:** none.
+
+### C4 · Guest & Vacation Homes · wow: mirror lake, dock and canoe
+1. ID: C4 · 2. `C4-category-guest.png` · 3. The Homes, card 4 · 4. A getaway or guest home · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 16. **MUST-HAVE** · 17. **AI OK**
+
+**12. Prompt**
+```
+A cozy modern guest cabin on the shore of a mirror-calm mountain lake at sunrise, with a simple wooden dock stretching into the water and a plain wooden canoe tied alongside. A single-story volume with a low-slope shed roof and a slim dark edge, vertical cedar wood cladding paired with smooth warm-gray panels, and a wide black-framed glass door glowing with warm amber light onto a deck facing the water. Soft mist rises off the lake, pine forest and soft blue mountains behind, and the whole scene is mirrored in the still water. Realistic, buildable and well-proportioned. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:3. No text, no logos, no lettering anywhere.
+```
+
+### C5 · Office & Studio Spaces · wow: a studio glowing like a lantern
+1. ID: C5 · 2. `C5-category-studio.png` · 3. The Homes, card 5 · 4. A backyard office or studio · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 16. **MUST-HAVE** · 17. **AI OK**
+
+**12. Prompt**
+```
+A compact modern backyard studio glowing like a lantern in a lush green garden at dawn. One full-height black-framed glass wall reveals a warm, inviting workspace inside: a light oak desk, a simple chair, a small desk lamp casting warm light, and a few green plants, with no screens showing content. The studio is a small single-story volume with a low-slope shed roof and a slim dark edge and vertical cedar wood cladding. Dew-covered ferns and grasses surround it, pale stepping stones lead to a wood step, and soft mist and the first golden light filter through tall trees behind. Realistic, buildable and well-proportioned. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:3. No text, no logos, no lettering anywhere.
+```
+
+### C6 · Custom Homes · wow: a hillside home above a valley of golden fog
+1. ID: C6 · 2. `C6-category-custom.png` · 3. The Homes, card 6 · 4. A distinctive custom design · 5. Image · 6. 4:3 · 7. 1600 × 1200 min · 16. **MUST-HAVE** · 17. **AI OK**
+
+**12. Prompt**
+```
+A striking modern single-story custom home with an L-shaped plan on a gentle hillside at sunrise, overlooking a valley filled with soft golden fog. Two connected wings with low-slope shed roofs at different heights and slim dark edges, vertical cedar wood cladding paired with smooth warm-gray panels, tall black-framed windows glowing warm amber, and a pale stone patio between the wings that opens to a wide wood deck facing the view. Native grasses and a few sculptural pines, the sun rising over distant blue ridges. Realistic, buildable, with clean right angles and correct proportions. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural. A real photograph, not a render: award-winning editorial architectural photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:3. No text, no logos, no lettering anywhere.
+```
 
 ---
 
 ## D. Interiors (See What's Inside)
 
-D1 is **3:2** (the large gallery image). D2 to D5 are **4:5** (tall tiles, which also work for the phone swipe gallery). They are images, PNG or highest-quality JPG. All are **AI OK** and **MUST-HAVE**.
+D1 is **3:2** (the big gallery image, minimum 2400 × 1600). D2 to D5 are **4:5** (minimum 1600 × 2000). All are **AI OK** and **MUST-HAVE**.
 
-**The interior world** (it's already in each prompt): pale oak floors, pale warm-gray walls, natural wood, dark window frames, morning light through large windows to a green garden, and textiles in stone, sage and soft lake-teal. It's calm, real and lived-in, not a showroom.
+**The interior hook:** golden sunbeams streaming in, big windows framing misty pines and water, steam rising from a mug, and soft textures. Rooms people want to *be* in, not showrooms.
 
 **Shared negative prompt for D1 to D5:**
 ```
-text, letters, numbers, words, logos, brand names on appliances, readable book spines, posters or artwork with text, screens showing content, watermarks, warped walls, bent or curved windows, impossible ceilings, extra doors, doors to nowhere, floating objects, distorted or melted furniture, duplicated furniture, extra faucets, impossible mirror reflections, people, pets, clutter, fisheye, wide-angle stretching, tilted verticals, oversaturated colors, HDR halos, 3D render look, plastic look, cartoon, illustration, night
+text, letters, numbers, words, logos, brand names on appliances, readable book spines, posters or artwork with text, screens showing content, watermarks, warped walls, bent or curved windows, impossible ceilings, extra doors, doors to nowhere, floating objects, distorted or melted furniture, duplicated furniture, extra faucets, mirrors, people, pets, clutter, mansion interior, chandelier, fisheye, wide-angle stretching, tilted verticals, oversaturated colors, orange color cast, HDR halos, 3D render look, CGI, video game look, surreal, painterly, fantasy glow, overly perfect AI look, plastic look, cartoon, illustration, night
 ```
 
 **Shared acceptance checklist for D1 to D5:**
+- [ ] Looks like a real photograph, not a render
+- [ ] Sunbeams and the window view give it the "I want to be there" feeling
 - [ ] Furniture and fixtures are whole and real: no melted legs, no extra faucets
-- [ ] Walls, windows and ceiling are straight, and the room size is believable
-- [ ] Windows show a green morning garden, the same world as the exteriors
+- [ ] Walls, windows and ceiling are straight, and the room size is believable for a modest home
 - [ ] No people, text, book titles, screen content or appliance logos (zoom in)
-- [ ] Same palette and light across all five, so they look like one home
+- [ ] Same light and palette across all five
 
-### D1 · Living area
-1. ID: D1 · 2. `D1-interior-living.png` · 3. See What's Inside, large image · 4. The main living space · 5. Image · 6. **3:2** · 7. 2400 × 1600 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
-
-**12. Prompt**
-```
-Interior of a bright, open living area in a modern single-story home on an early morning, seen at standing eye level. A low sofa in pale stone linen with a few soft sage and lake-teal cushions, a simple light oak coffee table, a wool rug, and a large dark-framed glass sliding door opening to a wood deck and a misty green garden. Pale oak plank floor, pale warm-gray walls, a gently sloped ceiling following a shed roof, a few natural objects such as a ceramic vase and a small plant. Realistic room proportions, straight lines. Soft low morning sun from the right casting gentle window light across the floor. Palette of pale stone, sage green, soft lake-teal, deep pine and warm wood, natural and not oversaturated. Realistic editorial interior photography, full-frame camera, 28mm lens, straight vertical lines, fine natural grain, 3:2. No text, no logos, no lettering anywhere.
-```
-**14. Start image:** none.
-
-### D2 · Kitchen
-1. ID: D2 · 2. `D2-interior-kitchen.png` · 3. See What's Inside, tile 1 · 4. A practical kitchen · 5. Image · 6. **4:5** · 7. 1600 × 2000 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
+### D1 · Living area · wow: a wall of glass onto the misty lake
+1. ID: D1 · 2. `D1-interior-living.png` · 3. See What's Inside, large image · 5. Image · 6. **3:2** · 7. 2400 × 1600 min · 16. **MUST-HAVE** · 17. **AI OK**
 
 **12. Prompt**
 ```
-Interior of a compact, practical kitchen in a modern single-story home on an early morning, seen at standing eye level. Flat-panel sage-green lower cabinets with slim dark handles, open light oak shelves with a few plain ceramic dishes, a pale stone countertop, a simple integrated cooktop and oven with no visible brand, and a single sink under a dark-framed window that looks out to green trees in soft morning mist. Pale oak floor and pale warm-gray walls. Realistic proportions, straight lines, everything whole and believable. Soft morning sun from the window. Palette of pale stone, sage green, soft lake-teal, deep pine and warm wood, natural and not oversaturated. Realistic editorial interior photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:5 vertical. No text, no logos, no lettering anywhere.
+A breathtaking bright living room inside a modern single-story home at sunrise. A wall of floor-to-ceiling black-framed glass with a sliding door open to a cedar deck, and beyond it a misty lake and pine forest glowing in golden light. Golden sunbeams stream in low across pale oak floors. A low linen sofa in warm stone with sage and soft teal cushions, a chunky wool rug, a light oak coffee table with a steaming ceramic mug and a small vase of wildflowers, and a gently sloped wood-lined ceiling. Calm, cozy, lived-in and magazine-worthy, with realistic room proportions and straight lines. Palette of pale stone, sage, soft lake-teal, deep pine and warm wood, rich but natural. A real photograph, not a render: award-winning editorial interior photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 3:2. No text, no logos, no lettering anywhere.
 ```
-**14. Start image:** none.
 
-### D3 · Bedroom
-1. ID: D3 · 2. `D3-interior-bedroom.png` · 3. See What's Inside, tile 2 · 4. A calm bedroom · 5. Image · 6. **4:5** · 7. 1600 × 2000 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
-
-**12. Prompt**
-```
-Interior of a calm bedroom in a modern single-story home on an early morning, seen at standing eye level. A simple low bed with pale stone linen bedding and a soft lake-teal throw, one light oak nightstand with a small ceramic lamp, and a large dark-framed window beside the bed looking out to green trees in soft morning mist. Pale oak floor, pale warm-gray walls, a gently sloped ceiling. Realistic proportions, straight lines, everything whole and believable. Soft low morning sun falling across the bedding. Palette of pale stone, sage green, soft lake-teal, deep pine and warm wood, natural and not oversaturated. Realistic editorial interior photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:5 vertical. No text, no logos, no lettering anywhere.
-```
-**14. Start image:** none.
-
-### D4 · Bathroom
-1. ID: D4 · 2. `D4-interior-bathroom.png` · 3. See What's Inside, tile 3 · 4. A clean bathroom · 5. Image · 6. **4:5** · 7. 1600 × 2000 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
+### D2 · Kitchen · wow: sunbeams across the counter
+1. ID: D2 · 2. `D2-interior-kitchen.png` · 3. See What's Inside, tile 1 · 5. Image · 6. **4:5** · 7. 1600 × 2000 min · 16. **MUST-HAVE** · 17. **AI OK**
 
 **12. Prompt**
 ```
-Interior of a clean, simple bathroom in a modern single-story home on an early morning, seen at standing eye level. A walk-in shower with a clear glass panel and pale large-format stone-gray tiles, a floating light oak vanity with one white basin and one dark faucet, a plain round mirror on the wall, and a small dark-framed window with soft green light from outside. Pale warm-gray walls. Realistic proportions, straight lines, every fixture whole and believable. Soft morning daylight. Palette of pale stone, sage green, soft lake-teal, deep pine and warm wood, natural and not oversaturated. Realistic editorial interior photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:5 vertical. No text, no logos, no lettering anywhere.
+A beautiful compact kitchen in a modern single-story home at sunrise. Sage-green flat-panel cabinets with slim black handles, warm oak open shelves with simple ceramic dishes, a pale stone countertop with a bowl of lemons and a steaming coffee pot, and integrated appliances with no visible brand. A wide black-framed window above the sink frames misty pines, and golden sunbeams fall across the counter and the pale oak floor. Realistic proportions, everything whole and believable. Palette of pale stone, sage, soft lake-teal, deep pine and warm wood, rich but natural. A real photograph, not a render: award-winning editorial interior photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:5 vertical. No text, no logos, no lettering anywhere.
 ```
-**14. Start image:** none. (Mirrors are tricky for AI. If the mirror shows a strange reflection, it's a redo.)
 
-### D5 · Home office
-1. ID: D5 · 2. `D5-interior-office.png` · 3. See What's Inside, tile 4 · 4. A home office or studio · 5. Image · 6. **4:5** · 7. 1600 × 2000 min · 10. PNG/JPG · 16. **MUST-HAVE** · 17. **AI OK**
+### D3 · Bedroom · wow: waking up to a forest view
+1. ID: D3 · 2. `D3-interior-bedroom.png` · 3. See What's Inside, tile 2 · 5. Image · 6. **4:5** · 7. 1600 × 2000 min · 16. **MUST-HAVE** · 17. **AI OK**
 
 **12. Prompt**
 ```
-Interior of a quiet home office in a modern single-story home on an early morning, seen at standing eye level. A simple light oak desk facing a large dark-framed window that looks out to a misty green garden, a plain upholstered chair in pale stone, one small potted plant and a ceramic cup on the desk, and a low oak shelf with a few plain objects and no books. Pale oak floor, pale warm-gray walls. Realistic proportions, straight lines, everything whole and believable. Soft low morning sun through the window. Palette of pale stone, sage green, soft lake-teal, deep pine and warm wood, natural and not oversaturated. Realistic editorial interior photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 4:5 vertical. No text, no logos, no lettering anywhere.
+A serene bedroom in a modern single-story home at sunrise. A low bed with softly rumpled pale linen bedding and a soft teal knit throw, golden morning sunbeams falling across the bed through a large black-framed window that frames a misty pine forest and a glimpse of a lake, a warm oak nightstand with a small ceramic lamp and a sprig of greenery, and a gently sloped wood-lined ceiling. Peaceful, inviting and real, with realistic proportions and straight lines. Palette of pale stone, sage, soft lake-teal, deep pine and warm wood, rich but natural. A real photograph, not a render: award-winning editorial interior photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:5 vertical. No text, no logos, no lettering anywhere.
 ```
-**14. Start image:** none.
+
+### D4 · Bathroom · wow: a soaking tub facing the pines
+1. ID: D4 · 2. `D4-interior-bathroom.png` · 3. See What's Inside, tile 3 · 5. Image · 6. **4:5** · 7. 1600 × 2000 min · 16. **MUST-HAVE** · 17. **AI OK**
+
+**12. Prompt**
+```
+A spa-like bathroom in a modern single-story home at sunrise. A freestanding white soaking tub sits in front of a large black-framed window that looks out onto misty pines, with golden morning light pouring in. A walk-in shower with a clear glass panel and warm stone-gray tiles, a floating light oak vanity with one white basin and one black faucet, a eucalyptus sprig and soft folded towels. Calm, fresh and real, every fixture whole and believable, with realistic proportions. Palette of pale stone, sage, soft lake-teal, deep pine and warm wood, rich but natural. A real photograph, not a render: award-winning editorial interior photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:5 vertical. No text, no logos, no lettering anywhere.
+```
+
+### D5 · Home office · wow: the best desk view in the world
+1. ID: D5 · 2. `D5-interior-office.png` · 3. See What's Inside, tile 4 · 5. Image · 6. **4:5** · 7. 1600 × 2000 min · 16. **MUST-HAVE** · 17. **AI OK**
+
+**12. Prompt**
+```
+An inspiring home office in a modern single-story home at sunrise. A light oak desk faces a big black-framed window with a view of a misty garden and tall pines, with golden sunbeams falling across the desk. A comfortable upholstered chair in pale stone, a steaming ceramic mug, a closed notebook and a pencil, and a trailing green plant on a low oak shelf. No books and no screens showing content. Calm, focused and real, with realistic proportions and straight lines. Palette of pale stone, sage, soft lake-teal, deep pine and warm wood, rich but natural. A real photograph, not a render: award-winning editorial interior photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 4:5 vertical. No text, no logos, no lettering anywhere.
+```
 
 ---
 
-## E. Lifestyle and backyard (optional)
+## E. Lifestyle (optional)
 
-Both are **3:2**, **minimum 2400 × 1600**, PNG or highest-quality JPG, **AI OK** and **NICE-TO-HAVE**. They use the same negative prompt as C1 to C6, but allow the one distant person in E2.
+Both are **3:2**, **minimum 2400 × 1600**, **AI OK** and **NICE-TO-HAVE**. They use the shared C negative prompt, but E2 allows its one distant person.
 
-### E1 · Backyard ready for a home
-1. ID: E1 · 2. `E1-lifestyle-backyard.png` · 3. Property Check, beside the first question on desktop · 4. Makes "your property" feel real · 5. Image · 6. 3:2 · 7. 2400 × 1600 min · 10. PNG/JPG · 16. NICE-TO-HAVE · 17. **AI OK**
+### E1 · A backyard full of possibility
+1. ID: E1 · 2. `E1-lifestyle-backyard.png` · 3. Property Check, beside the questions (desktop) · 4. Makes "your property" feel real and exciting · 16. NICE-TO-HAVE · 17. **AI OK**
 
 **12. Prompt**
 ```
-A wide, open, level backyard lawn behind a typical American single-family house on an early morning, seen at eye level from the back of the yard toward the trees. In the middle of the lawn, a rectangular area is marked out with a few thin wooden stakes and taut light string lines, showing where a small home could go. The back corner of the main house is visible at the far left edge, softly out of focus. Mature trees and a simple wood fence behind, soft mist lifting. Soft low morning sun from the back right, long gentle shadows. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial photography, full-frame camera, 35mm lens, straight vertical lines, fine natural grain, 3:2. No text, no logos, no lettering anywhere.
+An inviting wide backyard behind a classic American family house at golden sunrise. In the middle of a dewy lawn, a level open area is marked out with a few thin wooden stakes and taut white string lines glowing in the low sun, showing where a small home could go. Mature trees, soft mist lifting, long golden shadows across the grass, and the back corner of the main house softly out of focus at the left edge. A quiet feeling of possibility. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural. A real photograph, not a render: award-winning editorial photography on a full-frame camera, true-to-life colors and textures, crisp detail, straight vertical lines, fine film grain, 3:2. No text, no logos, no lettering anywhere.
 ```
-**14. Start image:** none.
-**15. Checklist:** stakes and string are simple and believable, with no tangled lines · no tools, people or text · same morning world.
+**15. Checklist:** stakes and string are simple and believable · no tools, people or text · golden and inviting.
 
 ### E2 · Morning on the deck
-1. ID: E2 · 2. `E2-lifestyle-deck.png` · 3. Why Kikfia, a wide image above the five pillars · 4. The feeling of living there · 5. Image · 6. 3:2 · 7. 2400 × 1600 min · 10. PNG/JPG · 16. NICE-TO-HAVE · 17. **AI OK**
+1. ID: E2 · 2. `E2-lifestyle-deck.png` · 3. Why Kikfia, a wide image above the five pillars · 4. The feeling of living there · 16. NICE-TO-HAVE · 17. **AI OK**
 
 **12. Prompt**
 ```
-Early morning on the wood deck of a modern single-story home, seen from inside the garden at a distance. One adult sits on the deck step holding a ceramic mug, seen from behind and small in the frame, looking out at a misty green garden; their face is not visible. The home behind has vertical cedar-tone wood cladding, smooth pale warm-gray panels and a large dark-framed glass sliding door. Mature trees, soft mist lifting. Soft low morning sun from the back right, warm gentle light. Realistic, natural and calm. Palette of misty sage greens, pale stone gray, deep pine green, cool lake-teal shadows and warm cedar wood, natural and not oversaturated. Realistic editorial lifestyle photography, full-frame camera, 50mm lens, straight vertical lines, fine natural grain, 3:2. No text, no logos, no lettering anywhere.
+Sunrise on the cedar deck of a modern single-story home beside a misty lake. One adult, seen from behind and small in the frame, sits on the edge of the deck wrapped in a soft knit blanket, holding a steaming ceramic mug and looking out at golden mist rising off the mirror-still water; their face is not visible. Behind them, the home's tall black-framed glass door glows with warm light. Tall pines frame the scene, and soft golden rays fall across the water. Peaceful, real and quietly cinematic. Palette of deep pine green, sage, misty blue-teal, pale stone and warm cedar gold, rich but natural. A real photograph, not a render: award-winning editorial lifestyle photography on a full-frame camera, true-to-life colors and textures, crisp detail, fine film grain, 3:2. No text, no logos, no lettering anywhere.
 ```
-**14. Start image:** none.
-**15. Checklist:** exactly one person, small, from behind, natural pose · hands and mug look real · no face, text or logos.
+**15. Checklist:** exactly one person, small, from behind, natural pose · hands, mug and blanket look real · no face, text or logos.
 
 ---
 
 ## F. Social share image
 
 ### F1 · Link preview (Open Graph), 1200 × 630
-1. ID: F1 · 2. `og-kikfia.jpg` · 3. Shown when someone shares the site on Facebook, WhatsApp, X or LinkedIn · 4. A clean branded preview · 5. Image · 6. 1.91:1 · 7. 1200 × 630 exactly · 10. JPG · 16. MUST-HAVE · 17. **I make it**
+1. ID: F1 · 2. `og-kikfia.jpg` · 3. Shown when the site is shared on Facebook, WhatsApp, X or LinkedIn · 16. MUST-HAVE · 17. **I make it**
 
-**Nothing for you to generate.** I build it from the approved hero ending frame, with the Kikfia wordmark and "Custom Homes. Built Around Your Life." set in the site's own fonts. Real text is added by me, never by AI.
+**Nothing for you to generate.** I build it from the approved hero ending frame, adding the Kikfia wordmark and "Custom Homes. Built Around Your Life." in the site's own fonts. Real text is added by me, never by AI.
 
 ---
 
 ## G. Real photos only you can provide
 
 ### G1 · Kashan's photo (REAL PHOTO REQUIRED)
-1. ID: G1 · 2. `G1-kashan.jpg` · 3. Meet the Person You'll Talk To · 4. Builds trust in the one-person promise · 5. Real photo · 6. 4:5 (portrait) · 7. 1200 × 1500 minimum · 10. JPG · 16. **MUST-HAVE before launch** · 17. **REAL PHOTO REQUIRED. Never AI.**
+1. ID: G1 · 2. `G1-kashan.jpg` · 3. Meet the Person You'll Talk To · 6. 4:5 · 7. 1200 × 1500 minimum · 10. JPG · 16. **MUST-HAVE before launch** · 17. **REAL PHOTO REQUIRED. Never AI.**
 
-**How to take it (a phone is fine):**
-- Stand facing a window for soft daylight on your face. No harsh sun, no flash.
-- Use a plain, light, uncluttered background. A light wall or soft greenery works.
-- Frame from mid-chest up, with the camera at eye level and a natural, friendly expression.
-- Wear a plain shirt in a solid color. Muted green, gray, navy or white all fit the palette.
-- Use no beauty filters, no portrait-mode blur and no edits. Send the original file.
-- Take 10 or so, and I'll pick the best one and tell you why.
+**To make it look as good as the rest of the site (a phone is fine):**
+- Shoot in the morning or late afternoon, outdoors in open shade or facing a window, so the light is soft and warm.
+- Choose a background of greenery or a plain light wall. Trees behind you match the site perfectly.
+- Frame from mid-chest up, with the camera at eye level and a relaxed, friendly smile.
+- Wear a solid color: muted green, navy, gray or white.
+- Use no filters, no beauty mode and no portrait blur. Send the original.
+- Take 10 or so, and I'll pick the best one.
 
-**15. Checklist:** sharp face · soft, even light · plain background · natural colors · no filter · no text or logos on clothing.
+**15. Checklist:** sharp face · soft, warm light · natural colors · no filter · no text or logos on clothing.
 
 ### G2 · Logo (optional, REAL)
-1. ID: G2 · 2. `G2-logo.svg` (or `.png`) · 3. Navigation, footer, browser tab, share image · 4. Your brand mark · 6. any · 7. SVG preferred, or a PNG at least 1000px wide with a transparent background · 16. NICE-TO-HAVE · 17. **REAL (your own file)**
-
-Until it arrives, the site uses a clean "Kikfia" text wordmark.
+SVG preferred, or a PNG at least 1000px wide with a transparent background. Until then, the site uses the "Kikfia" text wordmark.
 
 ### G3 · Real home photos and videos (REAL PHOTO PREFERRED)
-1. ID: G3 · 2. `G3-[model-name]-[view].jpg` · 3. Model cards, model drawers and See What's Inside · 4. Replaces renderings with your real homes · 6. any (landscape preferred) · 7. 2000px wide or more · 16. Add whenever available · 17. **REAL PHOTO PREFERRED**
-
-Send them only if you own them or have written permission to use them. For each model, the ideal set is:
+Only send media you own or have written permission to use. For each model, the ideal set is:
 - exterior front and three-quarter views
 - the living area, kitchen, bedroom and bathroom
 - one detail shot of the materials
 
-Real media replaces AI renderings slot by slot, with no redesign.
+Real media replaces renderings slot by slot, with no redesign.
 
 ### G4 · Short hello video from Kashan (optional, REAL)
-1. ID: G4 · 2. `G4-kashan-hello.mp4` · 3. Meet the Person You'll Talk To (plays only when tapped) · 4. Hearing a real voice builds trust fast · 5. Real video · 6. 16:9 or 9:16 · 7. 1080p · 8. 30 to 60 seconds · 9. 30 fps · 10. MP4 · 11. **Audio yes** (clear voice, quiet room) · 16. NICE-TO-HAVE · 17. **REAL ONLY**
-
-Suggested talking points, in your own words:
+30 to 60 seconds, 1080p, clear voice in a quiet room. Cover, in your own words:
 - who you are
 - that customers deal with you from start to finish
 - what happens after someone contacts you
-
-No scripts read off a screen.
