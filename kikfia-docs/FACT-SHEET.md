@@ -14,8 +14,6 @@ Each line shows where the fact lives (mostly `site-data.js`) and the placeholder
 
 ### Contact and identity
 - [ ] **Domain**, for example `kikfia.com`. Used for search tags, the sitemap and link previews. → `brand.domain`, plus the `DEPLOY STEP` tags in `index.html`, `robots.txt` and `sitemap.xml`
-- [ ] **Business email** → `contact.email` · shown as `[EMAIL]`
-- [ ] **Phone / WhatsApp number** → `contact.phone`, `contact.whatsapp` · shown as `[PHONE]`
 - [ ] **Real photo of Kashan** (asset G1) → `person.photo` · shown as `[REAL PHOTO OF KASHAN TO BE PROVIDED]`
 - [ ] **Video-call booking link** (Calendly, Cal.com or similar) → `contact.bookingUrl` · shown as `[BOOKING LINK REQUIRED]`
 - [ ] **Form destination**: a free Formspree form address → `form.endpoint` · the form currently says it isn't connected
@@ -80,7 +78,9 @@ Each line shows where the fact lives (mostly `site-data.js`) and the placeholder
 
 - ✅ Delivery areas: the United States and other countries (owner, October 3, 2026). In the FAQ.
 - ✅ The project assessment is free (owner, October 3, 2026). Said in the plan, the form intro and the FAQ.
-- ✅ Contact methods: phone, WhatsApp and email (owner, October 3, 2026). The numbers and email address are still needed → `contact.phone`, `contact.whatsapp`, `contact.email`
+- ✅ Contact methods: phone, WhatsApp and email (owner, October 3, 2026)
+- ✅ Email: kikfiaofficial3@kikfia.com (owner, October 3, 2026) → `contact.email`
+- ✅ Phone and WhatsApp: +92 314 5472429 (owner, October 3, 2026) → `contact.phone`, `contact.whatsapp`
 - ✅ Brand: Kikfia / Kikfia Custom Portable Houses
 - ✅ Legal line: "Kikfia Custom Portable Houses is a brand operated by Sohail Ecom Services LLC, a Texas limited liability company."
 - ✅ Mailing address: 5900 Balcones Drive #22441, Austin, TX 78731, USA (labeled "Mailing address" only)

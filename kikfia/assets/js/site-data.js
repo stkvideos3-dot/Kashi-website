@@ -37,9 +37,9 @@ window.KIKFIA = {
 
   /* ---------- 2. Contact details ---------- */
   contact: {
-    email: '',            // Example: 'hello@kikfia.com'
-    phone: '',            // Shown as written. Example: '+1 512 555 0100'
-    whatsapp: '',         // Digits only with country code, no + or spaces. Example: '15125550100'
+    email: 'kikfiaofficial3@kikfia.com',   // Confirmed by the owner, October 3, 2026
+    phone: '+92 314 5472429',              // Shown as written. Confirmed by the owner, October 3, 2026
+    whatsapp: '923145472429',              // Digits only with country code, no + or spaces. Same number as the phone
     bookingUrl: '',       // Your video-call booking link (Calendly, Cal.com, Google Calendar, etc.)
     responseTime: ''      // Optional. Example: 'within one business day'. Leave empty if unsure.
   },
