@@ -198,36 +198,6 @@ window.KIKFIA = {
   products: [
   ],
 
-  /* ---------- 11. What's included (general section) ----------
-     verified: false  = shows a [CONFIRM BEFORE PUBLICATION] tag.
-     Change to true only after you confirm the item. Remove items you don't offer. */
-  included: {
-    standard: [
-      { label: 'Structure', verified: false },
-      { label: 'Roof', verified: false },
-      { label: 'Walls', verified: false },
-      { label: 'Doors', verified: false },
-      { label: 'Windows', verified: false },
-      { label: 'Flooring', verified: false },
-      { label: 'Kitchen', verified: false },
-      { label: 'Bathroom', verified: false },
-      { label: 'Electrical', verified: false },
-      { label: 'Plumbing', verified: false }
-    ],
-    optional: [
-      { label: 'Cabinets and countertops', verified: false },
-      { label: 'Appliances', verified: false },
-      { label: 'Lighting', verified: false },
-      { label: 'Heating and cooling', verified: false },
-      { label: 'Furniture', verified: false }
-    ],
-    // These depend on location by nature, so they need no confirmation.
-    locationDependent: [
-      'Transport', 'Foundation', 'Site preparation', 'Installation',
-      'Utilities', 'Permits', 'Inspections', 'Local requirements'
-    ]
-  },
-
   /* ---------- 12. Customization options ----------
      verified: false on an option shows a confirmation tag.
      Systems options are hidden one by one until you set verified: true. */
@@ -260,39 +230,10 @@ window.KIKFIA = {
     { label: 'Home office', image: '', alt: 'Digital rendering of a home office desk facing a garden window', assetId: 'D5' }
   ],
 
-  /* ---------- 13b. Delivery and installation photos (After You Order) ---------- */
+  /* ---------- 13b. Delivery and installation photos (Your Simple Plan section) ---------- */
   process: [
     { image: 'assets/img/process-delivery', alt: 'Digital rendering of a portable house being delivered on a flatbed truck', caption: 'Delivery: your home travels to your property.' },
     { image: 'assets/img/process-install', alt: 'Digital rendering of a crane setting a portable house onto a concrete pad in a backyard', caption: 'Installation: it is set onto its prepared base.' }
-  ],
-
-  /* ---------- 14. Lifestyle images (optional) ---------- */
-  lifestyle: {
-    propertyCheck: { image: '', alt: 'Digital rendering of a backyard with a small home site marked out', assetId: 'E1' },
-    why: { image: '', alt: 'Digital rendering of a person on a wood deck on a misty morning', assetId: 'E2' }
-  },
-
-  /* ---------- 15. Payments ---------- */
-  payments: {
-    schedule: '',               // Example: 'A deposit when you sign, a milestone payment before delivery, and the balance at handover.'
-    cancellation: '',           // Your cancellation and refund terms in plain words
-    paymentMethods: '',         // Example: 'Bank transfer or check'
-    showSafetyNote: true,       // The "we never ask you to pay a new account by text" note
-    safetyNoteVerified: false   // Set to true once you confirm Kikfia will always follow it
-  },
-
-  /* ---------- 16. Verified customer reviews ----------
-     Add ONLY real reviews from real customers, with their permission.
-    {
-      name: 'First name and last initial, as the customer approved',
-      location: 'City, State',
-      project: 'Two-bedroom family home',
-      quote: 'Their words, unedited.',
-      rating: 0,          // only if the customer actually gave a rating (1 to 5), otherwise 0
-      date: '2027-03'
-    },
-  */
-  reviews: [
   ],
 
   /* ---------- 17. FAQ ----------
@@ -309,8 +250,8 @@ window.KIKFIA = {
     { q: 'What affects the price?',
       a: 'Your final project cost depends on your home, customization, location, transport, site requirements, permits and installation. Your quote lists the home price and these project costs separately, so you can see what each part costs.' },
     { q: 'How does delivery work?',
-      a: 'Your home is transported to your property on a planned date. Delivery depends on distance, road access and your site, and some sites need a crane. We look at access during the property and location review, and your quote shows how delivery is handled.',
-      needs: 'BUSINESS INFORMATION REQUIRED: delivery areas and who arranges transport' },
+      a: 'Your home is transported to your property on a planned date. Delivery depends on distance, road access and your site, and some sites need a crane. We look at access during the property and location review, and your quote shows how delivery is handled. We deliver within the United States and to other countries.',
+      needs: 'BUSINESS INFORMATION REQUIRED: who arranges transport' },
     { q: 'How does installation work?',
       a: "When your home arrives, it's set on its foundation, secured and connected as agreed. Your agreement states exactly what installation includes and who handles each part.",
       needs: 'BUSINESS INFORMATION REQUIRED: installation scope' },
@@ -319,7 +260,7 @@ window.KIKFIA = {
     { q: 'What permits may be needed?',
       a: 'Most areas require a building permit for a new home or ADU, often with inspections for the foundation, electrical and plumbing. Rules are different in every city and county, so we look at yours early, during the property and location review.' },
     { q: 'Can an ADU go on my property?',
-      a: 'It depends on your local zoning rules: lot size, setbacks, height and size limits, parking and utility capacity. Many cities now allow ADUs on single-family lots, but the details vary. The Property Check gives you a first look, and your local planning office has the final say.' },
+      a: 'It depends on your local zoning rules: lot size, setbacks, height and size limits, parking and utility capacity. Many cities now allow ADUs on single-family lots, but the details vary. Share your location with us and we\'ll help you understand what to check. Your local planning office has the final say.' },
     { q: 'Can an ADU be used as a rental?',
       a: 'Rental use depends on local rules and property requirements. Some areas allow long-term rentals, some limit short-term rentals, and some require the owner to live on the property. Check with your local planning office before you plan a rental.' },
     { q: 'How long does a project take?',
@@ -331,10 +272,9 @@ window.KIKFIA = {
     { q: 'Who will I be working with?',
       a: "Kashan Ahmed. You'll work with Kashan from your first question through your project, so you always know who to call." },
     { q: 'Do you serve international customers?',
-      a: 'For projects outside the United States, transport, customs, duties, foundations, installation, permits, utilities, inspections and local building rules all vary by country, so we review them before quoting.',
-      needs: 'BUSINESS INFORMATION REQUIRED: whether international orders are accepted' },
+      a: 'Yes. Kikfia works with customers in the United States and in other countries. For projects outside the United States, transport, customs, duties, foundations, installation, permits, utilities, inspections and local building rules all vary by country, so we review them before quoting.' },
     { q: 'What happens after I submit an inquiry?',
-      a: "Kashan reviews your details and contacts you the way you prefer: phone, WhatsApp or email. You'll talk through your home, your property and your questions, and then decide whether you'd like a project quote.",
+      a: "Kashan reviews your details and contacts you the way you prefer: phone, WhatsApp or email. Your project assessment is free. You'll talk through your home, your property and your questions, and then decide whether you'd like a project quote.",
       needs: 'BUSINESS INFORMATION REQUIRED: typical response time' }
   ],
 

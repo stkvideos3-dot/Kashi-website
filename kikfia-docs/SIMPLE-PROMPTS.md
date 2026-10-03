@@ -137,12 +137,12 @@ Negative (if your tool has a box for it): fast camera, shaking, zoom jumps, warp
 | Asset | Website spot |
 |---|---|
 | 1, 2 | Hero still (laptop and phone) and the image above the form |
-| 3, V2 | How It Works: Delivery step |
-| 4, V3 | How It Works: Installation & handover step |
+| 3, V2 | Your Simple Plan: delivery photo |
+| 4, V3 | Your Simple Plan: installation photo |
 | 5 to 10 | The Homes: the six category cards |
 | 11 to 15 | See What's Inside gallery |
 | V1, V4 | Optional extra hero clips |
 | V6 | Autoplay hero background (plays and repeats on its own) |
-| 16, V5 | Why Kikfia photo and atmosphere |
+| 16, V5 | Optional extra (the Why Kikfia section was removed October 3, 2026) |
 
 **Honesty note:** these are illustrations. The site labels them as digital renderings, and real photos of your real homes replace them whenever you have them.

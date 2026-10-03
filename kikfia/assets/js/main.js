@@ -389,99 +389,13 @@
     g.appendChild(el('div', { class: 'strip-nav' }, [prev, next]));
   }
 
-  /* ---------------- customize ---------------- */
-  var CZ_ICONS = { size: 'i-size', layout: 'i-layout', doors: 'i-door', windows: 'i-window', kitchen: 'i-kitchen', bathroom: 'i-bath', interior: 'i-interior', exterior: 'i-house', systems: 'i-systems', extras: 'i-extras' };
-  function renderCustomize() {
-    var tabs = $('[data-render="cz-tabs"]'), opts = D.customize || [];
-    if (!tabs || !opts.length) return;
-    opts.forEach(function (o, i) {
-      tabs.appendChild(el('button', { class: 'cz-tab', type: 'button', role: 'tab', id: 'cz-' + o.id, 'aria-controls': 'cz-panel', 'aria-selected': i === 0 ? 'true' : 'false', tabindex: i === 0 ? '0' : '-1', 'data-cz': o.id }, [icon(CZ_ICONS[o.id] || 'i-house', 'ic-l'), el('span', { text: o.name })]));
-    });
-    tabs.addEventListener('click', function (e) { var t = e.target.closest('[role=tab]'); if (t) selectCz(t.getAttribute('data-cz'), true); });
-    tabs.addEventListener('keydown', function (e) { rovingKeys(e, tabs, function (t) { selectCz(t.getAttribute('data-cz'), true); }); });
-    selectCz(opts[0].id, false);
-  }
-  function selectCz(id, focus) {
-    var opts = D.customize || [], o = opts.filter(function (x) { return x.id === id; })[0];
-    if (!o) return;
-    $$('[data-render="cz-tabs"] [role=tab]').forEach(function (t) {
-      var on = t.getAttribute('data-cz') === id;
-      t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
-      if (on && focus) t.focus();
-    });
-    var panel = $('[data-render="cz-detail"]');
-    panel.setAttribute('aria-labelledby', 'cz-' + id);
-    panel.textContent = '';
-    panel.appendChild(el('h3', { text: o.name }));
-    panel.appendChild(el('p', { text: o.line }));
-    if (o.verified === false) panel.appendChild(ph('CONFIRM BEFORE PUBLICATION'));
-    var ul = el('ul', { class: 'chiplist' });
-    (o.chips || []).forEach(function (c) {
-      var label = typeof c === 'string' ? c : c.label;
-      var unv = typeof c === 'object' && c.verified === false;
-      ul.appendChild(el('li', { class: unv ? 'unv' : null, text: label }));
-    });
-    panel.appendChild(ul);
-    $$('.plan-svg .z').forEach(function (z) { z.classList.toggle('on', z.getAttribute('data-zone') === o.zone); });
-  }
-
-  /* ---------------- included ---------------- */
-  function renderIncluded() {
-    var I = D.included || {};
-    function fill(key, items, ic) {
-      var ul = $('[data-render="' + key + '"]'); if (!ul) return;
-      var anyUnv = false;
-      (items || []).forEach(function (it) {
-        var label = typeof it === 'string' ? it : it.label;
-        var unv = typeof it === 'object' && it.verified === false;
-        if (unv) anyUnv = true;
-        ul.appendChild(el('li', { class: unv ? 'unv' : null }, [icon(ic), el('span', { text: label })]));
-      });
-      if (anyUnv) ul.parentNode.insertBefore(ph('CONFIRM BEFORE PUBLICATION'), ul);
-    }
-    fill('inc-std', I.standard, 'i-check');
-    fill('inc-opt', I.optional, 'i-sliders');
-    fill('inc-loc', I.locationDependent, 'i-pin');
-    // phone tabs
-    var sw = $('.inc-switch'), cols = $$('.inc-col');
-    if (!sw) return;
-    cols[0].classList.add('active');
-    function pick(btn, focus) {
-      $$('[role=tab]', sw).forEach(function (b) { var on = b === btn; b.setAttribute('aria-selected', on ? 'true' : 'false'); b.tabIndex = on ? 0 : -1; if (on && focus) b.focus(); });
-      cols.forEach(function (c) { c.classList.toggle('active', c.id === btn.getAttribute('aria-controls')); });
-    }
-    sw.addEventListener('click', function (e) { var b = e.target.closest('[role=tab]'); if (b) pick(b, false); });
-    sw.addEventListener('keydown', function (e) { rovingKeys(e, sw, function (b) { pick(b, true); }); });
-  }
-
-  /* ---------------- payments ---------------- */
-  function renderPayments() {
-    var P = D.payments || {};
-    var s = $('[data-render="pay-schedule"]');
-    if (s) { if (P.schedule) s.textContent = P.schedule; else s.appendChild(ph('BUSINESS INFORMATION REQUIRED: payment schedule')); }
-    var c = $('[data-render="pay-cancel"]');
-    if (c) { if (P.cancellation) c.textContent = P.cancellation; else c.appendChild(ph('BUSINESS INFORMATION REQUIRED: cancellation and refund terms')); }
-    var safe = $('[data-render="pay-safety"]');
-    if (safe) {
-      if (P.showSafetyNote === false) safe.remove();
-      else if (!P.safetyNoteVerified) safe.appendChild(ph('VERIFY BEFORE PUBLICATION'));
-    }
-  }
-
-  /* ---------------- stories ---------------- */
-  function renderStories() {
-    var R = (D.reviews || []).filter(function (r) { return r && r.quote; });
-    if (!R.length) return;
-    var box = $('[data-render="stories"]');
-    $('p', box).remove();
-    var list = el('div', { class: 'reviews' });
-    R.forEach(function (r) {
-      var meta = [r.name, r.location, r.project].filter(Boolean).join(' · ');
-      var card = el('figure', { class: 'review' }, [el('span', { class: 'verified', text: 'Verified customer' }), el('blockquote', { text: r.quote }), el('footer', { text: meta })]);
-      if (r.rating > 0) card.insertBefore(el('span', { class: 'fine', text: 'Rated ' + r.rating + ' out of 5' }), card.children[1]);
-      list.appendChild(card);
-    });
-    box.appendChild(list);
+  /* ---------------- make it yours (homes) ---------------- */
+  function renderMakeIt() {
+    var box = $('[data-render="make-it"]'), opts = (D.customize || []).filter(function (o) { return o.verified !== false; });
+    if (!box) return;
+    if (!opts.length) { box.remove(); return; }
+    box.appendChild(el('p', { class: 'make-it-h', text: 'Make it yours. Choose your:' }));
+    box.appendChild(el('ul', { class: 'chiplist' }, opts.map(function (o) { return el('li', { text: o.name }); })));
   }
 
   /* ---------------- faq ---------------- */
@@ -502,14 +416,12 @@
 
   /* ---------------- other images ---------------- */
   function renderImages() {
-    var H = D.hero || {}, L = D.lifestyle || {};
+    var H = D.hero || {};
     var start = $('[data-render="start-image"]');
     if (start && H.ending) {
       var pic = picture(H.ending, '', '100vw');
       if (pic) { $('.start-art', start).remove(); start.appendChild(pic); }
     }
-    var why = $('[data-render="why-photo"]');
-    if (why) { if (L.why && L.why.image) why.appendChild(media(L.why.image, L.why.alt, '(max-width: 1240px) 100vw, 1240px')); else why.remove(); }
     var proc = $('[data-render="process-photos"]'), P = (D.process || []).filter(function (x) { return x && x.image; });
     if (proc) {
       if (!P.length) proc.remove();
@@ -520,8 +432,6 @@
         proc.appendChild(el('span', { class: 'render-tag proc-tag', text: 'Renderings' }));
       }
     }
-    var pc = $('[data-render="pc-photo"]');
-    if (pc) { if (L.propertyCheck && L.propertyCheck.image) pc.appendChild(media(L.propertyCheck.image, L.propertyCheck.alt, '480px')); else pc.remove(); }
   }
 
   /* ---------------- select options ---------------- */
@@ -546,116 +456,6 @@
     $$('select[data-list]').forEach(function (s) {
       s.getAttribute('data-list').split('|').forEach(function (v) { s.appendChild(el('option', { value: v, text: v || 'Choose one' })); });
     });
-    // chip groups
-    $$('.chips').forEach(function (g) {
-      var name = g.getAttribute('data-name'), type = g.getAttribute('data-type');
-      var list = g.getAttribute('data-options') === 'homeType' ? types : (g.getAttribute('data-list') || '').split('|');
-      list.forEach(function (v, i) {
-        var id = 'pc-' + name + '-' + i;
-        g.appendChild(el('label', { class: 'chip', for: id }, [el('input', { type: type, name: name, value: v, id: id }), el('span', { text: v })]));
-      });
-    });
-  }
-
-  /* ---------------- property check ---------------- */
-  function initPropertyCheck() {
-    var form = $('#pc-form'); if (!form) return;
-    var steps = $$('.pc-step', form), result = $('.pc-result', form);
-    var back = $('[data-pc-back]', form), next = $('[data-pc-next]', form);
-    var num = $('[data-pc-num]', form), ticks = $$('.pc-ticks i', form), fill = $('.pc-fill', form);
-    var cur = 1, TOTAL = 7, started = false;
-    function val(name) { var c = $('[name="' + name + '"]:checked', form); return c ? c.value : ''; }
-    function vals(name) { return $$('[name="' + name + '"]:checked', form).map(function (c) { return c.value; }); }
-    function show(n) {
-      cur = n;
-      steps.forEach(function (s) { var on = +s.getAttribute('data-step') === n; s.hidden = !on; if (on) { s.classList.remove('entering'); void s.offsetWidth; s.classList.add('entering'); } });
-      result.hidden = n <= TOTAL;
-      next.hidden = n > TOTAL;
-      back.classList.toggle('invisible', n === 1);
-      back.hidden = n > TOTAL;
-      $('.pc-count', form).hidden = n > TOTAL;
-      next.textContent = n === TOTAL ? 'See My First Look' : 'Next';
-      if (num) num.textContent = Math.min(n, TOTAL);
-      var done = Math.min(n - 1, TOTAL);
-      if (fill) fill.style.setProperty('--pc', (n > TOTAL ? 1 : done / (TOTAL - 1)).toFixed(3));
-      ticks.forEach(function (t, i) { t.classList.toggle('done', i < n || n > TOTAL); });
-    }
-    function focusStep() {
-      var s = cur > TOTAL ? result : steps[cur - 1];
-      var f = cur > TOTAL ? result : $('input, select', s);
-      if (f) f.focus({ preventScroll: true });
-      var top = form.getBoundingClientRect().top;
-      if (top < 0 || top > innerHeight * 0.6) form.scrollIntoView({ behavior: reduceMQ.matches ? 'auto' : 'smooth', block: 'start' });
-    }
-    next.addEventListener('click', function () {
-      if (!started) { started = true; track('property_check_start'); }
-      if (cur === 2 && !val('homeType')) {
-        var g = $('[data-step="2"] .chips', form);
-        g.classList.add('need');
-        $('[data-step="2"] legend', form).insertAdjacentElement('afterend', el('p', { class: 'err', role: 'alert', text: 'Please choose a home type, or pick "Not sure yet".' }));
-        setTimeout(function () { var e = $('[data-step="2"] .err', form); if (e) e.remove(); }, 4000);
-        $('input', g).focus();
-        return;
-      }
-      if (cur === TOTAL) { buildResult(); show(TOTAL + 1); track('property_check_complete', { home_type: val('homeType') }); }
-      else show(cur + 1);
-      focusStep();
-    });
-    back.addEventListener('click', function () { if (cur > 1) { show(cur - 1); focusStep(); } });
-    $('[data-pc-restart]', form).addEventListener('click', function () { form.reset(); $('#pc-country').value = 'United States'; show(1); focusStep(); });
-
-    function suggest() {
-      var t = val('homeType'), b = val('bedrooms'), sp = val('space'), u = vals('use');
-      if (t === 'Custom home') return 'Custom Homes';
-      if (b === '3' || b === '4 or more') return 'Family Homes';
-      var map = { 'ADU or backyard home': 'ADU & Backyard Homes', 'Small home': 'Small Homes', 'Family home': 'Family Homes', 'Guest or vacation home': 'Guest & Vacation Homes', 'Office or studio': 'Office & Studio Spaces' };
-      if (map[t]) return map[t];
-      if (u.indexOf('Home office or studio') > -1 && u.length === 1) return 'Office & Studio Spaces';
-      if (u.indexOf('Vacation home') > -1 || u.indexOf('Guest space') > -1) return 'Guest & Vacation Homes';
-      if (sp === 'A small backyard' || sp === 'A large backyard') return 'ADU & Backyard Homes';
-      if (b === 'Studio' || b === '1') return 'Small Homes';
-      if (u.indexOf('My main home') > -1) return b === '2' ? 'Family Homes' : 'Small Homes';
-      return 'ADU & Backyard Homes';
-    }
-    function buildResult() {
-      var s = suggest(), country = $('#pc-country').value, sp = val('space'), u = vals('use');
-      $('[data-pc-suggest]', form).textContent = s;
-      var check = ['Zoning rules and setbacks for your lot', 'Building permits and inspections in your area', 'Water, power, and sewer or septic connections', 'Delivery access: road width, gates, trees and overhead lines', 'The right foundation for your soil and climate'];
-      if (s === 'ADU & Backyard Homes' || val('homeType') === 'ADU or backyard home') check.unshift('Whether your city allows an ADU on your lot, and its size limits');
-      if (u.indexOf('Rental, where local rules allow') > -1) check.push('Local rules on renting an ADU or second home');
-      if (sp === 'Acreage or rural land') check.push('Distance from the road and from utility lines');
-      if (country && country !== 'United States') check.push('Import, customs and duties, plus local building approval');
-      var cost = ['Home size and layout', 'Your customization choices', 'Transport distance and site access', 'Site preparation and foundation', 'Installation', 'Utility connections', 'Permits and local requirements'];
-      var cl = $('[data-pc-check]', form), co = $('[data-pc-cost]', form);
-      cl.textContent = ''; co.textContent = '';
-      check.forEach(function (c) { cl.appendChild(el('li', { text: c })); });
-      cost.forEach(function (c) { co.appendChild(el('li', { text: c })); });
-    }
-    $('[data-pc-send]', form).addEventListener('click', function () {
-      var area = $('#pc-area').value.trim();
-      var set = function (id, v) { var n = $(id); if (n && v) n.value = v; };
-      set('#f-country', $('#pc-country').value);
-      set('#f-zip', $('#pc-zip').value.trim());
-      set('#f-type', val('homeType'));
-      set('#f-beds', val('bedrooms'));
-      set('#f-size', area ? area.replace(/\s*sq\s*ft\s*$/i, '') + ' sq ft' : '');
-      set('#f-use', vals('use').join(', '));
-      set('#f-timeline', val('timeline'));
-      set('#f-budget', val('budget'));
-      var summary = [
-        'Location: ' + [$('#pc-region').value.trim(), $('#pc-zip').value.trim(), $('#pc-country').value].filter(Boolean).join(', '),
-        'Home type: ' + (val('homeType') || 'not given'),
-        'Bedrooms: ' + (val('bedrooms') || 'not given'),
-        'Space: ' + (val('space') || 'not given') + (area ? ' (' + area + ' sq ft)' : ''),
-        'Use: ' + (vals('use').join(', ') || 'not given'),
-        'Timeline: ' + (val('timeline') || 'not given'),
-        'Budget: ' + (val('budget') || 'not given'),
-        'Suggested starting point: ' + suggest()
-      ].join(' | ');
-      var hidden = $('#lead-form [name="propertyCheck"]'); if (hidden) hidden.value = summary;
-      setTimeout(function () { var n = $('#f-name'); if (n) n.focus({ preventScroll: true }); }, reduceMQ.matches ? 0 : 700);
-    });
-    show(1);
   }
 
   /* ---------------- lead form ---------------- */
@@ -822,7 +622,7 @@
   }
   function initReveals() {
     // stagger siblings inside grids
-    ['.tiles', '.pillars', '.inc-cols', '.timeline', '.cost-grid', '.plan-steps'].forEach(function (sel) {
+    ['.plan-steps', '.process-photos'].forEach(function (sel) {
       $$(sel).forEach(function (g) { $$('.reveal', g).forEach(function (n, i) { n.style.setProperty('--i', i); }); });
     });
     if ('IntersectionObserver' in window) {
@@ -835,40 +635,11 @@
       var secIO = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); secIO.unobserve(en.target); } });
       }, { rootMargin: '0px 0px -20% 0px', threshold: 0.05 });
-      $$('main > section, .you-line, .timeline, .cz-plan').forEach(function (s) { secIO.observe(s); });
+      $$('main > section, .you-line').forEach(function (s) { secIO.observe(s); });
     } else {
-      $$('main > section, .you-line, .timeline, .cz-plan').forEach(function (s) { s.classList.add('in'); });
+      $$('main > section, .you-line').forEach(function (s) { s.classList.add('in'); });
     }
     observeReveals();
-  }
-
-  /* ---------------- how it works: line drawn by scroll ---------------- */
-  function initSteps() {
-    var list = $('[data-steps]'); if (!list) return;
-    var fill = $('.steps-line-fill', list), steps = $$('.step', list);
-    var lastP = -1, raf = null, onScreen = false;
-    function measure() {
-      raf = null;
-      if (reduceMQ.matches) { pin(); return; }
-      var r = list.getBoundingClientRect();
-      var p = Math.min(1, Math.max(0, (innerHeight * 0.62 - r.top) / r.height));
-      if (Math.abs(p - lastP) < 0.002) return;
-      lastP = p;
-      fill.style.setProperty('--p', p.toFixed(4));
-      var y = r.top + p * r.height;
-      steps.forEach(function (s) {
-        var on = s.getBoundingClientRect().top + 14 <= y;
-        if (on !== s.classList.contains('done')) s.classList.toggle('done', on);
-      });
-    }
-    function pin() { fill.style.setProperty('--p', 1); steps.forEach(function (s) { s.classList.add('done'); }); lastP = 1; }
-    function onScroll() { if (onScreen && raf === null) raf = requestAnimationFrame(measure); }
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { onScreen = en[0].isIntersecting; onScroll(); }).observe(list);
-    else onScreen = true;
-    addEventListener('scroll', onScroll, { passive: true });
-    addEventListener('resize', function () { lastP = -1; onScroll(); });
-    reduceMQ.addEventListener('change', function () { lastP = -1; if (reduceMQ.matches) pin(); else measure(); });
-    measure();
   }
 
   /* ---------------- structured data ---------------- */
@@ -893,13 +664,12 @@
 
   /* ---------------- motion housekeeping ---------------- */
   doc.addEventListener('visibilitychange', function () { doc.body.classList.toggle('paused', doc.hidden); });
-  reduceMQ.addEventListener('change', function (e) { if (e.matches) $$('.reveal, main > section, .you-line, .timeline, .cz-plan').forEach(function (n) { n.classList.add('in', 'settled'); }); });
+  reduceMQ.addEventListener('change', function (e) { if (e.matches) $$('.reveal, main > section, .you-line').forEach(function (n) { n.classList.add('in', 'settled'); }); });
 
   /* ---------------- start ---------------- */
   function safe(fn) { try { fn(); } catch (e) { if (window.console) console.error(e); } }
   safe(renderBrand); safe(renderContact); safe(renderPerson); safe(fillSelects);
-  safe(renderHomes); safe(initDrawer); safe(renderInteriors); safe(renderCustomize);
-  safe(renderIncluded); safe(renderPayments); safe(renderStories); safe(renderFaq);
-  safe(renderImages); safe(initPropertyCheck); safe(initLeadForm); safe(initChrome);
-  safe(initReveals); safe(initSteps); safe(structuredData); safe(initConsent);
+  safe(renderHomes); safe(initDrawer); safe(renderMakeIt); safe(renderInteriors);
+  safe(renderFaq); safe(renderImages); safe(initLeadForm); safe(initChrome);
+  safe(initReveals); safe(structuredData); safe(initConsent);
 })();

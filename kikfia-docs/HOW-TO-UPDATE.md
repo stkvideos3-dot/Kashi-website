@@ -106,16 +106,13 @@ Image spots and where they live in `site-data.js`:
 | Category cards | `categories` → each `image` |
 | Model cards and drawer | `products` → `images` |
 | See What's Inside | `interiors` → each `image` |
-| Property Check photo | `lifestyle.propertyCheck.image` |
-| Why Kikfia photo | `lifestyle.why.image` |
+| Delivery and installation photos (Your Simple Plan) | `process` → each `image` |
 | Hero video, phone video, still images and the image above the form | `hero` (Claude prepares these files) |
 | Walk-through video in See What's Inside | `insideVideo` (set `video: ''` to hide it) |
 
-## Add a verified review
+## Add customer reviews
 
-Go to `reviews: [` (section 16). Copy the example from the comment above it, remove the `//`, and fill it in. Only add real reviews from real customers, with their permission.
-
-Set `rating` only if the customer actually gave one; otherwise leave `0`. Once a review is added, the "Customer Stories" section shows it automatically.
+The simpler page doesn't have a reviews section yet. When you have real reviews from real customers (with their permission), send them to Claude and a reviews section will be added.
 
 ## Edit the FAQ
 

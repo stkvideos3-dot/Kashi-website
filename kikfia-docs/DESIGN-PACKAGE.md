@@ -102,7 +102,7 @@ The fonts are hosted on your own site (not loaded from Google). That makes the p
 
 **Desktop:**
 - Left: the Kikfia wordmark.
-- Right: Homes · Customize · How It Works · Why Kikfia · FAQ, then a **Get Your Assessment** button.
+- Right: How It Works · Homes · Inside · About · FAQ, then a **Get Your Assessment** button. *(Updated October 3, 2026 for the simpler page.)*
 - Over the hero, the bar is clear with Pine Ink text. As soon as you scroll, it becomes a solid Mist Stone bar with a thin hairline.
 - The current section's link gets a small Lake underline.
 
@@ -149,6 +149,12 @@ Dark Pine Ink text over a soft morning-mist fade on the left side of the video. 
 ---
 
 ## 6. Every section below the hero (in order, copy verbatim)
+
+> **Simplified October 3, 2026 at the owner's request.** The owner asked for a short, simple page like their reference site, keeping only what the business needs. The page is now: Hero → Your Simple Plan → The Homes → See What's Inside → Meet Kashan → FAQ → Form → Footer.
+>
+> - **Removed from the page:** Build Your Home Your Way, What's Included, Property Check, How It Works (10 steps), What Happens After You Order?, Clear Payments, Why Kikfia and Customer Stories. Their specs stay below for reference, and the code is in the git history if any of them should come back.
+> - **Moved:** the delivery and installation photos now sit inside Your Simple Plan, under the three steps.
+> - **Kept in short form:** customization is now one "Make it yours" row of options under the home cards. What's included and payments are answered in the FAQ.
 
 ### 1b · Your Simple Plan  `#plan`  *(added October 1, 2026 at the owner's request)*
 
@@ -225,7 +231,7 @@ Nothing is filled in from photos. Empty fields simply don't show.
 - Image labels (mono): "LIVING" · "KITCHEN" · "BEDROOM" · "BATHROOM" · "HOME OFFICE"
 - **Walk-through video** *(added October 1, 2026)*: the owner's first video sits above the gallery. It plays on its own while on screen: in through the glass door to the living room, kitchen and bedroom. It has a pause button and a "Digital rendering" tag. Caption: "Look inside before you decide: living room, kitchen and bedroom."
 
-### 4 · Build Your Home Your Way  `#customize`
+### 4 · Build Your Home Your Way  `#customize`  **(removed from the page October 3, 2026)**
 
 **Layout:**
 - Left: a drawn floor plan (The Plan Line turned into walls). The area for the selected option lights up in Lake: the kitchen zone for Kitchen, the window marks for Windows, the outline and roof for Exterior, and so on.
@@ -252,7 +258,7 @@ Nothing is filled in from photos. Empty fields simply don't show.
 - Note under the panel: "Available options vary by model. Your quote lists every choice you make."
 - Button: **Get Your Project Assessment**
 
-### 5 · What's Included  `#included`
+### 5 · What's Included  `#included`  **(removed from the page October 3, 2026)**
 
 **Layout:** three columns on desktop, and three tabs on phones. A row of 8 drawn cost-factor icons sits below them. Background: Morning band.
 
@@ -275,7 +281,7 @@ Nothing is filled in from photos. Empty fields simply don't show.
 - Text: "Your home price and your project costs are listed separately in your quote."
 - Small print: "Prices and specifications are subject to confirmation and may vary based on configuration, location, transport, installation and local requirements."
 
-### 6 · Property Check  `#property-check`  (the one signature interaction)
+### 6 · Property Check  `#property-check`  (the one signature interaction)  **(removed from the page October 3, 2026)**
 
 **Layout:** a dark Pine Ink band with one large card. It asks one question per screen. The Plan Line along the top fills in as you answer, with 7 marks, one per question. There are big tap targets, Back and Next buttons, and full keyboard support.
 
@@ -329,7 +335,7 @@ Buttons: "Back" · "Next" · on the last question "See My First Look".
 
 **Words this tool never uses:** approved, guaranteed, permitted, legal, guaranteed to fit, engineering approved.
 
-### 7 · How It Works  `#how-it-works`
+### 7 · How It Works  `#how-it-works`  **(removed from the page October 3, 2026)**
 
 **Layout:**
 - Desktop: the headline stays pinned on the left while the 10 steps scroll on the right. The Plan Line runs down through all 10 numbered marks and draws itself as you scroll.
@@ -356,7 +362,7 @@ Buttons: "Back" · "Next" · on the last question "See My First Look".
 - Note (pinned under the intro on desktop): "Your written quote and agreement confirm the exact scope and responsibilities for your project."
 - Button: **Get Your Project Assessment**
 
-### 8 · What Happens After You Order?  `#after-order`
+### 8 · What Happens After You Order?  `#after-order`  **(removed from the page October 3, 2026)**
 
 **Layout:** a grid of 8 tiles (4 × 2) on desktop and a single column on phones. Each tile has a drawn icon. Background: Morning band.
 
@@ -392,7 +398,7 @@ Buttons: "Back" · "Next" · on the last question "See My First Look".
 - Buttons: **Book a Video Call** · **Get Your Project Assessment**
 - Contact row: Email `[EMAIL]` · Phone / WhatsApp `[PHONE]`
 
-### 10 · Clear Payments. Clear Terms.  `#payments`
+### 10 · Clear Payments. Clear Terms.  `#payments`  **(removed from the page October 3, 2026)**
 
 **Layout:** a dark Pine Ink band. A three-point timeline is drawn by The Plan Line, left to right on desktop and top to bottom on phones.
 
@@ -409,7 +415,7 @@ Buttons: "Back" · "Next" · on the last question "See My First Look".
 - Small print: "Cancellation and refund terms are set out in writing before any payment." `[BUSINESS INFORMATION REQUIRED: cancellation and refund terms]`
 - Safety note box: "Kikfia will never ask you to send money to a new or different account by text or phone call. If payment details ever look different, call Kashan before you pay." `[VERIFY BEFORE PUBLICATION]`
 
-### 11 · Why Kikfia  `#why`
+### 11 · Why Kikfia  `#why`  **(removed from the page October 3, 2026)**
 
 **Layout:** a short headline row, then five columns, each with a drawn icon, title and line. On phones they stack. Background: Mist Stone.
 
@@ -424,7 +430,7 @@ Buttons: "Back" · "Next" · on the last question "See My First Look".
 | Real customization | "Shape your home around your needs, within each model's available options." |
 | Clear payment terms | "You know what you're paying, when, and what it covers, before you pay." |
 
-### 12 · Customer Stories  `#stories`
+### 12 · Customer Stories  `#stories`  **(removed from the page October 3, 2026)**
 
 **Layout:** a slim, quiet, centered band with The Plan Line passing through. Background: Morning band.
 
