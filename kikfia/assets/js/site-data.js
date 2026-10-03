@@ -2,7 +2,7 @@
    KIKFIA SITE DATA
    ---------------------------------------------------------------------
    This is the ONE file to edit when a fact changes: phone, email,
-   prices, homes, photos, reviews, FAQ, form address, booking link and
+   prices, homes, photos, FAQ, form address and
    analytics IDs. You never need to touch index.html for these.
 
    Rules for editing:
@@ -22,7 +22,7 @@ window.KIKFIA = {
     legalEntity: 'Sohail Ecom Services LLC',
     legalLine: 'Kikfia Custom Portable Houses is a brand operated by Sohail Ecom Services LLC, a Texas limited liability company.',
     // Your web address, with https:// and no slash at the end. Example: 'https://kikfia.com'
-    domain: '',
+    domain: 'https://kikfia.com',   // Confirmed by the owner, October 3, 2026
     // Path to your logo file once you have one, for example 'assets/img/logo.svg'.
     // Leave empty to keep the "Kikfia" text wordmark.
     logo: '',
@@ -40,7 +40,6 @@ window.KIKFIA = {
     email: 'kikfiaofficial3@kikfia.com',   // Confirmed by the owner, October 3, 2026
     phone: '+92 314 5472429',              // Shown as written. Confirmed by the owner, October 3, 2026
     whatsapp: '923145472429',              // Digits only with country code, no + or spaces. Same number as the phone
-    bookingUrl: '',       // Your video-call booking link (Calendly, Cal.com, Google Calendar, etc.)
     responseTime: ''      // Optional. Example: 'within one business day'. Leave empty if unsure.
   },
 
@@ -48,7 +47,7 @@ window.KIKFIA = {
   person: {
     name: 'Kashan Ahmed',
     role: 'Your Kikfia contact',
-    photo: '',            // Real photo only. Example: 'assets/img/kashan.jpg'
+    photo: '',            // Optional, real photo only. Empty = no photo area on the page. Example: 'assets/img/kashan.jpg'
     photoAlt: 'Kashan Ahmed, your Kikfia contact',
     note: "Hi, I'm Kashan. When you contact Kikfia, you talk to me, and you keep talking to me from your first question until your home is handed over. I'll explain your options plainly, put everything in writing and answer you directly.",
     noteApproved: true,   // Approved by the owner with the design package on October 1, 2026

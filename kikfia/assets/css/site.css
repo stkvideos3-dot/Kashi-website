@@ -312,6 +312,8 @@ a.price:hover{background:var(--accent-muted)}
 /* ---------- kashan ---------- */
 .kashan-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:center}
 @media (max-width:860px){.kashan-grid{grid-template-columns:minmax(0,1fr)}}
+.kashan-grid.no-photo{grid-template-columns:minmax(0,1fr)}
+.no-photo .kashan-copy{max-width:760px}
 .kashan-photo .media{aspect-ratio:4/5;border-radius:20px}
 .kashan-photo .media-ph{padding:24px;text-align:center}
 .kashan-copy{display:grid;gap:20px;justify-items:start}

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# DEPLOY STEP: replace DOMAIN with the live address
-Sitemap: https://DOMAIN/sitemap.xml
+Sitemap: https://kikfia.com/sitemap.xml

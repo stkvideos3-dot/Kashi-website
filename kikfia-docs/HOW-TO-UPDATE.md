@@ -44,7 +44,9 @@ name: 'Kashan Ahmed',
 role: 'Your Kikfia contact',
 ```
 
-## Change the contact photo
+## Add a contact photo (optional)
+
+The Meet Kashan section has no photo for now. If you want one later:
 
 1. Send the photo to Claude, which resizes and compresses it for you. Or put a JPG in `kikfia/assets/img/` yourself.
 2. In `person:`, set:
@@ -54,7 +56,7 @@ photo: 'assets/img/kashan.jpg',
 photoAlt: 'Kashan Ahmed, your Kikfia contact',
 ```
 
-Only ever use a **real** photo of the real person.
+Only ever use a **real** photo of the real person. Leave `photo: ''` to keep the section text only.
 
 ## Change the personal note
 
@@ -140,16 +142,6 @@ endpoint: 'https://formspree.io/f/abcdwxyz',
 3. Send yourself a test inquiry from the live site. The first time, Formspree asks you to confirm your email.
 
 While `endpoint` is empty, the form honestly says it isn't connected.
-
-## Change the video-call booking link
-
-In `contact:`:
-
-```js
-bookingUrl: 'https://calendly.com/your-link',
-```
-
-Every "Book a Video Call" button then opens that page.
 
 ## Update analytics IDs
 

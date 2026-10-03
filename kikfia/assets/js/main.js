@@ -156,11 +156,6 @@
       if (S[k]) social.appendChild(el('li', null, [el('a', { href: S[k], target: '_blank', rel: 'noopener', text: names[k] })]));
     });
     if (!social.children.length) social.remove();
-    // booking links
-    $$('[data-booking]').forEach(function (b) {
-      if (contact.bookingUrl) { b.href = contact.bookingUrl; b.target = '_blank'; b.rel = 'noopener'; }
-      else b.insertAdjacentElement('afterend', ph('BOOKING LINK REQUIRED'));
-    });
     // WhatsApp in the phone bar
     var wa = $('[data-whatsapp]');
     if (wa && contact.whatsapp) { wa.href = waLink(); wa.hidden = false; }
@@ -168,14 +163,11 @@
 
   /* ---------------- person ---------------- */
   function renderPerson() {
+    // the photo area shows only when a real photo is set; otherwise the section is text only
     var fig = $('[data-render="kashan-photo"]');
     if (fig) {
-      if (person.photo) {
-        var box = el('div', { class: 'media' }, [el('img', { src: person.photo, alt: person.photoAlt || person.name, loading: 'lazy', decoding: 'async' })]);
-        fig.appendChild(box);
-      } else {
-        fig.appendChild(el('div', { class: 'media' }, [el('div', { class: 'media-ph', role: 'img', 'aria-label': 'Photo of Kashan coming soon' }, [icon('i-person', 'ic-l'), ph('REAL PHOTO OF KASHAN TO BE PROVIDED')])]));
-      }
+      if (person.photo) fig.appendChild(el('div', { class: 'media' }, [el('img', { src: person.photo, alt: person.photoAlt || person.name, loading: 'lazy', decoding: 'async' })]));
+      else { fig.parentNode.classList.add('no-photo'); fig.remove(); }
     }
     var note = $('[data-render="kashan-note"]');
     if (note) {
@@ -523,10 +515,6 @@
         done.appendChild(icon('i-check', 'ic-l'));
         done.appendChild(el('h3', { text: 'Thank you, ' + first + '.' }));
         done.appendChild(el('p', { text: 'Your request is in. Kashan will contact you by ' + methodWord + '.' }));
-        var b = el('a', { class: 'btn btn-ghost', 'data-cta': 'success_video_call', href: contact.bookingUrl || '#start' }, [icon('i-video'), 'Book a Video Call']);
-        if (contact.bookingUrl) { b.target = '_blank'; b.rel = 'noopener'; }
-        done.appendChild(b);
-        if (!contact.bookingUrl) done.appendChild(ph('BOOKING LINK REQUIRED'));
         form.reset();
       } else if (state === 'notconnected') {
         done.classList.add('warn');

@@ -154,6 +154,7 @@ Dark Pine Ink text over a soft morning-mist fade on the left side of the video. 
 >
 > - **Removed from the page:** Build Your Home Your Way, What's Included, Property Check, How It Works (10 steps), What Happens After You Order?, Clear Payments, Why Kikfia and Customer Stories. Their specs stay below for reference, and the code is in the git history if any of them should come back.
 > - **Moved:** the delivery and installation photos now sit inside Your Simple Plan, under the three steps.
+> - **October 3, later the same day:** the owner removed video-call booking everywhere (plan, Meet Kashan, form, thank-you message) and the photo area in Meet Kashan, which is now text only. The live address is https://kikfia.com.
 > - **Kept in short form:** customization is now one "Make it yours" row of options under the home cards. What's included and payments are answered in the FAQ.
 
 ### 1b · Your Simple Plan  `#plan`  *(added October 1, 2026 at the owner's request)*

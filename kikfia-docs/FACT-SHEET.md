@@ -13,9 +13,6 @@ Each line shows where the fact lives (mostly `site-data.js`) and the placeholder
 ## MUST HAVE BEFORE LAUNCH
 
 ### Contact and identity
-- [ ] **Domain**, for example `kikfia.com`. Used for search tags, the sitemap and link previews. → `brand.domain`, plus the `DEPLOY STEP` tags in `index.html`, `robots.txt` and `sitemap.xml`
-- [ ] **Real photo of Kashan** (asset G1) → `person.photo` · shown as `[REAL PHOTO OF KASHAN TO BE PROVIDED]`
-- [ ] **Video-call booking link** (Calendly, Cal.com or similar) → `contact.bookingUrl` · shown as `[BOOKING LINK REQUIRED]`
 - [ ] **Form destination**: a free Formspree form address → `form.endpoint` · the form currently says it isn't connected
 
 ### What you sell
@@ -50,7 +47,6 @@ Each line shows where the fact lives (mostly `site-data.js`) and the placeholder
 - [x] **Owner photos 1 to 5:** Family Homes and Small Homes cards, delivery and installation photos
 - [ ] **Owner photos 6 to 23:** please send them again in one new message, so they arrive as files
 - [ ] **Category images** (6) and **interior images** (5): the owner will supply them later. Until then, each spot shows a marked placeholder.
-- [ ] **Real photo of Kashan** (listed above)
 
 ---
 
@@ -81,6 +77,9 @@ Each line shows where the fact lives (mostly `site-data.js`) and the placeholder
 - ✅ Contact methods: phone, WhatsApp and email (owner, October 3, 2026)
 - ✅ Email: kikfiaofficial3@kikfia.com (owner, October 3, 2026) → `contact.email`
 - ✅ Phone and WhatsApp: +92 314 5472429 (owner, October 3, 2026) → `contact.phone`, `contact.whatsapp`
+- ✅ Website address: https://kikfia.com (owner, October 3, 2026) → `brand.domain`, canonical and share tags, `robots.txt`, `sitemap.xml`
+- ✅ No video-call booking on the site (owner, October 3, 2026)
+- ✅ No photo of Kashan on the site for now; the section is text only (owner, October 3, 2026). A real photo can be added later → `person.photo`
 - ✅ Brand: Kikfia / Kikfia Custom Portable Houses
 - ✅ Legal line: "Kikfia Custom Portable Houses is a brand operated by Sohail Ecom Services LLC, a Texas limited liability company."
 - ✅ Mailing address: 5900 Balcones Drive #22441, Austin, TX 78731, USA (labeled "Mailing address" only)
