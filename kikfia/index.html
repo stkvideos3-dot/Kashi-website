@@ -480,6 +480,8 @@ html:not(.show-placeholders) .slot.empty{display:none}
 .step p:not(.mono){margin:10px auto 0;max-width:26ch;color:var(--ink-2)}
 .delivery{position:relative;margin:72px 0 0}
 .delivery .ph{aspect-ratio:21/9;border-radius:var(--radius)}
+.delivery .ph img{object-position:50% 64%}
+@media (max-width:720px){.delivery .ph{aspect-ratio:4/3}.delivery .ph img{object-position:62% 60%}}
 .delivery figcaption{display:flex;align-items:baseline;gap:14px;margin-top:16px;color:var(--ink-2)}
 .delivery figcaption .mono{color:var(--ink)}
 
@@ -1114,6 +1116,10 @@ html:not(.show-placeholders) .slot.empty{display:none}
         </li>
       </ol>
     </div>
+    <figure class="delivery rv">
+      <div class="ph"><img src="assets/delivery.jpg" alt="A crane setting a new home onto its foundation while the owners watch, arm in arm" width="1376" height="768" loading="lazy" decoding="async"></div>
+      <figcaption><span class="mono">Delivery day</span>Set on its foundation, with you there to watch.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -1871,14 +1877,14 @@ const GOALS = {
     need: 'You want your land to earn', title: 'Rental income',
     text: 'Turn unused land into a space guests want to book. Designed to photograph well, rent well, and stay easy to look after.',
     chips: ['Airbnb cabins', 'Backyard rentals', 'Vacation units'],
-    img: 'assets/goal-rental.jpg', alt: 'An owner welcoming guests with suitcases to a modern rental cabin',
+    img: 'assets/goal-rental.jpg', alt: 'A host welcoming guests with suitcases to a mountain rental cabin at sunset',
     cta: 'Plan my rental', form: ['rental', 'rental']
   },
   office: {
     need: 'You need somewhere to focus', title: 'Home office',
     text: 'A quiet place to work, thirty steps from your kitchen. No commute, no interruptions, and a clear line between work and home.',
     chips: ['Office pods', 'Garden offices', 'Remote work studios'],
-    img: 'assets/goal-office.jpg', alt: 'A remote worker focused at her desk in a quiet backyard office',
+    img: 'assets/goal-office.jpg', alt: 'A remote worker at her desk inside a glass-walled office pod in her backyard',
     cta: 'Plan my office', form: ['office', 'work']
   },
   retreat: {
@@ -1906,14 +1912,14 @@ const GOALS = {
     need: 'You want your parents close', title: 'Housing for parents',
     text: 'Keep aging parents close and independent: a comfortable, accessible home in your backyard, with its own front door.',
     chips: ['Granny flats', 'Accessible ADUs', 'Guest houses'],
-    img: 'assets/goal-parents.jpg', alt: 'Grandparents on the sofa of a bright backyard ADU with their grandchildren',
+    img: 'assets/goal-parents.jpg', alt: 'Grandparents reading and laughing with their grandchildren in the backyard, their ADU behind them',
     cta: 'Plan a home for my parents', form: ['parents', 'parents']
   },
   custom: {
     need: 'You have an idea nobody sells', title: 'Fully custom project',
     text: 'A studio, a salon, a clinic, or something nobody has built yet. Bring the idea and we design it around you.',
     chips: ['Fully customized portable structures'],
-    img: 'assets/goal-custom.jpg', alt: 'A custom modern two-story home with wood and white facades',
+    img: 'assets/goal-custom.jpg', alt: 'A family on the wraparound deck of a custom modern home among the pines',
     cta: 'Plan my custom project', form: ['custom', 'other']
   }
 };

@@ -32,15 +32,16 @@ The captions use dark text with a soft light glow, because this film is bright. 
 |---|---|---|
 | `why-consult.jpg` | Why homeowners choose KIKFIA | A designer showing a client her design, with finish samples |
 | `goal-living.jpg` | Goals: Extra living space | Parents on the deck, kids and dog on the lawn |
-| `goal-rental.jpg` | Goals: Rental income | An owner welcoming guests to a rental cabin |
-| `goal-office.jpg` | Goals: Home office | A remote worker in a backyard office |
+| `goal-rental.jpg` | Goals: Rental income | A host welcoming guests to a mountain rental cabin (sign, plaque, and folder names removed) |
+| `goal-office.jpg` | Goals: Home office | A remote worker inside a glass office pod in her backyard (name on the glass and mug text removed) |
 | `goal-retreat.jpg` | Goals: Vacation retreat | A couple with coffee on a cabin deck at sunrise |
 | (drawing) | Goals: Storage or warehouse | Line drawing until a photo arrives as `goal-storage.jpg` |
 | `goal-commercial.jpg` | Goals: Commercial space, and Real problems: business | Two business owners outside their facility |
-| `goal-parents.jpg` | Goals: Housing for parents | Grandparents with grandkids in a bright ADU |
-| `goal-custom.jpg` | Goals: Fully custom project | A custom two-story modern home |
+| `goal-parents.jpg` | Goals: Housing for parents | Grandparents with their grandkids in the backyard, the ADU behind them |
+| `goal-custom.jpg` | Goals: Fully custom project | A family on the deck of a custom modern home among the pines |
 | `problem-space.jpg` | Real problems: running out of space | Frame from the hero film: dad lifting his son on the deck |
-| `contact-team.jpg` | Consultation | The KIKFIA team planning with a couple |
+| `contact-team.jpg` | Consultation | The team planning with a couple (the office wall sign is a plain panel: there is no physical office) |
+| `delivery.jpg` | How it works | A crane setting the home on its foundation while the owners watch |
 
 ## Films
 
@@ -57,7 +58,6 @@ The captions use dark text with a soft light glow, because this film is bright. 
 | File | Section | Shows |
 |---|---|---|
 | `goal-storage.jpg` | Goals: Storage or warehouse | A portable warehouse or storage unit |
-| `delivery.jpg` | How it works | Installation day: the home being set on its pad |
 | `ba-before.jpg` + `ba-after.jpg` | Project stories: before and after | The same spot before and after, same camera angle |
 | `case-1.jpg` to `case-3.jpg` | Project stories: case studies | Each finished project with its owners |
 | `review-1.jpg` to `review-3.jpg` | Client reviews | The real reviewer (with permission) |
