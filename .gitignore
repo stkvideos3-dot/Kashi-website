@@ -21,3 +21,5 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+### KIKFIA site: raw generations and review frames never ship
+kikfia-review/
