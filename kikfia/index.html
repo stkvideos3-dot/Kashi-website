@@ -35,6 +35,7 @@
   --accent-hover:#EDB458;
   --accent-muted:rgba(227,163,59,.28);
   --accent-text:#F0B54E;
+  --accent-deep:#8A5208;
   --focus:#B07010;
   --ease-out:cubic-bezier(.22,1,.36,1);
   --ease-io:cubic-bezier(.65,0,.35,1);
@@ -148,12 +149,53 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 @keyframes nudge{0%,100%{transform:translateY(-2px)}50%{transform:translateY(4px)}}
 @media (max-height:560px){.cue{display:none}}
 
+/* the hero footage is bright: dark captions on a soft light glow, no heavy shading */
+.stage{color:var(--ink)}
+.scrim{background:linear-gradient(180deg,rgba(246,243,234,.62) 0%,rgba(246,243,234,.3) 8%,rgba(246,243,234,0) 17%)}
+.band{text-shadow:0 1px 1px rgba(246,243,234,.55),0 0 18px rgba(246,243,234,.6),0 0 42px rgba(246,243,234,.45)}
+.band::before{background:radial-gradient(ellipse 72% 64% at 42% 50%,rgba(246,243,234,var(--sa,.5)) 0%,rgba(246,243,234,calc(var(--sa,.5)*.6)) 46%,rgba(246,243,234,0) 76%)}
+.b1{top:12vh;--sa:.5;width:min(900px,calc(100vw - 2*var(--gx)))}
+.b1 .line{max-width:none;font-size:clamp(2rem,3.8vw,3.7rem)}
+.b1::before{background:radial-gradient(ellipse 66% 50% at 40% 50%,rgba(246,243,234,var(--sa)) 0%,rgba(246,243,234,calc(var(--sa)*.7)) 52%,rgba(246,243,234,0) 80%)}
+.b2{bottom:12vh;--sa:.55}
+.b3{left:auto;right:4vw;top:15vh;bottom:auto;--sa:.55;width:auto}
+.b3 .line{font-size:clamp(1.9rem,3.5vw,3.5rem);max-width:11ch}
+.b4{top:max(11vh,92px);transform:none;--sa:.5;width:min(780px,56vw,calc(100vw - 2*var(--gx)))}
+.b4 .chip{display:none}
+.b4::before{background:radial-gradient(ellipse 66% 50% at 40% 44%,rgba(246,243,234,var(--sa)) 0%,rgba(246,243,234,calc(var(--sa)*.8)) 48%,rgba(246,243,234,calc(var(--sa)*.4)) 66%,rgba(246,243,234,calc(var(--sa)*.12)) 78%,rgba(246,243,234,0) 87%)}
+.b4 h1{font-size:clamp(2rem,3vw,3.1rem);max-width:13em;text-wrap:balance}
+.b4 .sub{max-width:75ch;margin-top:16px;font-size:clamp(1rem,1.2vw,1.15rem)}
+.b4 .cta-row{margin-top:24px}
+.sub{color:var(--ink)}
+.em{color:var(--accent-deep)}
+.stage .btn.ghost{color:var(--ink);background:rgba(246,243,234,.66);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1.5px rgba(28,37,32,.4)}
+.stage .btn.ghost:hover{background:rgba(246,243,234,.86)}
+.cue{color:var(--ink);text-shadow:0 0 12px rgba(246,243,234,.8)}
+.chip{background:rgba(246,243,234,.62);border-color:rgba(28,37,32,.16);text-shadow:none}
+.chip i{background:var(--accent-deep);box-shadow:none}
+.ring .trk{color:rgba(28,37,32,.2)}
+.nav:not(.solid){color:var(--ink)}
+.nav::before{content:"";position:absolute;inset:0 0 -22px 0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .5s var(--ease-out);background:linear-gradient(180deg,rgba(246,243,234,.5),rgba(246,243,234,.2));-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);-webkit-mask-image:linear-gradient(180deg,#000 50%,transparent);mask-image:linear-gradient(180deg,#000 50%,transparent)}
+.nav:not(.solid)::before{opacity:1}
+.nav:not(.solid) .nav-links a{opacity:1}
+.nav:not(.solid) .brand,.nav:not(.solid) .nav-links li:not(.nav-cta) a{text-shadow:0 0 2px rgba(246,243,234,.95),0 0 6px rgba(246,243,234,.9),0 0 14px rgba(246,243,234,.8),0 0 26px rgba(246,243,234,.6)}
+.stage :focus-visible,.nav:not(.solid) :focus-visible{outline-color:var(--focus)}
+
 /* static hero: the five gates, character for character identical to the JS list */
 @media (max-width: 720px), (orientation: portrait) and (max-width: 1024px), (orientation: portrait) and (pointer: coarse), (orientation: landscape) and (pointer: coarse) and (max-height: 560px), (prefers-reduced-motion: reduce){
   .hero{height:auto}
-  .stage{position:relative;height:auto;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;background:url("assets/hero-ending.jpg") 84% center/cover no-repeat,linear-gradient(180deg,#8fa3ab 0%,#d9b77f 52%,#5f6e4b 100%)}
+  .stage{position:relative;height:auto;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;background:url("assets/hero-ending.jpg") 50% center/cover no-repeat,linear-gradient(180deg,#8fa3ab 0%,#d9b77f 52%,#5f6e4b 100%)}
   .poster,.stage video,.cue,.b1,.b2,.b3{display:none!important}
-  .scrim{background:linear-gradient(180deg,rgba(10,14,12,.5) 0%,rgba(10,14,12,0) 15%,rgba(10,14,12,.44) 31%,rgba(10,14,12,.84) 52%,rgba(10,14,12,.9) 100%)}
+  .scrim{background:linear-gradient(180deg,rgba(10,14,12,0) 0%,rgba(10,14,12,0) 13%,rgba(10,14,12,.55) 30%,rgba(10,14,12,.84) 50%,rgba(10,14,12,.9) 100%)}
+  .stage{color:var(--on-video)}
+  .band.b4{text-shadow:var(--tshadow)}
+  .chip{background:rgba(8,12,10,.5);border-color:rgba(246,243,234,.22);text-shadow:0 1px 3px rgba(8,12,10,.85)}
+  .chip i{background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .b4 .chip{display:inline-flex}
+  .b4 .sub{max-width:46ch;font-size:clamp(1.05rem,1.35vw,1.25rem)}
+  .b4 .sub{color:var(--on-video)}
+  .b4 .em{color:var(--accent-text)}
+  .stage .btn.ghost{color:var(--on-video);background:rgba(246,243,234,.08);box-shadow:inset 0 0 0 1.5px rgba(246,243,234,.7)}
   .band.b4{position:relative;top:auto;left:auto;transform:none;opacity:1!important;--k:1!important;pointer-events:auto;width:auto;padding:0 var(--gx) 9vh}
   .band.b4::before{inset:-34% 0 0 0;background:radial-gradient(ellipse 75% 46% at 40% 52%,rgba(8,12,10,.62) 0%,rgba(8,12,10,0) 100%)}
 }
@@ -214,19 +256,24 @@ html:not(.show-placeholders) .slot.empty::before{content:none}
 .fill{font-style:italic;color:var(--ink-2)}
 [data-placeholder].review-card,[data-placeholder].case,[data-placeholder].rev-summary{border:1.5px dashed var(--line)}
 
-/* why homeowners choose KIKFIA */
-.why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:52px}
-.reason{display:flex;flex-direction:column;gap:10px;min-width:0;padding:28px 26px 30px;border-radius:var(--radius);background:var(--panel-2);box-shadow:0 1px 0 var(--hair),0 24px 50px -40px rgba(28,37,32,.45)}
-.r-ico{display:grid;place-items:center;width:46px;height:46px;margin-bottom:6px;border-radius:12px;background:var(--panel)}
+/* why homeowners choose KIKFIA: consultation photo beside five outcomes */
+.why-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,64px);align-items:stretch;margin-top:52px}
+.why-photo{position:relative;margin:0;min-height:540px;border-radius:var(--radius);overflow:hidden;background:var(--panel)}
+.why-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% center}
+.why-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(20,26,23,0) 34%,rgba(20,26,23,.84) 80%)}
+.why-photo figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:30px 30px 32px;color:var(--canvas)}
+.why-photo .mono{color:var(--accent-text)}
+.why-photo h3{margin-top:10px;max-width:20ch;font-size:clamp(1.5rem,2.2vw,2rem);line-height:1.12;font-stretch:112%}
+.why-photo .btn{margin-top:20px}
+.why-photo :focus-visible{outline-color:var(--accent)}
+.reasons{display:flex;flex-direction:column;margin:0;padding:0;list-style:none}
+.reason{display:grid;grid-template-columns:46px minmax(0,1fr);gap:18px;align-items:start;padding:22px 0;border-top:1px solid var(--hair)}
+.reason:last-child{border-bottom:1px solid var(--hair)}
+.r-ico{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--panel)}
 .r-ico svg,.g-ico svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .r-ico .acc{stroke:var(--focus)}
-.reason h3{font-size:1.3rem;font-stretch:112%}
-.reason p{color:var(--ink-2)}
-.reason.statement{justify-content:space-between;gap:24px;background:var(--ink);color:var(--canvas)}
-.statement .mono{color:var(--accent-text)}
-.statement h3{margin-top:10px;font-size:clamp(1.4rem,2vw,1.75rem);line-height:1.15}
-.statement .btn{align-self:flex-start}
-.statement :focus-visible{outline-color:var(--accent)}
+.reason h3{font-size:1.22rem;font-stretch:112%}
+.reason p{margin-top:6px;color:var(--ink-2)}
 
 /* what are you trying to achieve: eight goals and one detail panel */
 .goal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:48px}
@@ -257,6 +304,13 @@ html:not(.show-placeholders) .slot.empty::before{content:none}
 .prob .slot{aspect-ratio:4/3;border-radius:14px}
 .prob .slot.empty{padding:12px}
 .prob .slot.empty::before{font-size:.6rem}
+.film-play{position:absolute;inset:0;display:grid;place-items:center;border:0;background:linear-gradient(180deg,rgba(20,26,23,0) 45%,rgba(20,26,23,.35));cursor:pointer}
+.fp-ico{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--accent);color:var(--ink);box-shadow:0 10px 24px -10px rgba(140,90,10,.8);transition:transform .35s var(--ease-out)}
+.fp-ico svg{width:20px;height:20px}
+.film-play:hover .fp-ico,.film-play:focus-visible .fp-ico{transform:scale(1.08)}
+.fp-time{position:absolute;left:10px;bottom:10px;padding:3px 7px;border-radius:6px;background:rgba(28,37,32,.72);color:var(--on-video);font-size:.6rem}
+.slot img{transition:transform 1.2s var(--ease-out)}
+.prob:hover .slot img{transform:scale(1.03)}
 .prob h3{font-size:clamp(1.3rem,2vw,1.6rem);font-stretch:112%}
 .situ{margin-top:8px;max-width:44ch;color:var(--ink-2)}
 .p-arrow{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--panel);transition:transform .4s var(--ease-out),background-color .4s var(--ease-out)}
@@ -314,6 +368,32 @@ html:not(.show-placeholders) .slot.empty{display:none}
 .case dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:14px 0 0;font-size:.93rem}
 .case dt{font-weight:600}
 .case dd{margin:0;color:var(--ink-2)}
+
+/* life with the right space: a full-width film band before the ask */
+.life{position:relative;display:flex;align-items:flex-end;min-height:min(88vh,800px);padding:clamp(40px,5vw,72px) 0;overflow:hidden;color:var(--on-video);isolation:isolate;scroll-margin-top:64px}
+.life-media{position:absolute;inset:0;z-index:-1;background:#2a2f2e url("assets/film-coffee-poster.jpg") center/cover no-repeat}
+.life-v{display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s var(--ease-out)}
+.life-v.on{opacity:1}
+.life-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,12,0) 45%,rgba(10,14,12,.78) 100%),linear-gradient(90deg,rgba(10,14,12,.34),rgba(10,14,12,0) 55%)}
+.life .kick{color:rgba(246,243,234,.82)}
+.life h2{max-width:20ch;font-size:clamp(2.1rem,3.7vw,3.3rem);text-shadow:0 2px 24px rgba(8,12,10,.45)}
+.life .lede{color:rgba(246,243,234,.9)}
+.life .btn{margin-top:26px}
+.life :focus-visible{outline-color:var(--accent)}
+.contact-photo{margin:0 0 30px;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px -40px rgba(28,37,32,.6)}
+.contact-photo img{width:100%;height:100%;object-fit:cover}
+
+/* the story film player */
+.film-modal{width:min(1100px,calc(100vw - 32px));max-width:none;padding:0;border:0;border-radius:20px;background:var(--steel);color:var(--on-dark);box-shadow:0 40px 120px -30px rgba(0,0,0,.6);overflow:hidden}
+.film-modal::backdrop{background:rgba(12,16,14,.74);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.film-modal[open]{animation:fmin .35s var(--ease-out)}
+@keyframes fmin{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.fm-inner{position:relative}
+.film-modal video{display:block;width:100%;aspect-ratio:16/9;background:#0d100f}
+.fm-cap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px;padding:14px 18px;font-weight:600}
+.fm-cap .mono{color:var(--on-dark-2)}
+.fm-close{position:absolute;top:12px;right:12px;z-index:2;display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:50%;background:rgba(246,243,234,.92);color:var(--ink);cursor:pointer}
+.fm-close svg{width:18px;height:18px}
 
 /* client reviews */
 .rev-summary{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:40px;padding:18px 22px;border-radius:14px;background:var(--panel-2)}
@@ -548,7 +628,8 @@ html:not(.show-placeholders) .slot.empty{display:none}
 }
 @media (pointer:coarse){.btn,.hold-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}.goal-tab,.opt,.ix-group a,.qa summary{min-height:44px}}
 @media (max-width:1000px){
-  .why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why-grid{grid-template-columns:1fr}
+  .why-photo{min-height:420px}
   .goal-panel,.ba-row{grid-template-columns:1fr}
   .goal-ph{min-height:0;aspect-ratio:16/10}
   .prob{grid-template-columns:150px minmax(0,1fr) 40px minmax(0,1fr);gap:20px}
@@ -630,6 +711,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
   <div class="rl-way" data-for="costs"><span>Costs</span></div>
   <div class="rl-way" data-for="reviews"><span>Reviews</span></div>
   <div class="rl-way" data-for="faq"><span>Questions</span></div>
+  <div class="rl-way" data-for="life"><span>Life</span></div>
   <div class="rl-way" data-for="consultation"><span>Consultation</span></div>
   <div class="rl-pin"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="13" fill="#1C2520"/><path d="M8.5 14 14 9.2l5.5 4.8" fill="none" stroke="#E3A33B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path class="pb" d="M10.2 13.2v5.3h7.6v-5.3" fill="none" stroke="#EDF0E8" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
 </div>
@@ -642,12 +724,12 @@ html:not(.show-placeholders) .slot.empty{display:none}
     <video id="hero" preload="none" muted playsinline disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
     <div class="scrim" aria-hidden="true"></div>
 
-    <div class="band b1 fx-drift" data-a="0" data-b="0.22">
+    <div class="band b1 fx-drift" data-a="0" data-b="0.135">
       <p class="chip mono"><i aria-hidden="true"></i>KIKFIA custom portable houses</p>
-      <p class="line" data-split="words">You have the land. Now you need the space.</p>
+      <p class="line" data-split="words" data-break="land.">You have the land. Now you need the space.</p>
     </div>
 
-    <div class="band b2 fx-blur" data-a="0.26" data-b="0.48" data-ramp="0.05">
+    <div class="band b2 fx-blur" data-a="0.405" data-b="0.515" data-ramp="0.04">
       <p class="line stack">
         <span class="sr">Designed around how you'll live, work, or earn.</span>
         <span class="soft" aria-hidden="true">Designed around how you'll live, work, or earn.</span>
@@ -655,11 +737,11 @@ html:not(.show-placeholders) .slot.empty{display:none}
       </p>
     </div>
 
-    <div class="band b3 fx-grid" data-a="0.52" data-b="0.74" data-ramp="0.05" data-spread="0.42">
-      <p class="line" data-split="chars">One team, from first sketch to move-in day.</p>
+    <div class="band b3 fx-grid" data-a="0.612" data-b="0.71" data-ramp="0.04" data-spread="0.42">
+      <p class="line" data-split="chars">Space for the people you love.</p>
     </div>
 
-    <div class="band b4 fx-rise" data-a="0.8" data-b="1" data-ramp="0.09">
+    <div class="band b4 fx-rise" data-a="0.83" data-b="1" data-ramp="0.08">
       <p class="chip mono"><i aria-hidden="true"></i>KIKFIA custom portable houses</p>
       <h1 data-split="words" data-em="Life">Custom Portable Spaces Built Around Your Life</h1>
       <p class="sub">Whether you need an ADU, guest house, home office, cabin, warehouse, rental unit, or a fully customized structure, KIKFIA designs and delivers solutions tailored to your goals, land, and lifestyle.</p>
@@ -689,38 +771,21 @@ html:not(.show-placeholders) .slot.empty{display:none}
       <p class="lede rv">Every project starts with your problem. Then we design the space that solves it, and run it all the way to your front yard.</p>
     </header>
     <div class="why-grid">
-      <article class="reason rv">
-        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle class="acc" cx="12" cy="12" r="1"/></svg></span>
-        <h3>Designed around your goals</h3>
-        <p>Every project begins with your vision: how you want to live, work, or earn in the space.</p>
-      </article>
-      <article class="reason rv">
-        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h9M18 7h2M4 17h4M13 17h7"/><circle class="acc" cx="15.5" cy="7" r="2.2"/><circle class="acc" cx="10.5" cy="17" r="2.2"/></svg></span>
-        <h3>Fully customized</h3>
-        <p>Never limited to standard layouts. Size, rooms, finishes, and features are yours to choose.</p>
-      </article>
-      <article class="reason rv">
-        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="18" r="2"/><circle class="acc" cx="19" cy="6" r="2"/><path d="M7 18c6 0 4-12 10-12"/></svg></span>
-        <h3>One team from start to finish</h3>
-        <p>One company manages design, build, delivery, and installation, with one point of contact the whole way.</p>
-      </article>
-      <article class="reason">
-        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18l6-6 4 4 6-7"/><path class="acc" d="M15 9h5v5"/></svg></span>
-        <h3>Built for long-term value</h3>
-        <p>Flexible spaces that change with your life: a guest house today, a rental or an office tomorrow.</p>
-      </article>
-      <article class="reason">
-        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle class="acc" cx="12" cy="10" r="2.2"/></svg></span>
-        <h3>Solutions for every property</h3>
-        <p>Urban, suburban, and rural lots, homes and businesses. If there's a level spot, there's a plan.</p>
-      </article>
-      <article class="reason statement">
-        <div>
+      <figure class="why-photo rv">
+        <img src="assets/why-consult.jpg" alt="A KIKFIA designer showing a client her custom design, with wood and metal finish samples on the table" width="1600" height="892" loading="lazy" decoding="async">
+        <figcaption>
           <p class="mono">The KIKFIA difference</p>
           <h3>Whatever space challenge you have, KIKFIA designs the answer.</h3>
-        </div>
-        <a class="btn" href="#consultation">Get My Free Consultation <span class="arr" aria-hidden="true">&rarr;</span></a>
-      </article>
+          <a class="btn" href="#consultation">Get My Free Consultation <span class="arr" aria-hidden="true">&rarr;</span></a>
+        </figcaption>
+      </figure>
+      <ul class="reasons">
+        <li class="reason rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle class="acc" cx="12" cy="12" r="1"/></svg></span><div><h3>Designed around your goals</h3><p>Every project begins with your vision: how you want to live, work, or earn in the space.</p></div></li>
+        <li class="reason rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h9M18 7h2M4 17h4M13 17h7"/><circle class="acc" cx="15.5" cy="7" r="2.2"/><circle class="acc" cx="10.5" cy="17" r="2.2"/></svg></span><div><h3>Fully customized</h3><p>Never limited to standard layouts. Size, rooms, finishes, and features are yours to choose.</p></div></li>
+        <li class="reason rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="18" r="2"/><circle class="acc" cx="19" cy="6" r="2"/><path d="M7 18c6 0 4-12 10-12"/></svg></span><div><h3>One team from start to finish</h3><p>One company manages design, build, delivery, and installation, with one point of contact the whole way.</p></div></li>
+        <li class="reason rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18l6-6 4 4 6-7"/><path class="acc" d="M15 9h5v5"/></svg></span><div><h3>Built for long-term value</h3><p>Flexible spaces that change with your life: a guest house today, a rental or an office tomorrow.</p></div></li>
+        <li class="reason rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle class="acc" cx="12" cy="10" r="2.2"/></svg></span><div><h3>Solutions for every property</h3><p>Urban, suburban, and rural lots, homes and businesses. If there's a level spot, there's a plan.</p></div></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -746,7 +811,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
     </div>
     <div class="goal-panel" id="goalPanel" role="tabpanel" aria-labelledby="tab-living" tabindex="0">
       <figure class="ph goal-ph">
-        <img id="gImg" src="assets/use-backyard.webp" alt="A KIKFIA guest house in a green backyard, a stone path leading to its porch" width="1200" height="896" loading="lazy" decoding="async">
+        <img id="gImg" src="assets/goal-living.jpg" alt="Parents relaxing on the deck of their KIKFIA cabin while the kids play with the dog on the lawn" width="1600" height="892" loading="lazy" decoding="async">
         <svg class="goal-illo illo-storage" viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <rect width="640" height="420" fill="#DDE3DA"/>
           <rect width="640" height="300" fill="#EADCB8" opacity=".55"/>
@@ -799,31 +864,31 @@ html:not(.show-placeholders) .slot.empty{display:none}
     </header>
     <ul class="prob-list">
       <li class="prob">
-        <figure class="slot empty" data-label="Lifestyle photo: grandparents on the porch, grandkids on the lawn"></figure>
+        <figure class="slot film-slot"><img src="assets/film-family-poster.jpg" alt="Grandparents laughing with their grandchildren in a bright backyard ADU" width="1600" height="900" loading="lazy" decoding="async"><button class="film-play" type="button" data-film="assets/film-family.mp4" data-title="Room for the whole family" aria-label="Play the story: room for the whole family"><span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13L18.5 12z" fill="currentColor"/></svg></span><span class="fp-time mono" aria-hidden="true">0:10</span></button></figure>
         <div><h3>Need space for aging parents?</h3><p class="situ">They want their independence. You want them close. The spare room isn't enough.</p></div>
         <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">A custom ADU or guest house in your backyard: their own front door, steps from yours.</p><ul class="g-chips"><li>Custom ADUs</li><li>Guest houses</li><li>Accessible layouts</li></ul></div>
       </li>
       <li class="prob">
-        <figure class="slot empty" data-label="Lifestyle photo: guests arriving at a rental cabin"></figure>
+        <figure class="slot film-slot"><img src="assets/film-rental-poster.jpg" alt="Guests relaxing on the deck of a modern rental cabin at golden hour" width="1600" height="900" loading="lazy" decoding="async"><button class="film-play" type="button" data-film="assets/film-rental.mp4" data-title="Income from your land" aria-label="Play the story: income from your land"><span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13L18.5 12z" fill="currentColor"/></svg></span><span class="fp-time mono" aria-hidden="true">0:10</span></button></figure>
         <div><h3>Want rental income?</h3><p class="situ">You have land or a backyard that costs you money and earns nothing.</p></div>
         <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">An Airbnb-ready cabin or backyard rental, designed for guests and easy upkeep.</p><ul class="g-chips"><li>Airbnb cabins</li><li>Backyard rentals</li></ul></div>
       </li>
       <li class="prob">
-        <figure class="slot empty" data-label="Lifestyle photo: remote worker in a backyard studio"></figure>
+        <figure class="slot film-slot"><img src="assets/film-office-poster.jpg" alt="A remote worker at ease in her backyard office pod" width="1600" height="900" loading="lazy" decoding="async"><button class="film-play" type="button" data-film="assets/film-office.mp4" data-title="A quiet place to work" aria-label="Play the story: a quiet place to work"><span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13L18.5 12z" fill="currentColor"/></svg></span><span class="fp-time mono" aria-hidden="true">0:10</span></button></figure>
         <div><h3>Need a quiet home office?</h3><p class="situ">Calls from the kitchen table, kids at the door, and no line between work and home.</p></div>
         <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">A modern office pod or backyard studio, thirty steps from your back door.</p><ul class="g-chips"><li>Office pods</li><li>Backyard studios</li></ul></div>
       </li>
       <li class="prob">
-        <figure class="slot empty" data-label="Lifestyle photo: family settling into new extra space"></figure>
+        <figure class="slot"><img src="assets/problem-space.jpg" alt="A father lifting his son on the deck of their new space while his daughter cheers" width="1600" height="900" loading="lazy" decoding="async"></figure>
         <div><h3>Running out of space?</h3><p class="situ">Gear in the garage, guests on the couch, and a house that feels smaller every year.</p></div>
         <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">Flexible living and storage spaces that add room without a renovation.</p><ul class="g-chips"><li>Backyard studios</li><li>Storage units</li></ul></div>
       </li>
       <li class="prob">
-        <figure class="slot empty" data-label="Lifestyle photo: owner welcoming a customer at a portable office"></figure>
+        <figure class="slot"><img src="assets/goal-commercial.jpg" alt="Two business owners talking outside their facility" width="1600" height="1106" loading="lazy" decoding="async"></figure>
         <div><h3>Need a business facility?</h3><p class="situ">Leases are expensive, new construction is slow, and your business can't wait.</p></div>
         <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">Portable offices and commercial structures, ready for staff, stock, or customers.</p><ul class="g-chips"><li>Portable offices</li><li>Commercial structures</li></ul></div>
@@ -978,14 +1043,14 @@ html:not(.show-placeholders) .slot.empty{display:none}
   <div class="wrap custom-grid">
     <figure class="homes-fig rv">
       <div class="ph walk">
-        <img src="assets/inside.jpg" alt="Inside a KIKFIA home: open living space with a wood ceiling, a sofa, a bed nook, and glass doors to the meadow" width="1920" height="1080" loading="lazy" decoding="async">
-        <video class="walk-v" preload="none" muted playsinline disablepictureinpicture aria-label="Walk-through: from the living room to the glass doors as they open onto the meadow" tabindex="-1"></video>
-        <button class="walk-btn" type="button" aria-label="Play the walk-through video">
+        <img src="assets/film-custom-poster.jpg" alt="A designer sketching a custom home by hand" width="1600" height="900" loading="lazy" decoding="async">
+        <video class="walk-v" preload="none" playsinline disablepictureinpicture aria-label="Design story: from a hand sketch to a 3D model to the finished home" tabindex="-1"></video>
+        <button class="walk-btn" type="button" aria-label="Play the design story video">
           <span class="wb-ico" aria-hidden="true"><svg class="i-play" viewBox="0 0 20 20"><path d="M7 4.8v10.4L15.2 10z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 20 20"><path d="M6.5 5h2.6v10H6.5zM10.9 5h2.6v10h-2.6z" fill="currentColor"/></svg></span>
-          <span class="wb-label">Walk inside</span><span class="mono wb-time" aria-hidden="true">0:08</span>
+          <span class="wb-label">Watch the design story</span><span class="mono wb-time" aria-hidden="true">0:10</span>
         </button>
       </div>
-      <figcaption class="mono">Inside &middot; design rendering</figcaption>
+      <figcaption class="mono">From sketch to finished space</figcaption>
     </figure>
     <div class="custom-copy">
       <p class="kick mono rv">Customization</p>
@@ -1215,10 +1280,23 @@ html:not(.show-placeholders) .slot.empty{display:none}
   </div>
 </section>
 
+<section class="life" id="life" data-io aria-labelledby="lifeTitle">
+  <div class="life-media" aria-hidden="true">
+    <video class="life-v" muted loop playsinline disablepictureinpicture preload="none" data-src="assets/film-coffee.mp4" tabindex="-1"></video>
+  </div>
+  <div class="wrap life-copy">
+    <p class="kick mono rv">Life with the right space</p>
+    <h2 class="rv" id="lifeTitle">This is what the right space feels like.</h2>
+    <p class="lede rv">Slow mornings, quiet evenings, and a place that's truly yours.</p>
+    <a class="btn rv" href="#consultation">Get My Free Consultation <span class="arr" aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+
 <section class="sec quote" id="consultation" data-io>
   <div class="quote-bg" aria-hidden="true"></div>
   <div class="wrap quote-grid">
     <div class="quote-copy">
+      <figure class="contact-photo rv"><img src="assets/contact-team.jpg" alt="KIKFIA specialists reviewing floor plans and finishes with a couple during a consultation" width="1600" height="892" loading="lazy" decoding="async"></figure>
       <p class="kick mono rv">Free consultation</p>
       <h2 class="rv">Tell us about your project.</h2>
       <p class="lede rv">Answer a few quick questions. We'll come back with a recommended design and an all-in price, and the consultation costs you nothing.</p>
@@ -1335,6 +1413,14 @@ html:not(.show-placeholders) .slot.empty{display:none}
   </div>
 </footer>
 
+<dialog class="film-modal" id="filmModal" aria-labelledby="filmTitle">
+  <div class="fm-inner">
+    <button class="fm-close" type="button" aria-label="Close the film"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <video id="filmVideo" playsinline controls preload="none"></video>
+    <p class="fm-cap"><span id="filmTitle">Story film</span><span class="mono">Dramatized for illustration</span></p>
+  </div>
+</dialog>
+
 <script>
 (() => {
 'use strict';
@@ -1347,7 +1433,7 @@ const WHATSAPP = '923145472429';                     // WhatsApp number in inter
 /* ---------- hero video ---------- */
 const VIDEO_URL = 'assets/hero-scrub.mp4';
 const POSTER_URL = 'assets/hero-poster.jpg';
-const VIDEO_BYTES = 7286618;   // real byte size of the encoded video: the fallback when Content-Length is missing
+const VIDEO_BYTES = 7392777;   // real byte size of the encoded video: the fallback when Content-Length is missing
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -1417,7 +1503,7 @@ $$('[data-split]').forEach((el, n) => {
       ws.textContent = w;
     }
     vis.appendChild(ws);
-    if (wi < words.length - 1) vis.appendChild(document.createTextNode(' '));
+    if (wi < words.length - 1) vis.appendChild(el.dataset.break === w ? document.createElement('br') : document.createTextNode(' '));
   });
   el.append(sr, vis);
 });
@@ -1636,7 +1722,8 @@ new IntersectionObserver(([e]) => {
 /* nav turns solid once the hero is behind us */
 let navSolid = null;
 new IntersectionObserver(([e]) => {
-  const s = !e.isIntersecting;
+  // an edge-adjacent hero still reports isIntersecting, with a zero-height overlap
+  const s = !e.isIntersecting || e.intersectionRect.height < 1;
   if (s !== navSolid) { nav.classList.toggle('solid', s); navSolid = s; }
 }, { rootMargin: '-64px 0px 0px 0px' }).observe(hero);
 
@@ -1673,13 +1760,13 @@ const ways = $$('.rl-way')
     el.style.top = (all.length > 1 ? i / (all.length - 1) * 100 : 0).toFixed(2) + '%';
     return { el, sec: document.getElementById(el.dataset.for), hit: null, now: null };
   });
-let wayTops = [], routeH = 0, routeShow = null, routeP = -1, routePinned = false, routeQueued = false, routeDark = null, darkTop = 0, darkBot = 0;
-const darkSec = document.getElementById('costs');
+let wayTops = [], routeH = 0, routeShow = null, routeP = -1, routePinned = false, routeQueued = false, routeDark = null;
+const darkSecs = ['costs', 'life'].map(id => document.getElementById(id)).filter(Boolean);
+let darkRanges = [];
 function measureRoute() {
   wayTops = ways.map(w => w.sec.getBoundingClientRect().top + scrollY);
   routeH = route.getBoundingClientRect().height;
-  darkTop = darkSec.getBoundingClientRect().top + scrollY;
-  darkBot = darkTop + darkSec.offsetHeight;
+  darkRanges = darkSecs.map(d => { const t = d.getBoundingClientRect().top + scrollY; return [t, t + d.offsetHeight]; });
 }
 function updateRoute() {
   routeQueued = false;
@@ -1688,7 +1775,7 @@ function updateRoute() {
   if (show !== routeShow) { route.classList.toggle('show', show); routeShow = show; }
   if (!show) return;
   const mid = scrollY + innerHeight * 0.5;
-  const dark = mid > darkTop && mid < darkBot;
+  const dark = darkRanges.some(([t, b]) => mid > t && mid < b);
   if (dark !== routeDark) { route.classList.toggle('on-dark', dark); routeDark = dark; }
   let idx = -1;
   for (let i = 0; i < wayTops.length; i++) if (y >= wayTops[i]) idx = i;
@@ -1777,28 +1864,28 @@ const GOALS = {
     need: 'You need more room', title: 'Extra living space',
     text: 'Room for grown kids, guests, or a growing family, without moving or renovating. A private space with its own front door.',
     chips: ['ADUs', 'Guest houses', 'Backyard studios'],
-    img: 'assets/use-backyard.webp', alt: 'A KIKFIA guest house in a green backyard, a stone path leading to its porch',
+    img: 'assets/goal-living.jpg', alt: 'Parents relaxing on the deck of their KIKFIA cabin while the kids play with the dog on the lawn',
     cta: 'Plan my living space', form: ['home', 'living']
   },
   rental: {
     need: 'You want your land to earn', title: 'Rental income',
     text: 'Turn unused land into a space guests want to book. Designed to photograph well, rent well, and stay easy to look after.',
     chips: ['Airbnb cabins', 'Backyard rentals', 'Vacation units'],
-    img: 'assets/use-rental.webp', alt: 'A KIKFIA cabin among tall pines, string lights glowing on its porch',
+    img: 'assets/goal-rental.jpg', alt: 'An owner welcoming guests with suitcases to a modern rental cabin',
     cta: 'Plan my rental', form: ['rental', 'rental']
   },
   office: {
     need: 'You need somewhere to focus', title: 'Home office',
     text: 'A quiet place to work, thirty steps from your kitchen. No commute, no interruptions, and a clear line between work and home.',
     chips: ['Office pods', 'Garden offices', 'Remote work studios'],
-    img: 'assets/inside.jpg', alt: 'Inside a KIKFIA space: a bright room with a wood ceiling and glass doors to the meadow',
+    img: 'assets/goal-office.jpg', alt: 'A remote worker focused at her desk in a quiet backyard office',
     cta: 'Plan my office', form: ['office', 'work']
   },
   retreat: {
     need: 'You want a place to escape', title: 'Vacation retreat',
     text: 'A cabin by the lake, in the woods, or on your own land. A place to slow down, and to rent out when you are not there.',
     chips: ['Luxury cabins', 'Lake cabins', 'Weekend getaways'],
-    img: 'assets/use-lake.webp', alt: 'A KIKFIA cabin on a grassy rise beside a calm lake at sunset',
+    img: 'assets/goal-retreat.jpg', alt: 'A couple sharing coffee on a cabin deck above a misty mountain valley at sunrise',
     cta: 'Plan my retreat', form: ['retreat', 'retreat']
   },
   storage: {
@@ -1812,21 +1899,21 @@ const GOALS = {
     need: 'Your business needs space', title: 'Commercial space',
     text: 'Offices, studios, and retail units for your business, ready for staff and customers without a long lease or a long build.',
     chips: ['Portable offices', 'Retail units', 'Commercial structures'],
-    img: null, illo: 'commercial', alt: '',
+    img: 'assets/goal-commercial.jpg', alt: 'Two business owners talking outside their commercial facility',
     cta: 'Plan my commercial space', form: ['commercial', 'business']
   },
   parents: {
     need: 'You want your parents close', title: 'Housing for parents',
     text: 'Keep aging parents close and independent: a comfortable, accessible home in your backyard, with its own front door.',
     chips: ['Granny flats', 'Accessible ADUs', 'Guest houses'],
-    img: 'assets/hero-ending.jpg', alt: 'A KIKFIA cottage with a covered porch and warm light in the windows',
+    img: 'assets/goal-parents.jpg', alt: 'Grandparents on the sofa of a bright backyard ADU with their grandchildren',
     cta: 'Plan a home for my parents', form: ['parents', 'parents']
   },
   custom: {
     need: 'You have an idea nobody sells', title: 'Fully custom project',
     text: 'A studio, a salon, a clinic, or something nobody has built yet. Bring the idea and we design it around you.',
     chips: ['Fully customized portable structures'],
-    img: 'assets/hero-poster.jpg', alt: 'A valley at golden hour with a KIKFIA cabin among the pines',
+    img: 'assets/goal-custom.jpg', alt: 'A custom modern two-story home with wood and white facades',
     cta: 'Plan my custom project', form: ['custom', 'other']
   }
 };
@@ -2004,7 +2091,7 @@ const walkV = $('.walk-v');
 const walkBtn = $('.walk-btn');
 const walkLabel = $('.wb-label');
 walkBtn.addEventListener('click', () => {
-  if (!walkV.getAttribute('src')) walkV.src = 'assets/inside-walk.mp4';
+  if (!walkV.getAttribute('src')) walkV.src = 'assets/film-custom.mp4';
   if (walkV.paused) {
     if (walkV.ended) walkV.currentTime = 0;
     walkV.play().catch(() => {});
@@ -2015,18 +2102,53 @@ walkBtn.addEventListener('click', () => {
 walkV.addEventListener('play', () => {
   walk.classList.add('playing');
   walkLabel.textContent = 'Pause';
-  walkBtn.setAttribute('aria-label', 'Pause the walk-through video');
+  walkBtn.setAttribute('aria-label', 'Pause the design story video');
 });
 walkV.addEventListener('pause', () => {
   walk.classList.remove('playing');
   walk.classList.add('played');
-  walkLabel.textContent = walkV.ended ? 'Walk again' : 'Keep walking';
-  walkBtn.setAttribute('aria-label', walkV.ended ? 'Replay the walk-through video' : 'Resume the walk-through video');
+  walkLabel.textContent = walkV.ended ? 'Watch again' : 'Keep watching';
+  walkBtn.setAttribute('aria-label', walkV.ended ? 'Replay the design story video' : 'Resume the design story video');
 });
 walkV.addEventListener('error', () => {
   walk.classList.remove('playing', 'played');
   walkBtn.hidden = true;
 });
+
+/* ---------- story films: open in a player with sound, only when asked ---------- */
+const filmModal = $('#filmModal');
+const filmVideo = $('#filmVideo');
+const filmTitle = $('#filmTitle');
+function closeFilm() {
+  filmVideo.pause();
+  filmVideo.removeAttribute('src');
+  filmVideo.load();
+  if (filmModal.open) filmModal.close();
+}
+$$('[data-film]').forEach(b => b.addEventListener('click', () => {
+  const poster = b.closest('figure').querySelector('img');
+  filmVideo.poster = poster ? poster.currentSrc || poster.src : '';
+  filmVideo.src = b.dataset.film;
+  filmTitle.textContent = b.dataset.title;
+  if (typeof filmModal.showModal === 'function') filmModal.showModal(); else filmModal.setAttribute('open', '');
+  filmVideo.play().catch(() => {});
+}));
+$('.fm-close').addEventListener('click', closeFilm);
+filmModal.addEventListener('click', e => { if (e.target === filmModal) closeFilm(); });
+filmModal.addEventListener('close', closeFilm);
+
+/* ---------- life band: a quiet loop while it is on screen, a still frame with reduced motion ---------- */
+const lifeV = $('.life-v');
+if (lifeV) {
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting && !reduceMQ.matches) {
+      if (!lifeV.getAttribute('src')) lifeV.src = lifeV.dataset.src;
+      lifeV.play().then(() => lifeV.classList.add('on')).catch(() => {});
+    } else {
+      lifeV.pause();
+    }
+  }, { threshold: 0.2 }).observe(lifeV.closest('.life'));
+}
 
 /* ---------- the one interactive moment: press and hold to set it down ---------- */
 const holdSec = $('.hold');
