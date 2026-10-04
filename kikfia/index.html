@@ -480,8 +480,12 @@ html:not(.show-placeholders) .slot.empty{display:none}
 .step p:not(.mono){margin:10px auto 0;max-width:26ch;color:var(--ink-2)}
 .delivery{position:relative;margin:72px 0 0}
 .delivery .ph{aspect-ratio:21/9;border-radius:var(--radius)}
-.delivery .ph img{object-position:50% 64%}
-@media (max-width:720px){.delivery .ph{aspect-ratio:4/3}.delivery .ph img{object-position:62% 60%}}
+.build-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.2vw,28px);margin-top:72px}
+.build-pair .delivery{margin:0}
+.build-pair .delivery .ph{aspect-ratio:3/2}
+.build-pair .delivery:first-child .ph img{object-position:85% 50%}
+.build-pair .delivery:last-child .ph img{object-position:70% 60%}
+@media (max-width:720px){.build-pair{grid-template-columns:1fr;margin-top:48px}.build-pair .delivery .ph{aspect-ratio:4/3}}
 .delivery figcaption{display:flex;align-items:baseline;gap:14px;margin-top:16px;color:var(--ink-2)}
 .delivery figcaption .mono{color:var(--ink)}
 
@@ -1116,10 +1120,16 @@ html:not(.show-placeholders) .slot.empty{display:none}
         </li>
       </ol>
     </div>
-    <figure class="delivery rv">
-      <div class="ph"><img src="assets/delivery.jpg" alt="A crane setting a new home onto its foundation while the owners watch, arm in arm" width="1376" height="768" loading="lazy" decoding="async"></div>
-      <figcaption><span class="mono">Delivery day</span>Set on its foundation, with you there to watch.</figcaption>
-    </figure>
+    <div class="build-pair">
+      <figure class="delivery rv">
+        <div class="ph"><img src="assets/build.jpg" alt="Builders framing and finishing portable homes in a bright build hall while two supervisors check the plans" width="1600" height="893" loading="lazy" decoding="async"></div>
+        <figcaption><span class="mono">Step 03</span>Built to your approved design.</figcaption>
+      </figure>
+      <figure class="delivery rv">
+        <div class="ph"><img src="assets/delivery.jpg" alt="A crane setting a new home onto its foundation while the owners watch, arm in arm" width="1376" height="768" loading="lazy" decoding="async"></div>
+        <figcaption><span class="mono">Step 04</span>Set on its foundation, with you there to watch.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 

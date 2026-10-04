@@ -41,7 +41,8 @@ The captions use dark text with a soft light glow, because this film is bright. 
 | `goal-custom.jpg` | Goals: Fully custom project | A family on the deck of a custom modern home among the pines |
 | `problem-space.jpg` | Real problems: running out of space | Frame from the hero film: dad lifting his son on the deck |
 | `contact-team.jpg` | Consultation | The team planning with a couple (the office wall sign is a plain panel: there is no physical office) |
-| `delivery.jpg` | How it works | A crane setting the home on its foundation while the owners watch |
+| `build.jpg` | How it works, step 03 | Builders framing and finishing homes in a build hall (no wording claims a factory) |
+| `delivery.jpg` | How it works, step 04 | A crane setting the home on its foundation while the owners watch |
 
 ## Films
 
