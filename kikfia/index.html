@@ -196,7 +196,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .in .rv:nth-child(3){transition-delay:.16s}
 .in .rv:nth-child(4){transition-delay:.24s}
 
-/* explore solutions: the goal finder */
+/* shared: split headers, photo frames, asset slots, placeholders */
 .split-head{display:grid;grid-template-columns:1.1fr 1fr;align-items:end;gap:32px}
 .split-head .lede{justify-self:end;margin-top:0}
 .ph{position:relative;margin:0;overflow:hidden;background:linear-gradient(160deg,#c9d3bf 0%,#e6cf9f 55%,#9aa98a 100%)}
@@ -205,27 +205,129 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .ph::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 35%,rgba(255,236,190,.28) 50%,transparent 65%);transform:translateX(-120%)}
 .live .ph::after{animation:glint 9s var(--ease-io) infinite;animation-delay:-2s}
 @keyframes glint{0%,62%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
-.finder{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.4fr);gap:28px;margin-top:52px;align-items:start}
-.goal-list{display:flex;flex-direction:column;gap:8px}
-.goal-tab{display:flex;flex-direction:column;align-items:flex-start;gap:7px;width:100%;padding:18px 22px;border:0;border-radius:16px;background:transparent;color:var(--ink);text-align:left;cursor:pointer;box-shadow:inset 0 0 0 1px var(--hair);transition:background-color .4s var(--ease-out),color .4s var(--ease-out),box-shadow .4s var(--ease-out)}
-.goal-tab:hover{background:rgba(246,247,242,.75)}
+.slot{position:relative;margin:0;overflow:hidden}
+.slot img,.slot video{display:block;width:100%;height:100%;object-fit:cover}
+.slot.empty{display:grid;place-items:center;padding:18px;border:1.5px dashed var(--line);background:repeating-linear-gradient(135deg,rgba(28,37,32,.035) 0 10px,transparent 10px 20px),linear-gradient(160deg,#dfe5d8,#efe3c8)}
+.slot.empty::before{content:attr(data-label);max-width:30ch;text-align:center;font-family:var(--f-mono);font-size:.66rem;line-height:1.55;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+html:not(.show-placeholders) .slot.empty::before{content:none}
+.ph-tag{position:absolute;top:12px;right:12px;z-index:2;padding:4px 8px;border-radius:6px;background:var(--accent);font-family:var(--f-mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.fill{font-style:italic;color:var(--ink-2)}
+[data-placeholder].review-card,[data-placeholder].case,[data-placeholder].rev-summary{border:1.5px dashed var(--line)}
+
+/* why homeowners choose KIKFIA */
+.why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:52px}
+.reason{display:flex;flex-direction:column;gap:10px;min-width:0;padding:28px 26px 30px;border-radius:var(--radius);background:var(--panel-2);box-shadow:0 1px 0 var(--hair),0 24px 50px -40px rgba(28,37,32,.45)}
+.r-ico{display:grid;place-items:center;width:46px;height:46px;margin-bottom:6px;border-radius:12px;background:var(--panel)}
+.r-ico svg,.g-ico svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.r-ico .acc{stroke:var(--focus)}
+.reason h3{font-size:1.3rem;font-stretch:112%}
+.reason p{color:var(--ink-2)}
+.reason.statement{justify-content:space-between;gap:24px;background:var(--ink);color:var(--canvas)}
+.statement .mono{color:var(--accent-text)}
+.statement h3{margin-top:10px;font-size:clamp(1.4rem,2vw,1.75rem);line-height:1.15}
+.statement .btn{align-self:flex-start}
+.statement :focus-visible{outline-color:var(--accent)}
+
+/* what are you trying to achieve: eight goals and one detail panel */
+.goal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:48px}
+.goal-tab{display:flex;align-items:center;gap:14px;min-width:0;padding:14px 16px;border:0;border-radius:16px;background:var(--panel-2);color:var(--ink);text-align:left;cursor:pointer;box-shadow:inset 0 0 0 1px var(--hair);transition:background-color .4s var(--ease-out),color .4s var(--ease-out),box-shadow .4s var(--ease-out),transform .4s var(--ease-out)}
+.goal-tab:hover{transform:translateY(-1px);box-shadow:inset 0 0 0 1px rgba(28,37,32,.3)}
 .goal-tab[aria-selected="true"]{background:var(--ink);color:var(--canvas);box-shadow:0 18px 40px -26px rgba(28,37,32,.75)}
-.g-title{font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:1.1rem;line-height:1.25}
-.g-sub{font-size:.66rem;line-height:1.5;color:var(--ink-2);transition:color .4s var(--ease-out)}
-.goal-tab[aria-selected="true"] .g-sub{color:var(--on-dark-2)}
-.goal-panel{border-radius:var(--radius);overflow:hidden;background:var(--panel-2);box-shadow:0 1px 0 var(--hair),0 30px 60px -40px rgba(28,37,32,.5)}
-.goal-ph{aspect-ratio:16/10}
+.g-ico{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--panel);color:var(--ink);transition:background-color .4s var(--ease-out),color .4s var(--ease-out)}
+.goal-tab[aria-selected="true"] .g-ico{background:rgba(236,238,230,.12);color:var(--accent-text)}
+.g-title{font-family:var(--f-display);font-stretch:110%;font-weight:700;font-size:1rem;line-height:1.2}
+.goal-panel{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);margin-top:14px;border-radius:var(--radius);overflow:hidden;background:var(--panel-2);box-shadow:0 1px 0 var(--hair),0 30px 60px -40px rgba(28,37,32,.5)}
+.goal-ph{min-height:360px}
 .goal-illo{position:absolute;inset:0;width:100%;height:100%;display:none}
 .goal-ph.illo img{display:none}
-.goal-ph.illo .goal-illo{display:block}
+.goal-ph[data-illo="storage"] .illo-storage,.goal-ph[data-illo="commercial"] .illo-commercial{display:block}
 .goal-ph img,.goal-illo,.goal-body{transition:opacity .25s var(--ease-out)}
 .goal-panel.swap .goal-ph img,.goal-panel.swap .goal-illo,.goal-panel.swap .goal-body{opacity:0}
-.goal-body{padding:26px 28px 30px}
-.goal-body h3{font-size:1.6rem;font-stretch:112%}
-.goal-body p{margin-top:10px;max-width:56ch;color:var(--ink-2)}
+.goal-body{display:flex;flex-direction:column;justify-content:center;padding:34px 36px}
+.goal-body .g-need{color:var(--focus)}
+.goal-body h3{margin-top:10px;font-size:1.7rem;font-stretch:112%}
+.goal-body p:not(.mono){margin-top:10px;max-width:50ch;color:var(--ink-2)}
 .g-chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
 .g-chips li{padding:7px 13px;border-radius:999px;background:var(--panel);font-size:.88rem;font-weight:500}
-.goal-body .btn{margin-top:24px}
+.goal-body .btn{align-self:flex-start;margin-top:24px}
+
+/* real problems we solve: problem, then solution */
+.prob-list{margin:48px 0 0;padding:0;list-style:none;border-top:1px solid var(--hair)}
+.prob{display:grid;grid-template-columns:200px minmax(0,1fr) 46px minmax(0,1fr);gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--hair)}
+.prob .slot{aspect-ratio:4/3;border-radius:14px}
+.prob .slot.empty{padding:12px}
+.prob .slot.empty::before{font-size:.6rem}
+.prob h3{font-size:clamp(1.3rem,2vw,1.6rem);font-stretch:112%}
+.situ{margin-top:8px;max-width:44ch;color:var(--ink-2)}
+.p-arrow{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--panel);transition:transform .4s var(--ease-out),background-color .4s var(--ease-out)}
+.p-arrow svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.prob:hover .p-arrow{transform:translateX(4px);background:var(--accent)}
+.sol .mono{color:var(--focus)}
+.sol-line{margin-top:8px;font-size:1.08rem;font-weight:600;line-height:1.45}
+.sol .g-chips{margin-top:12px}
+html:not(.show-placeholders) .prob:has(.slot.empty){grid-template-columns:minmax(0,1fr) 46px minmax(0,1fr)}
+html:not(.show-placeholders) .slot.empty{display:none}
+.prob-more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-top:32px}
+.prob-more p{font-family:var(--f-display);font-stretch:110%;font-weight:600;font-size:1.2rem}
+
+/* project stories: video chapters, before and after, case studies */
+.story-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:44px}
+.story-tab{padding:10px 18px;border:0;border-radius:999px;background:var(--panel);color:var(--ink);font-weight:600;cursor:pointer;transition:background-color .35s var(--ease-out),color .35s var(--ease-out)}
+.story-tab[aria-selected="true"]{background:var(--ink);color:var(--canvas)}
+.story-frame{position:relative;margin-top:16px;aspect-ratio:16/9;border-radius:var(--radius)}
+.story-play{position:absolute;left:50%;top:50%;z-index:2;display:grid;place-items:center;width:72px;height:72px;margin:-36px 0 0 -36px;border:0;border-radius:50%;background:var(--accent);color:var(--ink);cursor:pointer;box-shadow:0 14px 30px -12px rgba(140,90,10,.7);transition:transform .35s var(--ease-out)}
+.story-play:hover{transform:scale(1.05)}
+.story-play svg{width:26px;height:26px}
+.story-frame.empty .story-play{top:auto;bottom:22px;left:22px;margin:0;width:52px;height:52px;opacity:.55;cursor:default}
+.story-frame.playing .story-play{opacity:0;pointer-events:none}
+.chapters{display:flex;flex-wrap:wrap;align-items:center;gap:10px 8px;margin:18px 0 0;padding:0;list-style:none}
+.chapters li{display:flex;align-items:center;gap:8px;font-size:.92rem;color:var(--ink-2);transition:color .3s}
+.chapters li:not(:last-child)::after{content:"";width:18px;height:1.5px;margin-left:2px;background:var(--line)}
+.c-dot{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background-color .3s,transform .3s}
+.chapters li.on{color:var(--ink);font-weight:600}
+.chapters li.on .c-dot{background:var(--accent);transform:scale(1.3)}
+.ba-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center;margin-top:64px}
+.ba{position:relative;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;--pos:50%;touch-action:pan-y}
+.ba-layer{position:absolute;inset:0}
+.ba-after{clip-path:inset(0 0 0 var(--pos))}
+.ba-layer.slot.empty{border-radius:var(--radius)}
+.ba-after.slot.empty{background:repeating-linear-gradient(135deg,rgba(28,37,32,.035) 0 10px,transparent 10px 20px),linear-gradient(160deg,#e9d7ae,#c7d1b9)}
+.ba-before.slot.empty{justify-items:start;padding-left:7%}
+.ba-after.slot.empty{justify-items:end;padding-right:7%}
+.ba .slot.empty::before{max-width:16ch}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);z-index:2;width:2px;margin-left:-1px;background:var(--panel-2);pointer-events:none}
+.ba-handle::after{content:"";position:absolute;top:50%;left:50%;width:42px;height:42px;margin:-21px 0 0 -21px;border-radius:50%;background:var(--panel-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l-5 5 5 5M15 7l5 5-5 5' fill='none' stroke='%231C2520' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat;box-shadow:0 8px 20px -8px rgba(28,37,32,.55)}
+.ba input{position:absolute;inset:0;z-index:3;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+.ba input:focus-visible ~ .ba-handle::after{outline:3px solid var(--focus);outline-offset:2px}
+.ba-label{position:absolute;bottom:14px;z-index:2;padding:5px 10px;border-radius:8px;background:rgba(28,37,32,.74);color:var(--on-video);font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+.ba-label.b{left:14px}
+.ba-label.a{right:14px}
+.ba-copy h3{margin-top:10px;font-size:clamp(1.5rem,2.4vw,2rem);font-stretch:112%}
+.ba-copy p:not(.mono){margin-top:12px;max-width:44ch;color:var(--ink-2)}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:64px}
+.case{position:relative;display:flex;flex-direction:column;min-width:0;border-radius:var(--radius);overflow:hidden;background:var(--panel-2);box-shadow:0 24px 50px -40px rgba(28,37,32,.45)}
+.case .slot{aspect-ratio:16/10}
+.case-body{padding:22px 22px 26px}
+.case-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.case-meta span{padding:4px 9px;border-radius:999px;background:var(--panel);font-family:var(--f-mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase}
+.case h3{font-size:1.22rem;font-stretch:110%}
+.case dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:14px 0 0;font-size:.93rem}
+.case dt{font-weight:600}
+.case dd{margin:0;color:var(--ink-2)}
+
+/* client reviews */
+.rev-summary{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:40px;padding:18px 22px;border-radius:14px;background:var(--panel-2)}
+.stars{display:inline-flex;gap:3px}
+.stars svg{width:18px;height:18px;fill:var(--accent)}
+.rev-summary b{font-family:var(--f-display);font-stretch:110%;font-size:1.2rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+.review-card{position:relative;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-width:0;padding:30px 26px 26px;border-radius:var(--radius);background:var(--panel-2);box-shadow:0 24px 50px -40px rgba(28,37,32,.45)}
+.review-card blockquote{margin:0;font-family:var(--f-display);font-stretch:106%;font-weight:600;font-size:1.1rem;line-height:1.45}
+.rc-who{display:flex;align-items:center;gap:12px}
+.rc-ava{flex:none;width:46px;height:46px;border-radius:50%}
+.rc-ava.slot.empty{padding:0}
+.rc-who b{display:block}
+.rc-who span{font-size:.9rem;color:var(--ink-2)}
 
 /* what we build: one index of every structure */
 .build-head{max-width:820px}
@@ -359,21 +461,6 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .mf-total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:22px;padding-top:18px;border-top:1px dashed rgba(236,238,230,.28);font-family:var(--f-display);font-stretch:114%;font-weight:700;font-size:1.25rem}
 .mf-total .mono{color:var(--on-dark-2)}
 
-/* why KIKFIA */
-.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 34px;margin:56px 0 0;padding:0;list-style:none}
-.pillar{position:relative;min-width:0;padding-top:22px;border-top:1px solid var(--hair)}
-.pillar::before{content:"";position:absolute;left:0;top:-2px;width:38px;height:3px;border-radius:2px;background:var(--accent);transform-origin:left;transform:scaleX(0);transition:transform 1s var(--ease-out)}
-.trust.in .pillar::before{transform:scaleX(1)}
-.trust.in .pillar:nth-child(2)::before{transition-delay:.08s}
-.trust.in .pillar:nth-child(3)::before{transition-delay:.16s}
-.trust.in .pillar:nth-child(4)::before{transition-delay:.24s}
-.trust.in .pillar:nth-child(5)::before{transition-delay:.32s}
-.trust.in .pillar:nth-child(6)::before{transition-delay:.4s}
-.trust.in .pillar:nth-child(7)::before{transition-delay:.48s}
-.trust.in .pillar:nth-child(8)::before{transition-delay:.56s}
-.pillar h3{font-size:1.16rem;font-stretch:110%}
-.pillar p{margin-top:8px;font-size:.98rem;color:var(--ink-2)}
-
 /* 06: FAQ */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,90px);align-items:start}
 .faq-head{position:sticky;top:120px}
@@ -446,36 +533,53 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   .homes-fig{position:relative;top:auto}
   .homes-fig .ph{aspect-ratio:16/10}
   .index{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
   .quote-bg{background:linear-gradient(180deg,rgba(237,240,232,.94) 0%,rgba(237,240,232,.86) 100%),url("assets/hero-ending.jpg") 70% center/cover no-repeat,linear-gradient(180deg,#c9d3bf,#e6cf9f)}
 }
 @media (max-width:820px){
-  .goal-list{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
-  .goal-tab{flex:0 0 min(78%,300px);scroll-snap-align:start}
   .steps{grid-template-columns:1fr 1fr;row-gap:44px}
   .steps-path{display:none}
 }
 @media (max-width:560px){
   body{font-size:16px}
-  .steps,.fields,.arrives,.opts,.index,.pillars{grid-template-columns:1fr}
+  .steps,.fields,.arrives,.opts,.index{grid-template-columns:1fr}
   .hold-btn{width:100%;min-width:0}
   .goal-body{padding:22px 20px 24px}
   .ix-custom{padding:24px 22px}
 }
 @media (pointer:coarse){.btn,.hold-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}.goal-tab,.opt,.ix-group a,.qa summary{min-height:44px}}
+@media (max-width:1000px){
+  .why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .goal-panel,.ba-row{grid-template-columns:1fr}
+  .goal-ph{min-height:0;aspect-ratio:16/10}
+  .prob{grid-template-columns:150px minmax(0,1fr) 40px minmax(0,1fr);gap:20px}
+  .cases,.reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  .goal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prob,html:not(.show-placeholders) .prob:has(.slot.empty){grid-template-columns:1fr;gap:14px}
+  .prob .slot{aspect-ratio:16/9}
+  .p-arrow{transform:rotate(90deg)}
+  .prob:hover .p-arrow{transform:rotate(90deg) translateX(4px)}
+}
+@media (max-width:560px){
+  .why-grid,.cases,.reviews-grid{grid-template-columns:1fr}
+  .goal-tab{gap:10px;padding:12px}
+  .g-ico{width:36px;height:36px}
+  .goal-body{padding:24px 22px 26px}
+  .story-tab{flex:1 1 100%;text-align:left}
+}
 
 /* ---------- reduced motion: final states, nothing moves ---------- */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
   .rv{opacity:1!important;transform:none!important}
-  .pillar::before{transform:none!important}
   .steps-path path,.ico *{stroke-dashoffset:0!important}
   .mote{display:none}
   .chev svg{transform:none}
 }
 </style>
-<noscript><style>.band.b4{opacity:1;--k:1}.rv{opacity:1;transform:none}.steps-path path,.ico *{stroke-dashoffset:0}.pillar::before{transform:none}</style></noscript>
+<noscript><style>.band.b4{opacity:1;--k:1}.rv{opacity:1;transform:none}.steps-path path,.ico *{stroke-dashoffset:0}</style></noscript>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -504,10 +608,10 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
     KIKFIA
   </a>
   <ul class="nav-links">
-    <li><a href="#solutions">Solutions</a></li>
-    <li class="wide"><a href="#customize">Customize</a></li>
-    <li><a href="#route">How it works</a></li>
     <li><a href="#why">Why KIKFIA</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li class="wide"><a href="#stories">Stories</a></li>
+    <li><a href="#route">How it works</a></li>
     <li class="wide"><a href="#faq">Questions</a></li>
     <li class="nav-cta"><a class="btn" href="#consultation">Free consultation</a></li>
   </ul>
@@ -516,14 +620,17 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 <div class="route-line" aria-hidden="true">
   <div class="rl-track"></div>
   <div class="rl-fill"></div>
-  <div class="rl-way" data-for="solutions" style="top:0%"><span>Solutions</span></div>
-  <div class="rl-way" data-for="build" style="top:14.29%"><span>What we build</span></div>
-  <div class="rl-way" data-for="customize" style="top:28.57%"><span>Customize</span></div>
-  <div class="rl-way" data-for="route" style="top:42.86%"><span>How it works</span></div>
-  <div class="rl-way" data-for="costs" style="top:57.14%"><span>Costs</span></div>
-  <div class="rl-way" data-for="why" style="top:71.43%"><span>Why KIKFIA</span></div>
-  <div class="rl-way" data-for="faq" style="top:85.71%"><span>Questions</span></div>
-  <div class="rl-way" data-for="consultation" style="top:100%"><span>Consultation</span></div>
+  <div class="rl-way" data-for="why"><span>Why KIKFIA</span></div>
+  <div class="rl-way" data-for="solutions"><span>Solutions</span></div>
+  <div class="rl-way" data-for="problems"><span>Problems we solve</span></div>
+  <div class="rl-way" data-for="stories"><span>Stories</span></div>
+  <div class="rl-way" data-for="build"><span>What we build</span></div>
+  <div class="rl-way" data-for="customize"><span>Customize</span></div>
+  <div class="rl-way" data-for="route"><span>How it works</span></div>
+  <div class="rl-way" data-for="costs"><span>Costs</span></div>
+  <div class="rl-way" data-for="reviews"><span>Reviews</span></div>
+  <div class="rl-way" data-for="faq"><span>Questions</span></div>
+  <div class="rl-way" data-for="consultation"><span>Consultation</span></div>
   <div class="rl-pin"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="13" fill="#1C2520"/><path d="M8.5 14 14 9.2l5.5 4.8" fill="none" stroke="#E3A33B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path class="pb" d="M10.2 13.2v5.3h7.6v-5.3" fill="none" stroke="#EDF0E8" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
 </div>
 
@@ -572,53 +679,228 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   </div>
 </section>
 
+<section class="sec why" id="why" data-io>
+  <div class="wrap">
+    <header class="split-head">
+      <div>
+        <p class="kick mono rv">Why KIKFIA</p>
+        <h2 class="rv">Why homeowners choose KIKFIA</h2>
+      </div>
+      <p class="lede rv">Every project starts with your problem. Then we design the space that solves it, and run it all the way to your front yard.</p>
+    </header>
+    <div class="why-grid">
+      <article class="reason rv">
+        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle class="acc" cx="12" cy="12" r="1"/></svg></span>
+        <h3>Designed around your goals</h3>
+        <p>Every project begins with your vision: how you want to live, work, or earn in the space.</p>
+      </article>
+      <article class="reason rv">
+        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h9M18 7h2M4 17h4M13 17h7"/><circle class="acc" cx="15.5" cy="7" r="2.2"/><circle class="acc" cx="10.5" cy="17" r="2.2"/></svg></span>
+        <h3>Fully customized</h3>
+        <p>Never limited to standard layouts. Size, rooms, finishes, and features are yours to choose.</p>
+      </article>
+      <article class="reason rv">
+        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="18" r="2"/><circle class="acc" cx="19" cy="6" r="2"/><path d="M7 18c6 0 4-12 10-12"/></svg></span>
+        <h3>One team from start to finish</h3>
+        <p>One company manages design, build, delivery, and installation, with one point of contact the whole way.</p>
+      </article>
+      <article class="reason">
+        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18l6-6 4 4 6-7"/><path class="acc" d="M15 9h5v5"/></svg></span>
+        <h3>Built for long-term value</h3>
+        <p>Flexible spaces that change with your life: a guest house today, a rental or an office tomorrow.</p>
+      </article>
+      <article class="reason">
+        <span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle class="acc" cx="12" cy="10" r="2.2"/></svg></span>
+        <h3>Solutions for every property</h3>
+        <p>Urban, suburban, and rural lots, homes and businesses. If there's a level spot, there's a plan.</p>
+      </article>
+      <article class="reason statement">
+        <div>
+          <p class="mono">The KIKFIA difference</p>
+          <h3>Whatever space challenge you have, KIKFIA designs the answer.</h3>
+        </div>
+        <a class="btn" href="#consultation">Get My Free Consultation <span class="arr" aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="sec goals" id="solutions" data-io>
   <div class="wrap">
     <header class="split-head">
       <div>
         <p class="kick mono rv">Explore solutions</p>
-        <h2 class="rv">What do you need the space to do?</h2>
+        <h2 class="rv">What are you trying to achieve?</h2>
       </div>
-      <p class="lede rv">Start with your goal. We design the structure around it.</p>
+      <p class="lede rv">Pick the goal that sounds like you. We'll show you how KIKFIA gets you there.</p>
     </header>
-    <div class="finder rv">
-      <div class="goal-list" role="tablist" aria-label="Choose your goal">
-        <button class="goal-tab" type="button" role="tab" id="tab-living" data-goal="living" aria-selected="true" aria-controls="goalPanel"><span class="g-title">I need extra living space</span><span class="g-sub mono">ADUs &middot; Guest houses &middot; Granny flats</span></button>
-        <button class="goal-tab" type="button" role="tab" id="tab-rental" data-goal="rental" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-title">I want rental income</span><span class="g-sub mono">Airbnb cabins &middot; Guest houses &middot; Vacation units</span></button>
-        <button class="goal-tab" type="button" role="tab" id="tab-office" data-goal="office" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-title">I need a home office</span><span class="g-sub mono">Office pods &middot; Garden offices &middot; Remote work studios</span></button>
-        <button class="goal-tab" type="button" role="tab" id="tab-business" data-goal="business" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-title">I need business space</span><span class="g-sub mono">Portable offices &middot; Warehouses &middot; Commercial units</span></button>
-        <button class="goal-tab" type="button" role="tab" id="tab-custom" data-goal="custom" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-title">I need a custom solution</span><span class="g-sub mono">Fully customized portable structures</span></button>
+    <div class="goal-grid rv" role="tablist" aria-label="Choose your goal">
+      <button class="goal-tab" type="button" role="tab" id="tab-living" data-goal="living" aria-selected="true" aria-controls="goalPanel"><span class="g-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 11.5 11 5l7.5 6.5"/><path d="M5.5 10v9h11v-9"/><path d="M19.5 15.5v5M17 18h5"/></svg></span><span class="g-title">Extra living space</span></button>
+      <button class="goal-tab" type="button" role="tab" id="tab-rental" data-goal="rental" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.3c-.5-.8-1.5-1.3-2.6-1.3-1.5 0-2.6.8-2.6 1.9 0 2.6 5.4 1.4 5.4 4.2 0 1.1-1.2 1.9-2.8 1.9-1.2 0-2.3-.5-2.8-1.3M12 6.5V8M12 16v1.5"/></svg></span><span class="g-title">Rental income</span></button>
+      <button class="goal-tab" type="button" role="tab" id="tab-office" data-goal="office" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="9.5" rx="1.2"/><path d="M3 18.5h18"/></svg></span><span class="g-title">Home office</span></button>
+      <button class="goal-tab" type="button" role="tab" id="tab-retreat" data-goal="retreat" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l5 7h-3l4 6H6l4-6H7z"/><path d="M12 16v5"/></svg></span><span class="g-title">Vacation retreat</span></button>
+      <button class="goal-tab" type="button" role="tab" id="tab-storage" data-goal="storage" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20V9l9-5 9 5v11"/><path d="M7 20v-7h10v7M7 16.5h10"/></svg></span><span class="g-title">Storage or warehouse</span></button>
+      <button class="goal-tab" type="button" role="tab" id="tab-commercial" data-goal="commercial" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="1"/><path d="M9 7.5h2M13 7.5h2M9 11h2M13 11h2M9 14.5h2M13 14.5h2M11 20.5v-3h2v3"/></svg></span><span class="g-title">Commercial space</span></button>
+      <button class="goal-tab" type="button" role="tab" id="tab-parents" data-goal="parents" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 11.5 12 4.5l8.5 7"/><path d="M5.5 10v10h13V10"/><path d="M12 17.6l-2.4-2.3a1.5 1.5 0 0 1 2.4-1.8 1.5 1.5 0 0 1 2.4 1.8z"/></svg></span><span class="g-title">Housing for parents</span></button>
+      <button class="goal-tab" type="button" role="tab" id="tab-custom" data-goal="custom" aria-selected="false" aria-controls="goalPanel" tabindex="-1"><span class="g-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1 0 1.5-.7 1.5-1.5 0-1.3-1.1-1.5-1.1-2.6 0-.9.7-1.5 1.5-1.5H16a4.5 4.5 0 0 0 4.5-4.5c0-3.9-3.8-6.9-8.5-6.9z"/><circle cx="7.8" cy="11" r=".9"/><circle cx="10" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></span><span class="g-title">Fully custom project</span></button>
+    </div>
+    <div class="goal-panel" id="goalPanel" role="tabpanel" aria-labelledby="tab-living" tabindex="0">
+      <figure class="ph goal-ph">
+        <img id="gImg" src="assets/use-backyard.webp" alt="A KIKFIA guest house in a green backyard, a stone path leading to its porch" width="1200" height="896" loading="lazy" decoding="async">
+        <svg class="goal-illo illo-storage" viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="640" height="420" fill="#DDE3DA"/>
+          <rect width="640" height="300" fill="#EADCB8" opacity=".55"/>
+          <circle cx="520" cy="104" r="40" fill="#F4D49A" opacity=".85"/>
+          <path d="M0 300 C 160 288, 320 296, 640 286 V420 H0z" fill="#9FAF86"/>
+          <path d="M0 330 H640 V420 H0z" fill="#BDB7A8"/>
+          <path d="M120 172 L 300 118 L 480 172 Z" fill="#3B4244"/>
+          <rect x="134" y="170" width="332" height="160" fill="#2E3436"/>
+          <rect x="176" y="214" width="150" height="116" fill="#4A5250"/>
+          <path d="M176 228h150M176 242h150M176 256h150M176 270h150M176 284h150M176 298h150M176 312h150" stroke="#2E3436" stroke-width="2"/>
+          <rect x="350" y="214" width="42" height="116" fill="#B98B5A"/>
+          <rect x="404" y="214" width="46" height="40" fill="#F2C77E"/>
+          <rect x="196" y="300" width="34" height="30" fill="#C9A26F"/><rect x="236" y="306" width="28" height="24" fill="#B98B5A"/>
+          <path d="M40 304 l9 -30 l9 30z M580 296 l9 -30 l9 30z" fill="#5E7052"/>
+        </svg>
+        <svg class="goal-illo illo-commercial" viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="640" height="420" fill="#DDE3DA"/>
+          <rect width="640" height="300" fill="#EADCB8" opacity=".55"/>
+          <circle cx="120" cy="100" r="38" fill="#F4D49A" opacity=".85"/>
+          <path d="M0 296 C 160 284, 320 292, 640 282 V420 H0z" fill="#9FAF86"/>
+          <path d="M0 330 H640 V420 H0z" fill="#BDB7A8"/>
+          <rect x="140" y="166" width="380" height="12" fill="#3B4244"/>
+          <rect x="140" y="176" width="380" height="154" fill="#2E3436"/>
+          <path d="M150 178 h360 l-14 26 H164z" fill="#B98B5A"/>
+          <rect x="170" y="216" width="150" height="86" rx="2" fill="#F2C77E"/>
+          <path d="M245 216v86" stroke="#2E3436" stroke-width="3"/>
+          <rect x="340" y="216" width="56" height="114" fill="#4A5250"/>
+          <rect x="348" y="226" width="40" height="64" fill="#F2C77E" opacity=".85"/>
+          <rect x="414" y="216" width="88" height="86" rx="2" fill="#F2C77E"/>
+          <path d="M40 300 l9 -30 l9 30z M590 292 l9 -30 l9 30z" fill="#5E7052"/>
+        </svg>
+      </figure>
+      <div class="goal-body">
+        <p class="mono g-need" id="gNeed">You need more room</p>
+        <h3 id="gTitle">Extra living space</h3>
+        <p id="gText">Room for grown kids, guests, or a growing family, without moving or renovating. A private space with its own front door.</p>
+        <ul class="g-chips" id="gChips"><li>ADUs</li><li>Guest houses</li><li>Backyard studios</li></ul>
+        <a class="btn dark" href="#consultation" id="gCta">Plan my living space <span class="arr" aria-hidden="true">&rarr;</span></a>
       </div>
-      <div class="goal-panel" id="goalPanel" role="tabpanel" aria-labelledby="tab-living" tabindex="0">
-        <figure class="ph goal-ph">
-          <img id="gImg" src="assets/use-backyard.webp" alt="A KIKFIA guest house in a green backyard, a stone path leading to its porch" width="1200" height="896" loading="lazy" decoding="async">
-          <svg class="goal-illo" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs><linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3DDD8"/><stop offset="1" stop-color="#EFDDB4"/></linearGradient></defs>
-            <rect width="640" height="400" fill="url(#gSky)"/>
-            <circle cx="530" cy="104" r="40" fill="#F4D49A" opacity=".8"/>
-            <path d="M0 296 C 160 284, 320 292, 640 282 V400 H0z" fill="#9FAF86"/>
-            <path d="M0 322 H640 V400 H0z" fill="#BDB7A8"/>
-            <path d="M0 322 H640" stroke="#A39D8E" stroke-width="2"/>
-            <path d="M36 300 l8 -26 l8 26z M58 302 l10 -34 l10 34z M598 290 l9 -30 l9 30z" fill="#5E7052"/>
-            <path d="M60 184 L 195 142 L 330 184 Z" fill="#3B4244"/>
-            <rect x="72" y="182" width="246" height="140" fill="#2E3436"/>
-            <rect x="108" y="226" width="112" height="96" fill="#4A5250"/>
-            <path d="M108 238h112M108 250h112M108 262h112M108 274h112M108 286h112M108 298h112M108 310h112" stroke="#2E3436" stroke-width="2"/>
-            <rect x="244" y="212" width="54" height="40" fill="#F2C77E"/>
-            <rect x="360" y="200" width="226" height="10" fill="#3B4244"/>
-            <rect x="360" y="208" width="226" height="114" fill="#2E3436"/>
-            <rect x="378" y="228" width="44" height="94" fill="#B98B5A"/>
-            <rect x="436" y="228" width="132" height="62" rx="2" fill="#F2C77E"/>
-            <path d="M502 228v62" stroke="#2E3436" stroke-width="3"/>
-          </svg>
-        </figure>
-        <div class="goal-body">
-          <h3 id="gTitle">Extra living space</h3>
-          <p id="gText">Room for aging parents, grown kids, or guests, right in your backyard. A private home with its own front door, steps from yours.</p>
-          <ul class="g-chips" id="gChips"><li>ADUs</li><li>Guest houses</li><li>Granny flats</li></ul>
-          <a class="btn dark" href="#consultation" id="gCta">Plan my living space <span class="arr" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec problems" id="problems" data-io>
+  <div class="wrap">
+    <header class="build-head">
+      <p class="kick mono rv">Real problems we solve</p>
+      <h2 class="rv">Tell us the problem. We'll design the space.</h2>
+      <p class="lede rv">People don't come to us for a box. They come because life outgrew their space. Here's what that usually looks like.</p>
+    </header>
+    <ul class="prob-list">
+      <li class="prob">
+        <figure class="slot empty" data-label="Lifestyle photo: grandparents on the porch, grandkids on the lawn"></figure>
+        <div><h3>Need space for aging parents?</h3><p class="situ">They want their independence. You want them close. The spare room isn't enough.</p></div>
+        <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">A custom ADU or guest house in your backyard: their own front door, steps from yours.</p><ul class="g-chips"><li>Custom ADUs</li><li>Guest houses</li><li>Accessible layouts</li></ul></div>
+      </li>
+      <li class="prob">
+        <figure class="slot empty" data-label="Lifestyle photo: guests arriving at a rental cabin"></figure>
+        <div><h3>Want rental income?</h3><p class="situ">You have land or a backyard that costs you money and earns nothing.</p></div>
+        <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">An Airbnb-ready cabin or backyard rental, designed for guests and easy upkeep.</p><ul class="g-chips"><li>Airbnb cabins</li><li>Backyard rentals</li></ul></div>
+      </li>
+      <li class="prob">
+        <figure class="slot empty" data-label="Lifestyle photo: remote worker in a backyard studio"></figure>
+        <div><h3>Need a quiet home office?</h3><p class="situ">Calls from the kitchen table, kids at the door, and no line between work and home.</p></div>
+        <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">A modern office pod or backyard studio, thirty steps from your back door.</p><ul class="g-chips"><li>Office pods</li><li>Backyard studios</li></ul></div>
+      </li>
+      <li class="prob">
+        <figure class="slot empty" data-label="Lifestyle photo: family settling into new extra space"></figure>
+        <div><h3>Running out of space?</h3><p class="situ">Gear in the garage, guests on the couch, and a house that feels smaller every year.</p></div>
+        <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">Flexible living and storage spaces that add room without a renovation.</p><ul class="g-chips"><li>Backyard studios</li><li>Storage units</li></ul></div>
+      </li>
+      <li class="prob">
+        <figure class="slot empty" data-label="Lifestyle photo: owner welcoming a customer at a portable office"></figure>
+        <div><h3>Need a business facility?</h3><p class="situ">Leases are expensive, new construction is slow, and your business can't wait.</p></div>
+        <span class="p-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="sol"><p class="mono">The KIKFIA solution</p><p class="sol-line">Portable offices and commercial structures, ready for staff, stock, or customers.</p><ul class="g-chips"><li>Portable offices</li><li>Commercial structures</li></ul></div>
+      </li>
+    </ul>
+    <div class="prob-more rv">
+      <p>Don't see your situation? Tell us about it.</p>
+      <a class="btn dark" href="#consultation">Describe my project <span class="arr" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec stories" id="stories" data-io data-proof-section>
+  <div class="wrap">
+    <header class="split-head">
+      <div>
+        <p class="kick mono rv">Project stories</p>
+        <h2 class="rv">See what changed for them.</h2>
+      </div>
+      <p class="lede rv">Every project starts with a problem. These stories show where it ended up.</p>
+    </header>
+    <div class="story" data-proof-group>
+      <div class="story-tabs" role="tablist" aria-label="Choose a story">
+        <button class="story-tab" type="button" role="tab" aria-selected="true" data-story="family">From empty land to family home</button>
+        <button class="story-tab" type="button" role="tab" aria-selected="false" data-story="rental" tabindex="-1">From idle land to rental income</button>
+        <button class="story-tab" type="button" role="tab" aria-selected="false" data-story="office" tabindex="-1">From kitchen table to office pod</button>
+      </div>
+      <div class="story-frame slot empty" id="storyFrame" data-label="Story video placeholder: from empty land to family home" data-placeholder data-proof-item>
+        <span class="ph-tag">Placeholder</span>
+        <button class="story-play" type="button" aria-label="Play the story video" disabled><svg viewBox="0 0 24 24"><path d="M8 5.5v13L18.5 12z" fill="currentColor"/></svg></button>
+      </div>
+      <ol class="chapters" id="storyChapters" aria-label="Story chapters"><li class="on"><span class="c-dot"></span>Empty land</li><li><span class="c-dot"></span>Consultation</li><li><span class="c-dot"></span>Design</li><li><span class="c-dot"></span>Construction</li><li><span class="c-dot"></span>Finished project</li><li><span class="c-dot"></span>Happy family</li></ol>
+    </div>
+    <div class="ba-row" data-proof-group>
+      <div class="ba" data-placeholder data-proof-item>
+        <span class="ph-tag">Placeholder</span>
+        <figure class="ba-layer ba-before slot empty" data-label="Before photo: the empty backyard"></figure>
+        <figure class="ba-layer ba-after slot empty" data-label="After photo: the finished guest house"></figure>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" id="baRange">
+        <span class="ba-handle" aria-hidden="true"></span>
+        <span class="ba-label b" aria-hidden="true">Before</span>
+        <span class="ba-label a" aria-hidden="true">After</span>
+      </div>
+      <div class="ba-copy" data-placeholder data-proof-item>
+        <p class="kick mono">Before and after</p>
+        <h3 class="fill">[Project title, for example: From empty backyard to guest house]</h3>
+        <p class="fill">[Two sentences: what the customer needed, and what the space does for them now.]</p>
+      </div>
+    </div>
+    <div class="cases" data-proof-group>
+      <article class="case" data-placeholder data-proof-item>
+        <span class="ph-tag">Placeholder</span>
+        <figure class="slot empty" data-label="Lifestyle photo of the finished project with the owners"></figure>
+        <div class="case-body">
+          <div class="case-meta"><span>Rental income</span><span class="fill">[City, State]</span></div>
+          <h3 class="fill">[Case study title]</h3>
+          <dl><dt>Problem</dt><dd class="fill">[What wasn't working]</dd><dt>Solution</dt><dd class="fill">[What KIKFIA designed and built]</dd><dt>Result</dt><dd class="fill">[The outcome, in the owner's words]</dd></dl>
         </div>
-      </div>
+      </article>
+      <article class="case" data-placeholder data-proof-item>
+        <span class="ph-tag">Placeholder</span>
+        <figure class="slot empty" data-label="Lifestyle photo of the finished project with the owners"></figure>
+        <div class="case-body">
+          <div class="case-meta"><span>Housing for parents</span><span class="fill">[City, State]</span></div>
+          <h3 class="fill">[Case study title]</h3>
+          <dl><dt>Problem</dt><dd class="fill">[What wasn't working]</dd><dt>Solution</dt><dd class="fill">[What KIKFIA designed and built]</dd><dt>Result</dt><dd class="fill">[The outcome, in the owner's words]</dd></dl>
+        </div>
+      </article>
+      <article class="case" data-placeholder data-proof-item>
+        <span class="ph-tag">Placeholder</span>
+        <figure class="slot empty" data-label="Lifestyle photo of the finished project with the owners"></figure>
+        <div class="case-body">
+          <div class="case-meta"><span>Home office</span><span class="fill">[City, State]</span></div>
+          <h3 class="fill">[Case study title]</h3>
+          <dl><dt>Problem</dt><dd class="fill">[What wasn't working]</dd><dt>Solution</dt><dd class="fill">[What KIKFIA designed and built]</dd><dt>Result</dt><dd class="fill">[The outcome, in the owner's words]</dd></dl>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -649,8 +931,8 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
           <h3>Family and guests</h3>
           <ul>
             <li><a href="#consultation" data-need="guest" data-item="Guest houses"><span class="ix-name">Guest houses</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#consultation" data-need="guest" data-item="Granny flats"><span class="ix-name">Granny flats</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#consultation" data-need="office" data-item="Backyard studios"><span class="ix-name">Backyard studios</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
+            <li><a href="#consultation" data-need="parents" data-item="Granny flats"><span class="ix-name">Granny flats</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
+            <li><a href="#consultation" data-need="guest" data-item="Backyard studios"><span class="ix-name">Backyard studios</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
           </ul>
         </div>
         <div class="ix-group">
@@ -658,7 +940,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
           <ul>
             <li><a href="#consultation" data-need="office" data-item="Home offices"><span class="ix-name">Home offices</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
             <li><a href="#consultation" data-need="office" data-item="Office pods"><span class="ix-name">Office pods</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#consultation" data-need="business" data-item="Portable offices"><span class="ix-name">Portable offices</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
+            <li><a href="#consultation" data-need="commercial" data-item="Portable offices"><span class="ix-name">Portable offices</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
           </ul>
         </div>
       </div>
@@ -666,17 +948,17 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <div class="ix-group">
           <h3>Getaways and rentals</h3>
           <ul>
-            <li><a href="#consultation" data-need="rental" data-item="Luxury cabins"><span class="ix-name">Luxury cabins</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#consultation" data-need="rental" data-item="Vacation cabins"><span class="ix-name">Vacation cabins</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
+            <li><a href="#consultation" data-need="retreat" data-item="Luxury cabins"><span class="ix-name">Luxury cabins</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
+            <li><a href="#consultation" data-need="retreat" data-item="Vacation cabins"><span class="ix-name">Vacation cabins</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
             <li><a href="#consultation" data-need="rental" data-item="Airbnb units"><span class="ix-name">Airbnb units</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
           </ul>
         </div>
         <div class="ix-group">
           <h3>Business</h3>
           <ul>
-            <li><a href="#consultation" data-need="business" data-item="Portable warehouses"><span class="ix-name">Portable warehouses</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#consultation" data-need="business" data-item="Container structures"><span class="ix-name">Container structures</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#consultation" data-need="business" data-item="Commercial structures"><span class="ix-name">Commercial structures</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
+            <li><a href="#consultation" data-need="storage" data-item="Portable warehouses"><span class="ix-name">Portable warehouses</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
+            <li><a href="#consultation" data-need="storage" data-item="Container structures"><span class="ix-name">Container structures</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
+            <li><a href="#consultation" data-need="commercial" data-item="Commercial structures"><span class="ix-name">Commercial structures</span><span class="ix-arr" aria-hidden="true">&rarr;</span></a></li>
           </ul>
         </div>
       </div>
@@ -850,25 +1132,38 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   </div>
 </section>
 
-<section class="sec trust" id="why" data-io>
+<section class="sec reviews" id="reviews" data-io data-proof-section>
   <div class="wrap">
     <header class="split-head">
       <div>
-        <p class="kick mono rv">Why KIKFIA</p>
-        <h2 class="rv">One company, responsible for all of it.</h2>
+        <p class="kick mono rv">Client reviews</p>
+        <h2 class="rv">What our clients say.</h2>
       </div>
-      <p class="lede rv">You never juggle a designer, a builder, and a delivery crew. KIKFIA runs your project from the first sketch to the final walkthrough.</p>
+      <p class="lede rv">Real words from people who now have the space they needed.</p>
     </header>
-    <ul class="pillars">
-      <li class="pillar"><h3>Custom design expertise</h3><p>Every layout drawn for your land and your goals, never pulled from a catalog.</p></li>
-      <li class="pillar"><h3>Professional guidance</h3><p>Straight advice on size, budget, and permits before you spend a dollar.</p></li>
-      <li class="pillar"><h3>Quality construction</h3><p>Insulated, weather-sealed structures made for year-round use.</p></li>
-      <li class="pillar"><h3>Project management</h3><p>One point of contact who keeps your timeline on track.</p></li>
-      <li class="pillar"><h3>Premium materials</h3><p>Durable frames, quality cladding, and finishes you choose yourself.</p></li>
-      <li class="pillar"><h3>Efficient delivery</h3><p>A delivery date set well ahead, and a crew that sets it on your pad.</p></li>
-      <li class="pillar"><h3>Long-term value</h3><p>Space that adds room, income, or resale appeal to your property.</p></li>
-      <li class="pillar"><h3>Dedicated support</h3><p>A real person to call or message on WhatsApp, before and after delivery.</p></li>
-    </ul>
+    <div class="rev-summary" data-placeholder data-proof-item>
+      <span class="ph-tag">Placeholder</span>
+      <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg></span>
+      <b class="fill">[Rating] on [Google or Facebook]</b>
+      <span class="fill">[Number] verified reviews</span>
+    </div>
+    <div class="reviews-grid" data-proof-group>
+      <figure class="review-card" data-placeholder data-proof-item>
+        <span class="ph-tag">Placeholder</span>
+        <blockquote class="fill">[Customer testimonial: one or two sentences about the problem they had and how their KIKFIA space solved it.]</blockquote>
+        <figcaption class="rc-who"><span class="rc-ava slot empty"></span><span><b class="fill">[Customer name]</b><span class="fill">[City, State] &middot; [Project type]</span></span></figcaption>
+      </figure>
+      <figure class="review-card" data-placeholder data-proof-item>
+        <span class="ph-tag">Placeholder</span>
+        <blockquote class="fill">[Customer testimonial: one or two sentences about the problem they had and how their KIKFIA space solved it.]</blockquote>
+        <figcaption class="rc-who"><span class="rc-ava slot empty"></span><span><b class="fill">[Customer name]</b><span class="fill">[City, State] &middot; [Project type]</span></span></figcaption>
+      </figure>
+      <figure class="review-card" data-placeholder data-proof-item>
+        <span class="ph-tag">Placeholder</span>
+        <blockquote class="fill">[Customer testimonial: one or two sentences about the problem they had and how their KIKFIA space solved it.]</blockquote>
+        <figcaption class="rc-who"><span class="rc-ava slot empty"></span><span><b class="fill">[Customer name]</b><span class="fill">[City, State] &middot; [Project type]</span></span></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -941,22 +1236,27 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
           <select id="f-need" name="need" required>
             <option value="" disabled selected>Choose one</option>
             <option value="home" data-phrase="a home or ADU">A home or ADU</option>
-            <option value="guest" data-phrase="a guest house or granny flat">A guest house or granny flat</option>
+            <option value="parents" data-phrase="housing for your parents">Housing for my parents</option>
+            <option value="guest" data-phrase="a guest house or backyard studio">A guest house or backyard studio</option>
             <option value="rental" data-phrase="a rental cabin or Airbnb unit">A rental cabin or Airbnb unit</option>
-            <option value="office" data-phrase="a home office or studio">A home office or studio</option>
-            <option value="business" data-phrase="business space">Business space or warehouse</option>
-            <option value="custom" data-phrase="a fully custom structure">A fully custom structure</option>
+            <option value="office" data-phrase="a home office or office pod">A home office or office pod</option>
+            <option value="retreat" data-phrase="a vacation cabin">A vacation cabin</option>
+            <option value="storage" data-phrase="storage or a warehouse">Storage or a warehouse</option>
+            <option value="commercial" data-phrase="commercial space">Commercial or office space</option>
+            <option value="custom" data-phrase="a fully custom project">A fully custom project</option>
             <option value="unsure" data-phrase="the right structure, chosen together">Not sure yet, help me decide</option>
           </select>
         </div>
         <div class="field"><label for="f-goal">What is your goal?</label>
           <select id="f-goal" name="goal">
             <option value="" selected>Choose one</option>
-            <option value="living" data-phrase="more living space">More living space</option>
+            <option value="living" data-phrase="extra living space">Extra living space</option>
             <option value="rental" data-phrase="rental income">Rental income</option>
             <option value="work" data-phrase="a place to work">A place to work</option>
-            <option value="business" data-phrase="your business">Space for my business</option>
             <option value="retreat" data-phrase="a vacation retreat">A vacation retreat</option>
+            <option value="parents" data-phrase="keeping family close">Keeping family close</option>
+            <option value="storage" data-phrase="more storage">More storage</option>
+            <option value="business" data-phrase="your business">Space for my business</option>
             <option value="affordable" data-phrase="affordable housing">Affordable housing</option>
             <option value="other" data-phrase="">Something else</option>
           </select>
@@ -1011,11 +1311,14 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         KIKFIA
       </a>
       <ul>
+        <li><a href="#why">Why KIKFIA</a></li>
         <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#problems">Problems we solve</a></li>
+        <li><a href="#stories">Project stories</a></li>
         <li><a href="#build">What we build</a></li>
         <li><a href="#customize">Customize</a></li>
         <li><a href="#route">How it works</a></li>
-        <li><a href="#why">Why KIKFIA</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#faq">Questions</a></li>
         <li><a href="#consultation">Free consultation</a></li>
       </ul>
@@ -1062,6 +1365,22 @@ const nav = $('.nav');
 const reduceMQ = matchMedia('(prefers-reduced-motion: reduce)');
 
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---------- social proof: placeholders show in previews only ---------- */
+// The live site never shows a placeholder review, story, or case study. A real item carries
+// data-proof-item without data-placeholder; a proof section with no real items is removed.
+const SHOW_PLACEHOLDERS = false;   // preview builds set this to true
+document.documentElement.classList.toggle('show-placeholders', SHOW_PLACEHOLDERS);
+if (!SHOW_PLACEHOLDERS) {
+  $$('[data-placeholder]').forEach(el => el.remove());
+  $$('[data-proof-group]').forEach(g => { if (!g.querySelector('[data-proof-item]')) g.remove(); });
+  $$('[data-proof-section]').forEach(sec => { if (!sec.querySelector('[data-proof-item]')) sec.remove(); });
+}
+// links to sections that are not on the page go too
+$$('a[href^="#"]').forEach(a => {
+  const id = a.getAttribute('href').slice(1);
+  if (id && !document.getElementById(id)) (a.closest('li') || a).remove();
+});
 
 /* ---------- split headline text once, seeded so every load is identical ---------- */
 $$('[data-split]').forEach((el, n) => {
@@ -1348,7 +1667,12 @@ $$('.ph img').forEach(img => {
 const route = $('.route-line');
 const rlFill = $('.rl-fill');
 const rlPin = $('.rl-pin');
-const ways = $$('.rl-way').map(el => ({ el, sec: document.getElementById(el.dataset.for), hit: null, now: null }));
+const ways = $$('.rl-way')
+  .filter(el => { if (document.getElementById(el.dataset.for)) return true; el.remove(); return false; })
+  .map((el, i, all) => {
+    el.style.top = (all.length > 1 ? i / (all.length - 1) * 100 : 0).toFixed(2) + '%';
+    return { el, sec: document.getElementById(el.dataset.for), hit: null, now: null };
+  });
 let wayTops = [], routeH = 0, routeShow = null, routeP = -1, routePinned = false, routeQueued = false, routeDark = null, darkTop = 0, darkBot = 0;
 const darkSec = document.getElementById('costs');
 function measureRoute() {
@@ -1447,48 +1771,70 @@ function summarize() {
 ['f-need', 'f-goal', 'f-size', 'f-time'].forEach(id => document.getElementById(id).addEventListener('change', summarize));
 $('#f-place').addEventListener('input', summarize);
 
-/* ---------- explore solutions: the goal finder ---------- */
+/* ---------- what are you trying to achieve: eight goals, one panel ---------- */
 const GOALS = {
   living: {
-    title: 'Extra living space',
-    text: 'Room for aging parents, grown kids, or guests, right in your backyard. A private home with its own front door, steps from yours.',
-    chips: ['ADUs', 'Guest houses', 'Granny flats'],
+    need: 'You need more room', title: 'Extra living space',
+    text: 'Room for grown kids, guests, or a growing family, without moving or renovating. A private space with its own front door.',
+    chips: ['ADUs', 'Guest houses', 'Backyard studios'],
     img: 'assets/use-backyard.webp', alt: 'A KIKFIA guest house in a green backyard, a stone path leading to its porch',
-    cta: 'Plan my living space', need: 'guest', goal: 'living'
+    cta: 'Plan my living space', form: ['home', 'living']
   },
   rental: {
-    title: 'Rental income',
+    need: 'You want your land to earn', title: 'Rental income',
     text: 'Turn unused land into a space guests want to book. Designed to photograph well, rent well, and stay easy to look after.',
-    chips: ['Airbnb cabins', 'Guest houses', 'Vacation units'],
+    chips: ['Airbnb cabins', 'Backyard rentals', 'Vacation units'],
     img: 'assets/use-rental.webp', alt: 'A KIKFIA cabin among tall pines, string lights glowing on its porch',
-    cta: 'Plan my rental', need: 'rental', goal: 'rental'
+    cta: 'Plan my rental', form: ['rental', 'rental']
   },
   office: {
-    title: 'A home office',
+    need: 'You need somewhere to focus', title: 'Home office',
     text: 'A quiet place to work, thirty steps from your kitchen. No commute, no interruptions, and a clear line between work and home.',
     chips: ['Office pods', 'Garden offices', 'Remote work studios'],
     img: 'assets/inside.jpg', alt: 'Inside a KIKFIA space: a bright room with a wood ceiling and glass doors to the meadow',
-    cta: 'Plan my office', need: 'office', goal: 'work'
+    cta: 'Plan my office', form: ['office', 'work']
   },
-  business: {
-    title: 'Business space',
-    text: 'Offices, storage, and commercial units that go up fast and grow with your business. Ready for staff, stock, or customers.',
-    chips: ['Portable offices', 'Warehouses', 'Commercial units'],
-    img: null, alt: '',
-    cta: 'Plan my business space', need: 'business', goal: 'business'
+  retreat: {
+    need: 'You want a place to escape', title: 'Vacation retreat',
+    text: 'A cabin by the lake, in the woods, or on your own land. A place to slow down, and to rent out when you are not there.',
+    chips: ['Luxury cabins', 'Lake cabins', 'Weekend getaways'],
+    img: 'assets/use-lake.webp', alt: 'A KIKFIA cabin on a grassy rise beside a calm lake at sunset',
+    cta: 'Plan my retreat', form: ['retreat', 'retreat']
+  },
+  storage: {
+    need: 'You need secure storage', title: 'Storage or warehouse',
+    text: 'Weather-tight space for equipment, inventory, or everything the garage can no longer hold. Quick to install and ready to move when you are.',
+    chips: ['Portable warehouses', 'Storage units', 'Container structures'],
+    img: null, illo: 'storage', alt: '',
+    cta: 'Plan my storage space', form: ['storage', 'storage']
+  },
+  commercial: {
+    need: 'Your business needs space', title: 'Commercial space',
+    text: 'Offices, studios, and retail units for your business, ready for staff and customers without a long lease or a long build.',
+    chips: ['Portable offices', 'Retail units', 'Commercial structures'],
+    img: null, illo: 'commercial', alt: '',
+    cta: 'Plan my commercial space', form: ['commercial', 'business']
+  },
+  parents: {
+    need: 'You want your parents close', title: 'Housing for parents',
+    text: 'Keep aging parents close and independent: a comfortable, accessible home in your backyard, with its own front door.',
+    chips: ['Granny flats', 'Accessible ADUs', 'Guest houses'],
+    img: 'assets/hero-ending.jpg', alt: 'A KIKFIA cottage with a covered porch and warm light in the windows',
+    cta: 'Plan a home for my parents', form: ['parents', 'parents']
   },
   custom: {
-    title: 'Something custom',
-    text: 'A studio, a salon, a cabin on the lake, or something nobody has built yet. Bring the idea and we design it around you.',
+    need: 'You have an idea nobody sells', title: 'Fully custom project',
+    text: 'A studio, a salon, a clinic, or something nobody has built yet. Bring the idea and we design it around you.',
     chips: ['Fully customized portable structures'],
-    img: 'assets/use-lake.webp', alt: 'A custom KIKFIA cabin on a grassy rise beside a calm lake at sunset',
-    cta: 'Plan my custom project', need: 'custom', goal: 'other'
+    img: 'assets/hero-poster.jpg', alt: 'A valley at golden hour with a KIKFIA cabin among the pines',
+    cta: 'Plan my custom project', form: ['custom', 'other']
   }
 };
 const tabs = $$('.goal-tab');
 const gPanel = $('#goalPanel');
 const gPh = $('.goal-ph');
 const gImg = $('#gImg');
+const gNeed = $('#gNeed');
 const gTitle = $('#gTitle');
 const gText = $('#gText');
 const gChips = $('#gChips');
@@ -1515,9 +1861,12 @@ function setGoal(key, focus) {
       gImg.alt = g.alt;
       gImg.classList.remove('missing');
       gPh.classList.remove('illo');
+      gPh.removeAttribute('data-illo');
     } else {
       gPh.classList.add('illo');
+      gPh.dataset.illo = g.illo;
     }
+    gNeed.textContent = g.need;
     gTitle.textContent = g.title;
     gText.textContent = g.text;
     gChips.replaceChildren(...g.chips.map(c => { const li = document.createElement('li'); li.textContent = c; return li; }));
@@ -1529,24 +1878,102 @@ tabs.forEach((t, i) => {
   t.addEventListener('click', () => setGoal(t.dataset.goal));
   t.addEventListener('keydown', e => {
     let j = -1;
-    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') j = (i + 1) % tabs.length;
-    else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') j = (i + 1) % tabs.length;
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') j = (i - 1 + tabs.length) % tabs.length;
     else if (e.key === 'Home') j = 0;
     else if (e.key === 'End') j = tabs.length - 1;
     if (j >= 0) { e.preventDefault(); setGoal(tabs[j].dataset.goal, true); }
   });
 });
 gCta.addEventListener('click', () => {
-  const g = GOALS[goalNow];
-  setField('f-need', g.need);
-  setField('f-goal', g.goal);
+  const [need, goal] = GOALS[goalNow].form;
+  setField('f-need', need);
+  setField('f-goal', goal);
 });
-// warm the other goal photos once the finder is near, so a tab switch never flashes empty
+// warm the other goal photos once the panel is near, so a switch never flashes empty
 new IntersectionObserver((es, ob) => {
   if (!es[0].isIntersecting) return;
   Object.values(GOALS).forEach(g => { if (g.img) new Image().src = g.img; });
   ob.disconnect();
 }, { rootMargin: '600px 0px' }).observe($('#solutions'));
+
+/* ---------- project stories: chapters now, videos when they arrive ---------- */
+// add a story's video by filling `video` (and `poster`), and give each chapter its start time in seconds
+const STORIES = {
+  family: { label: 'Story video placeholder: from empty land to family home', video: '', poster: '',
+    chapters: [['Empty land', 0], ['Consultation', 0], ['Design', 0], ['Construction', 0], ['Finished project', 0], ['Happy family', 0]] },
+  rental: { label: 'Story video placeholder: from idle land to rental income', video: '', poster: '',
+    chapters: [['Need rental income', 0], ['Custom cabin', 0], ['Guests arrive', 0], ['Income generated', 0]] },
+  office: { label: 'Story video placeholder: from kitchen table to office pod', video: '', poster: '',
+    chapters: [['Workspace problem', 0], ['Office pod installed', 0], ['Better work days', 0]] }
+};
+const storyFrame = $('#storyFrame');
+const storyChapters = $('#storyChapters');
+const storyTabs = $$('.story-tab');
+let storyVideo = null, chapterNow = -1;
+function markChapter(i) {
+  if (i === chapterNow) return;
+  chapterNow = i;
+  [...storyChapters.children].forEach((li, n) => li.classList.toggle('on', n === i));
+}
+function renderStory(key) {
+  const st = STORIES[key];
+  storyTabs.forEach(t => {
+    const on = t.dataset.story === key;
+    t.setAttribute('aria-selected', String(on));
+    t.tabIndex = on ? 0 : -1;
+  });
+  storyChapters.replaceChildren(...st.chapters.map(([name]) => {
+    const li = document.createElement('li');
+    const dot = document.createElement('span');
+    dot.className = 'c-dot';
+    li.append(dot, name);
+    return li;
+  }));
+  chapterNow = -1;
+  markChapter(0);
+  if (!storyFrame) return;
+  const play = $('.story-play', storyFrame);
+  if (storyVideo) { storyVideo.remove(); storyVideo = null; }
+  storyFrame.classList.remove('playing');
+  if (st.video) {
+    storyVideo = document.createElement('video');
+    storyVideo.src = st.video;
+    if (st.poster) storyVideo.poster = st.poster;
+    storyVideo.preload = 'metadata';
+    storyVideo.playsInline = true;
+    storyVideo.setAttribute('aria-label', st.label.replace('Story video placeholder: ', 'Story video: '));
+    storyVideo.addEventListener('timeupdate', () => {
+      let i = 0;
+      st.chapters.forEach(([, t], n) => { if (storyVideo.currentTime >= t) i = n; });
+      markChapter(i);
+    });
+    storyVideo.addEventListener('pause', () => storyFrame.classList.remove('playing'));
+    storyVideo.addEventListener('play', () => storyFrame.classList.add('playing'));
+    storyVideo.addEventListener('click', () => { storyVideo.paused ? storyVideo.play() : storyVideo.pause(); });
+    storyFrame.prepend(storyVideo);
+    storyFrame.classList.remove('empty');
+    play.disabled = false;
+  } else {
+    storyFrame.dataset.label = st.label;
+    storyFrame.classList.add('empty');
+    play.disabled = true;
+  }
+}
+if (storyChapters) {
+  storyTabs.forEach(t => t.addEventListener('click', () => renderStory(t.dataset.story)));
+  if (storyFrame) $('.story-play', storyFrame).addEventListener('click', () => { if (storyVideo) storyVideo.play().catch(() => {}); });
+  renderStory('family');
+}
+
+/* ---------- before and after: drag to compare ---------- */
+const baRange = $('#baRange');
+if (baRange) {
+  const ba = baRange.closest('.ba');
+  const updBa = () => ba.style.setProperty('--pos', baRange.value + '%');
+  baRange.addEventListener('input', updBa);
+  updBa();
+}
 
 /* ---------- what we build: every item starts a consultation ---------- */
 $$('.index a[data-need]').forEach(a => a.addEventListener('click', () => {
