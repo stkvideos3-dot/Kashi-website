@@ -48,7 +48,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{overflow-x:hidden;overflow-x:clip;background:var(--canvas);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;overflow-x:hidden;overflow-x:clip;background:transparent;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;animation:pagein .9s var(--ease-out) both}
+body{position:relative;z-index:0;margin:0;overflow-x:hidden;overflow-x:clip;background:var(--canvas);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;animation:pagein .9s var(--ease-out) both}
 @keyframes pagein{from{opacity:0}to{opacity:1}}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
@@ -76,8 +76,8 @@ main:focus{outline:none}
 body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
 
 /* ---------- nav ---------- */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px var(--gx);color:var(--on-video);transition:background-color .5s var(--ease-out),color .5s var(--ease-out),box-shadow .5s var(--ease-out),padding .5s var(--ease-out)}
-.nav.solid{background:rgba(237,240,232,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--hair);padding-top:12px;padding-bottom:12px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:calc(16px + env(safe-area-inset-top,0px)) var(--gx) 16px;color:var(--on-video);transition:background-color .5s var(--ease-out),color .5s var(--ease-out),box-shadow .5s var(--ease-out),padding .5s var(--ease-out)}
+.nav.solid{background:rgba(237,240,232,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--ink);box-shadow:0 1px 0 var(--hair);padding-top:calc(12px + env(safe-area-inset-top,0px));padding-bottom:12px}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:1.18rem;letter-spacing:.06em}
 .brand svg{width:30px;height:30px;flex:none}
 .nav:not(.solid) .brand{text-shadow:0 1px 10px rgba(8,12,10,.5)}
@@ -1065,7 +1065,23 @@ async function loadHeroBlob() {
   video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
   video.load();
 }
+// the Blob path failed (blocked fetch, stalled stream, or blob: media refused): try the plain URL once
+let directTried = false;
+function tryDirect() {
+  directTried = true;
+  seekBusy = false;
+  pendingTime = null;
+  ring.classList.add('done');
+  video.addEventListener('canplay', () => {
+    requestSeek(heroProgress() * video.duration);
+    stage.classList.add('video-ready');
+  }, { once: true });
+  video.preload = 'auto';
+  video.src = VIDEO_URL;
+  video.load();
+}
 function failVideo() {
+  if (!directTried && location.protocol !== 'file:') { tryDirect(); return; }
   ring.classList.add('done');
   stage.classList.remove('video-ready');
   stage.classList.add('video-failed');
