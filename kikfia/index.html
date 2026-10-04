@@ -254,7 +254,6 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 html:not(.show-placeholders) .slot.empty::before{content:none}
 .ph-tag{position:absolute;top:12px;right:12px;z-index:2;padding:4px 8px;border-radius:6px;background:var(--accent);font-family:var(--f-mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
 .fill{font-style:italic;color:var(--ink-2)}
-[data-placeholder].review-card,[data-placeholder].case,[data-placeholder].rev-summary{border:1.5px dashed var(--line)}
 
 /* why homeowners choose KIKFIA: consultation photo beside five outcomes */
 .why-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,64px);align-items:stretch;margin-top:52px}
@@ -285,11 +284,8 @@ html:not(.show-placeholders) .slot.empty::before{content:none}
 .g-title{font-family:var(--f-display);font-stretch:110%;font-weight:700;font-size:1rem;line-height:1.2}
 .goal-panel{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);margin-top:14px;border-radius:var(--radius);overflow:hidden;background:var(--panel-2);box-shadow:0 1px 0 var(--hair),0 30px 60px -40px rgba(28,37,32,.5)}
 .goal-ph{min-height:360px}
-.goal-illo{position:absolute;inset:0;width:100%;height:100%;display:none}
-.goal-ph.illo img{display:none}
-.goal-ph[data-illo="storage"] .illo-storage,.goal-ph[data-illo="commercial"] .illo-commercial{display:block}
-.goal-ph img,.goal-illo,.goal-body{transition:opacity .25s var(--ease-out)}
-.goal-panel.swap .goal-ph img,.goal-panel.swap .goal-illo,.goal-panel.swap .goal-body{opacity:0}
+.goal-ph img,.goal-body{transition:opacity .25s var(--ease-out)}
+.goal-panel.swap .goal-ph img,.goal-panel.swap .goal-body{opacity:0}
 .goal-body{display:flex;flex-direction:column;justify-content:center;padding:34px 36px}
 .goal-body .g-need{color:var(--focus)}
 .goal-body h3{margin-top:10px;font-size:1.7rem;font-stretch:112%}
@@ -324,11 +320,16 @@ html:not(.show-placeholders) .slot.empty{display:none}
 .prob-more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-top:32px}
 .prob-more p{font-family:var(--f-display);font-stretch:110%;font-weight:600;font-size:1.2rem}
 
-/* project stories: video chapters, before and after, case studies */
-.story-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:44px}
-.story-tab{padding:10px 18px;border:0;border-radius:999px;background:var(--panel);color:var(--ink);font-weight:600;cursor:pointer;transition:background-color .35s var(--ease-out),color .35s var(--ease-out)}
-.story-tab[aria-selected="true"]{background:var(--ink);color:var(--canvas)}
-.story-frame{position:relative;margin-top:16px;aspect-ratio:16/9;border-radius:var(--radius)}
+/* the transformation: one film with chapters, before and after, case studies */
+.story-frame{position:relative;margin-top:44px;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:#1a1f1d}
+.story-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer}
+.story-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;margin-top:18px}
+.story-foot .chapters{margin:0}
+.story-note{color:var(--ink-2);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase}
+.ba-copy .story-note{margin-top:18px}
+.chapters button{display:inline-flex;align-items:center;gap:8px;padding:6px 2px;border:0;background:none;color:inherit;font:inherit;cursor:pointer}
+.chapters button:hover{color:var(--ink)}
+.ba-layer img{width:100%;height:100%;object-fit:cover;display:block}
 .story-play{position:absolute;left:50%;top:50%;z-index:2;display:grid;place-items:center;width:72px;height:72px;margin:-36px 0 0 -36px;border:0;border-radius:50%;background:var(--accent);color:var(--ink);cursor:pointer;box-shadow:0 14px 30px -12px rgba(140,90,10,.7);transition:transform .35s var(--ease-out)}
 .story-play:hover{transform:scale(1.05)}
 .story-play svg{width:26px;height:26px}
@@ -358,6 +359,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
 .ba-label.a{right:14px}
 .ba-copy h3{margin-top:10px;font-size:clamp(1.5rem,2.4vw,2rem);font-stretch:112%}
 .ba-copy p:not(.mono){margin-top:12px;max-width:44ch;color:var(--ink-2)}
+.ba-copy h3+p{margin-top:14px}
 .cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:64px}
 .case{position:relative;display:flex;flex-direction:column;min-width:0;border-radius:var(--radius);overflow:hidden;background:var(--panel-2);box-shadow:0 24px 50px -40px rgba(28,37,32,.45)}
 .case .slot{aspect-ratio:16/10}
@@ -395,19 +397,14 @@ html:not(.show-placeholders) .slot.empty{display:none}
 .fm-close{position:absolute;top:12px;right:12px;z-index:2;display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:50%;background:rgba(246,243,234,.92);color:var(--ink);cursor:pointer}
 .fm-close svg{width:18px;height:18px}
 
-/* client reviews */
-.rev-summary{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:40px;padding:18px 22px;border-radius:14px;background:var(--panel-2)}
-.stars{display:inline-flex;gap:3px}
-.stars svg{width:18px;height:18px;fill:var(--accent)}
-.rev-summary b{font-family:var(--f-display);font-stretch:110%;font-size:1.2rem}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
-.review-card{position:relative;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-width:0;padding:30px 26px 26px;border-radius:var(--radius);background:var(--panel-2);box-shadow:0 24px 50px -40px rgba(28,37,32,.45)}
-.review-card blockquote{margin:0;font-family:var(--f-display);font-stretch:106%;font-weight:600;font-size:1.1rem;line-height:1.45}
-.rc-who{display:flex;align-items:center;gap:12px}
-.rc-ava{flex:none;width:46px;height:46px;border-radius:50%}
-.rc-ava.slot.empty{padding:0}
-.rc-who b{display:block}
-.rc-who span{font-size:.9rem;color:var(--ink-2)}
+/* no surprises, no guesswork: six trust cards */
+.clarity-intro p:not(.lede){margin-top:14px;max-width:52ch;color:var(--ink-2)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:52px 0 0;padding:0;list-style:none}
+.trust{min-width:0;padding:28px 26px 30px;border-radius:var(--radius);background:var(--panel-2);box-shadow:0 1px 0 var(--hair),0 24px 50px -40px rgba(28,37,32,.45)}
+.trust h3{margin-top:18px;font-size:1.2rem;font-stretch:112%}
+.trust p{margin-top:8px;color:var(--ink-2)}
+.clarity-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;margin-top:28px;padding:22px 26px;border-radius:var(--radius);box-shadow:inset 0 0 0 1px var(--line)}
+.clarity-cta p{font-weight:600;font-size:1.06rem}
 
 /* what we build: one index of every structure */
 .build-head{max-width:820px}
@@ -492,20 +489,19 @@ html:not(.show-placeholders) .slot.empty{display:none}
 /* 04: the one interactive moment */
 .hold{padding-top:clamp(40px,6vw,80px)}
 .hold-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,80px);align-items:center;padding:clamp(28px,4vw,56px);border-radius:28px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--hair)}
-.scene{position:relative;aspect-ratio:6/5;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#cfd9d6 0%,#efdcb4 70%,#e8d3a4 100%)}
-.scene svg{position:absolute;inset:0;width:100%;height:100%}
-.sc-house{transform:translateY(calc((1 - var(--hp,0))*-150px))}
-.sc-sway{transform-box:fill-box;transform-origin:50% 0;transform:rotate(calc(var(--sway,0deg)*(1 - var(--hp,0))))}
-.live .sc-sway{animation:sway 4.2s ease-in-out infinite alternate;animation-delay:-1.4s}
-@property --sway{syntax:'<angle>';inherits:false;initial-value:0deg}
-@keyframes sway{from{--sway:-1.6deg}to{--sway:1.6deg}}
-.sc-cable{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(calc((20 + 150*var(--hp,0))/170))}
-.sc-shadow{transform-box:fill-box;transform-origin:50% 50%;opacity:calc(.15 + .55*var(--hp,0));transform:scaleX(calc(.45 + .55*var(--hp,0)))}
-.sc-pad-glow{opacity:calc(var(--hp,0)*.6);transition:opacity .3s}
-.landed .sc-pad-glow{opacity:1;animation:padpulse 1.4s var(--ease-out) 1 both}
-@keyframes padpulse{0%{opacity:1}100%{opacity:.35}}
-.sc-lit{opacity:0;transition:opacity .8s var(--ease-out) .2s}
-.landed .sc-lit{opacity:1}
+.scene{position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:#3a3f3c}
+.scene img,.scene video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sc-poster{object-position:88% 50%;transition:opacity .5s var(--ease-out)}
+.sc-video{opacity:0;transition:opacity .5s var(--ease-out)}
+.scene.film .sc-video{opacity:1}
+.scene.film .sc-poster{opacity:0}
+.sc-note{position:absolute;left:12px;bottom:12px;z-index:2;padding:4px 8px;border-radius:6px;background:rgba(28,37,32,.68);color:var(--on-video);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase}
+.watch-row{margin-top:14px}
+.watch-link{display:inline-flex;align-items:center;gap:10px;padding:8px 2px;border:0;background:none;color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+.watch-link .mono{color:var(--ink-2);font-weight:400;font-size:.8rem}
+.wl-ico{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--panel-2);box-shadow:inset 0 0 0 1px var(--line)}
+.wl-ico svg{width:12px;height:12px}
+.watch-link:hover .wl-ico{background:var(--accent);box-shadow:none}
 .hold-copy .lede{max-width:40ch}
 .hold-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:260px;margin-top:28px;padding:16px 26px;border:0;border-radius:999px;overflow:hidden;background:var(--ink);color:var(--canvas);font-weight:600;font-size:1rem;cursor:pointer;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;transition:transform .3s var(--ease-out),background-color .5s var(--ease-out)}
 .hold-btn.pressing{transform:scale(.98)}
@@ -639,7 +635,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
   .goal-panel,.ba-row{grid-template-columns:1fr}
   .goal-ph{min-height:0;aspect-ratio:16/10}
   .prob{grid-template-columns:150px minmax(0,1fr) 40px minmax(0,1fr);gap:20px}
-  .cases,.reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cases,.trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:820px){
   .goal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -649,11 +645,10 @@ html:not(.show-placeholders) .slot.empty{display:none}
   .prob:hover .p-arrow{transform:rotate(90deg) translateX(4px)}
 }
 @media (max-width:560px){
-  .why-grid,.cases,.reviews-grid{grid-template-columns:1fr}
+  .why-grid,.cases,.trust-grid{grid-template-columns:1fr}
   .goal-tab{gap:10px;padding:12px}
   .g-ico{width:36px;height:36px}
   .goal-body{padding:24px 22px 26px}
-  .story-tab{flex:1 1 100%;text-align:left}
 }
 
 /* ---------- reduced motion: final states, nothing moves ---------- */
@@ -715,7 +710,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
   <div class="rl-way" data-for="customize"><span>Customize</span></div>
   <div class="rl-way" data-for="route"><span>How it works</span></div>
   <div class="rl-way" data-for="costs"><span>Costs</span></div>
-  <div class="rl-way" data-for="reviews"><span>Reviews</span></div>
+  <div class="rl-way" data-for="clarity"><span>No surprises</span></div>
   <div class="rl-way" data-for="faq"><span>Questions</span></div>
   <div class="rl-way" data-for="life"><span>Life</span></div>
   <div class="rl-way" data-for="consultation"><span>Consultation</span></div>
@@ -818,37 +813,6 @@ html:not(.show-placeholders) .slot.empty{display:none}
     <div class="goal-panel" id="goalPanel" role="tabpanel" aria-labelledby="tab-living" tabindex="0">
       <figure class="ph goal-ph">
         <img id="gImg" src="assets/goal-living.jpg" alt="Parents relaxing on the deck of their KIKFIA cabin while the kids play with the dog on the lawn" width="1600" height="892" loading="lazy" decoding="async">
-        <svg class="goal-illo illo-storage" viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="640" height="420" fill="#DDE3DA"/>
-          <rect width="640" height="300" fill="#EADCB8" opacity=".55"/>
-          <circle cx="520" cy="104" r="40" fill="#F4D49A" opacity=".85"/>
-          <path d="M0 300 C 160 288, 320 296, 640 286 V420 H0z" fill="#9FAF86"/>
-          <path d="M0 330 H640 V420 H0z" fill="#BDB7A8"/>
-          <path d="M120 172 L 300 118 L 480 172 Z" fill="#3B4244"/>
-          <rect x="134" y="170" width="332" height="160" fill="#2E3436"/>
-          <rect x="176" y="214" width="150" height="116" fill="#4A5250"/>
-          <path d="M176 228h150M176 242h150M176 256h150M176 270h150M176 284h150M176 298h150M176 312h150" stroke="#2E3436" stroke-width="2"/>
-          <rect x="350" y="214" width="42" height="116" fill="#B98B5A"/>
-          <rect x="404" y="214" width="46" height="40" fill="#F2C77E"/>
-          <rect x="196" y="300" width="34" height="30" fill="#C9A26F"/><rect x="236" y="306" width="28" height="24" fill="#B98B5A"/>
-          <path d="M40 304 l9 -30 l9 30z M580 296 l9 -30 l9 30z" fill="#5E7052"/>
-        </svg>
-        <svg class="goal-illo illo-commercial" viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="640" height="420" fill="#DDE3DA"/>
-          <rect width="640" height="300" fill="#EADCB8" opacity=".55"/>
-          <circle cx="120" cy="100" r="38" fill="#F4D49A" opacity=".85"/>
-          <path d="M0 296 C 160 284, 320 292, 640 282 V420 H0z" fill="#9FAF86"/>
-          <path d="M0 330 H640 V420 H0z" fill="#BDB7A8"/>
-          <rect x="140" y="166" width="380" height="12" fill="#3B4244"/>
-          <rect x="140" y="176" width="380" height="154" fill="#2E3436"/>
-          <path d="M150 178 h360 l-14 26 H164z" fill="#B98B5A"/>
-          <rect x="170" y="216" width="150" height="86" rx="2" fill="#F2C77E"/>
-          <path d="M245 216v86" stroke="#2E3436" stroke-width="3"/>
-          <rect x="340" y="216" width="56" height="114" fill="#4A5250"/>
-          <rect x="348" y="226" width="40" height="64" fill="#F2C77E" opacity=".85"/>
-          <rect x="414" y="216" width="88" height="86" rx="2" fill="#F2C77E"/>
-          <path d="M40 300 l9 -30 l9 30z M590 292 l9 -30 l9 30z" fill="#5E7052"/>
-        </svg>
       </figure>
       <div class="goal-body">
         <p class="mono g-need" id="gNeed">You need more room</p>
@@ -907,71 +871,40 @@ html:not(.show-placeholders) .slot.empty{display:none}
   </div>
 </section>
 
-<section class="sec stories" id="stories" data-io data-proof-section>
+<section class="sec stories" id="stories" data-io>
   <div class="wrap">
     <header class="split-head">
       <div>
-        <p class="kick mono rv">Project stories</p>
+        <p class="kick mono rv">The transformation</p>
         <h2 class="rv">See what changed for them.</h2>
       </div>
-      <p class="lede rv">Every project starts with a problem. These stories show where it ended up.</p>
+      <p class="lede rv">A crowded house and a backyard nobody used. Watch what one well-planned space changes for the whole family.</p>
     </header>
-    <div class="story" data-proof-group>
-      <div class="story-tabs" role="tablist" aria-label="Choose a story">
-        <button class="story-tab" type="button" role="tab" aria-selected="true" data-story="family">From empty land to family home</button>
-        <button class="story-tab" type="button" role="tab" aria-selected="false" data-story="rental" tabindex="-1">From idle land to rental income</button>
-        <button class="story-tab" type="button" role="tab" aria-selected="false" data-story="office" tabindex="-1">From kitchen table to office pod</button>
+    <div class="story">
+      <div class="story-frame" id="storyFrame">
+        <button class="story-play" type="button" aria-label="Play the film: from a crowded house to a backyard ADU"><svg viewBox="0 0 24 24"><path d="M8 5.5v13L18.5 12z" fill="currentColor"/></svg></button>
       </div>
-      <div class="story-frame slot empty" id="storyFrame" data-label="Story video placeholder: from empty land to family home" data-placeholder data-proof-item>
-        <span class="ph-tag">Placeholder</span>
-        <button class="story-play" type="button" aria-label="Play the story video" disabled><svg viewBox="0 0 24 24"><path d="M8 5.5v13L18.5 12z" fill="currentColor"/></svg></button>
+      <div class="story-foot">
+        <ol class="chapters" id="storyChapters" aria-label="Film chapters"></ol>
+        <p class="mono story-note">Dramatized for illustration</p>
       </div>
-      <ol class="chapters" id="storyChapters" aria-label="Story chapters"><li class="on"><span class="c-dot"></span>Empty land</li><li><span class="c-dot"></span>Consultation</li><li><span class="c-dot"></span>Design</li><li><span class="c-dot"></span>Construction</li><li><span class="c-dot"></span>Finished project</li><li><span class="c-dot"></span>Happy family</li></ol>
     </div>
-    <div class="ba-row" data-proof-group>
-      <div class="ba" data-placeholder data-proof-item>
-        <span class="ph-tag">Placeholder</span>
-        <figure class="ba-layer ba-before slot empty" data-label="Before photo: the empty backyard"></figure>
-        <figure class="ba-layer ba-after slot empty" data-label="After photo: the finished guest house"></figure>
-        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" id="baRange">
+    <div class="ba-row">
+      <div class="ba">
+        <figure class="ba-layer ba-before"><img src="assets/ba-before.jpg" alt="Before: a patchy, empty backyard behind a two-story house" width="745" height="559" loading="lazy" decoding="async"></figure>
+        <figure class="ba-layer ba-after"><img src="assets/ba-after.jpg" alt="After: the same backyard with a modern ADU, a patio, a garden, and the family enjoying it" width="745" height="559" loading="lazy" decoding="async"></figure>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the backyard before and after" id="baRange">
         <span class="ba-handle" aria-hidden="true"></span>
         <span class="ba-label b" aria-hidden="true">Before</span>
         <span class="ba-label a" aria-hidden="true">After</span>
       </div>
-      <div class="ba-copy" data-placeholder data-proof-item>
+      <div class="ba-copy">
         <p class="kick mono">Before and after</p>
-        <h3 class="fill">[Project title, for example: From empty backyard to guest house]</h3>
-        <p class="fill">[Two sentences: what the customer needed, and what the space does for them now.]</p>
+        <h3>From unused lawn to everyday living space.</h3>
+        <p>Same yard, same angle. On one side, grass nobody walks on. On the other, a backyard ADU with a patio, a garden, and room for the whole family to spread out.</p>
+        <p>Drag the handle to see the difference.</p>
+        <p class="mono story-note">Illustration</p>
       </div>
-    </div>
-    <div class="cases" data-proof-group>
-      <article class="case" data-placeholder data-proof-item>
-        <span class="ph-tag">Placeholder</span>
-        <figure class="slot empty" data-label="Lifestyle photo of the finished project with the owners"></figure>
-        <div class="case-body">
-          <div class="case-meta"><span>Rental income</span><span class="fill">[City, State]</span></div>
-          <h3 class="fill">[Case study title]</h3>
-          <dl><dt>Problem</dt><dd class="fill">[What wasn't working]</dd><dt>Solution</dt><dd class="fill">[What KIKFIA designed and built]</dd><dt>Result</dt><dd class="fill">[The outcome, in the owner's words]</dd></dl>
-        </div>
-      </article>
-      <article class="case" data-placeholder data-proof-item>
-        <span class="ph-tag">Placeholder</span>
-        <figure class="slot empty" data-label="Lifestyle photo of the finished project with the owners"></figure>
-        <div class="case-body">
-          <div class="case-meta"><span>Housing for parents</span><span class="fill">[City, State]</span></div>
-          <h3 class="fill">[Case study title]</h3>
-          <dl><dt>Problem</dt><dd class="fill">[What wasn't working]</dd><dt>Solution</dt><dd class="fill">[What KIKFIA designed and built]</dd><dt>Result</dt><dd class="fill">[The outcome, in the owner's words]</dd></dl>
-        </div>
-      </article>
-      <article class="case" data-placeholder data-proof-item>
-        <span class="ph-tag">Placeholder</span>
-        <figure class="slot empty" data-label="Lifestyle photo of the finished project with the owners"></figure>
-        <div class="case-body">
-          <div class="case-meta"><span>Home office</span><span class="fill">[City, State]</span></div>
-          <h3 class="fill">[Case study title]</h3>
-          <dl><dt>Problem</dt><dd class="fill">[What wasn't working]</dd><dt>Solution</dt><dd class="fill">[What KIKFIA designed and built]</dd><dt>Result</dt><dd class="fill">[The outcome, in the owner's words]</dd></dl>
-        </div>
-      </article>
     </div>
   </div>
 </section>
@@ -1137,30 +1070,9 @@ html:not(.show-placeholders) .slot.empty{display:none}
   <div class="wrap">
     <div class="hold-grid">
       <div class="scene" aria-hidden="true">
-        <svg viewBox="0 0 480 400" preserveAspectRatio="xMidYMid slice">
-          <circle cx="380" cy="120" r="46" fill="#F4D49A" opacity=".75"/>
-          <path d="M0 300 C 90 280, 170 292, 250 284 S 400 276, 480 288 V400 H0z" fill="#9FAF86"/>
-          <path d="M0 322 C 120 310, 260 318, 480 308 V400 H0z" fill="#879A70"/>
-          <path d="M30 300 l8 -26 l8 26z M52 302 l10 -34 l10 34z M412 292 l9 -30 l9 30z M436 294 l7 -22 l7 22z" fill="#5E7052"/>
-          <rect x="0" y="22" width="480" height="8" rx="2" fill="#2A2F2E"/>
-          <path d="M40 30 L 70 22 M 100 30 L 130 22 M 160 30 L 190 22 M 220 30 L 250 22 M 280 30 L 310 22 M 340 30 L 370 22 M 400 30 L 430 22" stroke="#4A5250" stroke-width="2"/>
-          <rect x="246" y="30" width="28" height="12" rx="2" fill="#2A2F2E"/>
-          <ellipse class="sc-pad-glow" cx="260" cy="322" rx="132" ry="14" fill="#E3A33B" opacity="0"/>
-          <rect x="140" y="314" width="240" height="12" rx="3" fill="#B9B3A4"/>
-          <ellipse class="sc-shadow" cx="260" cy="320" rx="118" ry="7" fill="#1C2520"/>
-          <rect class="sc-cable" x="259" y="40" width="2" height="170" fill="#2A2F2E"/>
-          <g class="sc-house">
-            <g class="sc-sway">
-              <path d="M260 196 L 210 210 M260 196 L 310 210" stroke="#2A2F2E" stroke-width="2"/>
-              <rect x="150" y="210" width="220" height="104" rx="4" fill="#2E3436"/>
-              <rect x="150" y="210" width="220" height="10" fill="#3B4244"/>
-              <rect x="164" y="232" width="50" height="82" fill="#B98B5A"/>
-              <rect x="226" y="232" width="128" height="70" rx="2" fill="#7B8B8E"/>
-              <rect class="sc-lit" x="226" y="232" width="128" height="70" rx="2" fill="#F2C77E"/>
-              <line x1="290" y1="232" x2="290" y2="302" stroke="#2E3436" stroke-width="3"/>
-            </g>
-          </g>
-        </svg>
+        <img class="sc-poster" src="assets/delivery-day.jpg" alt="" width="1600" height="893" loading="lazy" decoding="async">
+        <video class="sc-video" muted playsinline disablepictureinpicture preload="none" tabindex="-1"></video>
+        <span class="sc-note mono">Dramatized for illustration</span>
       </div>
       <div class="hold-copy">
         <p class="kick mono rv">Delivery day</p>
@@ -1168,6 +1080,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
         <p class="lede rv" id="holdHelp">Press and hold the button to land your home on its pad.</p>
         <button class="hold-btn" id="holdBtn" type="button" aria-describedby="holdHelp"><span class="hb-fill" aria-hidden="true"></span><span class="hb-label">Hold to set it down</span></button>
         <p class="sr" id="holdStatus" aria-live="polite"></p>
+        <p class="watch-row"><button class="watch-link" type="button" data-film="assets/film-delivery.mp4" data-poster="assets/delivery-day.jpg" data-title="Delivery day, from truck to foundation"><span class="wl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13L18.5 12z" fill="currentColor"/></svg></span>Watch the whole delivery<span class="mono"> 0:10</span></button></p>
         <h3 class="arrives-title">What arrives with it</h3>
         <ul class="arrives">
           <li>Insulated walls and roof</li>
@@ -1186,8 +1099,8 @@ html:not(.show-placeholders) .slot.empty{display:none}
   <div class="wrap costs-grid">
     <div class="costs-copy">
       <p class="kick mono rv">Costs in the open</p>
-      <h2 class="rv">Every cost, before you pay.</h2>
-      <p class="lede rv">No surprise fees. Your KIKFIA quote lists design, build, delivery, and installation up front, in writing.</p>
+      <h2 class="rv">The major costs, before you commit.</h2>
+      <p class="lede rv">Your KIKFIA quote lists design, build, delivery, and installation up front, in writing, along with the local items to plan for.</p>
     </div>
     <div class="manifest rv">
       <div class="mf-head mono"><span>Quote sheet</span><span>Sample layout</span></div>
@@ -1208,42 +1121,34 @@ html:not(.show-placeholders) .slot.empty{display:none}
           <li><span>Your city permit</span><span>We prepare plans</span></li>
         </ul>
       </div>
-      <p class="mf-total"><span>One price, in writing</span><span class="mono">Before any deposit</span></p>
+      <p class="mf-total"><span>A written quote</span><span class="mono">Before you commit</span></p>
     </div>
   </div>
 </section>
 
-<section class="sec reviews" id="reviews" data-io data-proof-section>
+<section class="sec clarity" id="clarity" data-io>
   <div class="wrap">
     <header class="split-head">
       <div>
-        <p class="kick mono rv">Client reviews</p>
-        <h2 class="rv">What our clients say.</h2>
+        <p class="kick mono rv">Clear from the start</p>
+        <h2 class="rv">No surprises. No guesswork.</h2>
       </div>
-      <p class="lede rv">Real words from people who now have the space they needed.</p>
+      <div class="clarity-intro rv">
+        <p class="lede">Many homeowners worry about hidden costs, unclear timelines, and unexpected project requirements.</p>
+        <p>At KIKFIA, we believe customers should understand the major project considerations before moving forward. Our goal is to help you make informed decisions with confidence.</p>
+      </div>
     </header>
-    <div class="rev-summary" data-placeholder data-proof-item>
-      <span class="ph-tag">Placeholder</span>
-      <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg></span>
-      <b class="fill">[Rating] on [Google or Facebook]</b>
-      <span class="fill">[Number] verified reviews</span>
-    </div>
-    <div class="reviews-grid" data-proof-group>
-      <figure class="review-card" data-placeholder data-proof-item>
-        <span class="ph-tag">Placeholder</span>
-        <blockquote class="fill">[Customer testimonial: one or two sentences about the problem they had and how their KIKFIA space solved it.]</blockquote>
-        <figcaption class="rc-who"><span class="rc-ava slot empty"></span><span><b class="fill">[Customer name]</b><span class="fill">[City, State] &middot; [Project type]</span></span></figcaption>
-      </figure>
-      <figure class="review-card" data-placeholder data-proof-item>
-        <span class="ph-tag">Placeholder</span>
-        <blockquote class="fill">[Customer testimonial: one or two sentences about the problem they had and how their KIKFIA space solved it.]</blockquote>
-        <figcaption class="rc-who"><span class="rc-ava slot empty"></span><span><b class="fill">[Customer name]</b><span class="fill">[City, State] &middot; [Project type]</span></span></figcaption>
-      </figure>
-      <figure class="review-card" data-placeholder data-proof-item>
-        <span class="ph-tag">Placeholder</span>
-        <blockquote class="fill">[Customer testimonial: one or two sentences about the problem they had and how their KIKFIA space solved it.]</blockquote>
-        <figcaption class="rc-who"><span class="rc-ava slot empty"></span><span><b class="fill">[Customer name]</b><span class="fill">[City, State] &middot; [Project type]</span></span></figcaption>
-      </figure>
+    <ul class="trust-grid">
+      <li class="trust rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path class="acc" d="M8.5 13l2.2 2.2 4.8-4.8"/></svg></span><h3>Transparent planning</h3><p>Understand major project costs and requirements before moving forward.</p></li>
+      <li class="trust rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v10H10l-5 4v-4H4z"/><path class="acc" d="M8 9.5h8M8 12.5h5"/></svg></span><h3>Clear communication</h3><p>Know what happens next at every stage of the process.</p></li>
+      <li class="trust rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h9M18 7h2M4 17h4M13 17h7"/><circle class="acc" cx="15.5" cy="7" r="2.2"/><circle class="acc" cx="10.5" cy="17" r="2.2"/></svg></span><h3>Customized around you</h3><p>Every project is designed around your goals, land, and needs.</p></li>
+      <li class="trust rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle class="acc" cx="7" cy="17.5" r="1.8"/><circle class="acc" cx="17" cy="17.5" r="1.8"/></svg></span><h3>Professional delivery</h3><p>Guidance from planning through installation.</p></li>
+      <li class="trust rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1.2-3.4 3.9-5.2 7-5.2s5.8 1.8 7 5.2"/><path class="acc" d="M6.5 9a5.5 5.5 0 0 1 11 0"/></svg></span><h3>Real support</h3><p>Talk with a team focused on helping you make the right decision.</p></li>
+      <li class="trust rv"><span class="r-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 18h5M10.5 21h3"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/><path class="acc" d="M10.5 11.5l1.5 1.5 1.5-1.5"/></svg></span><h3>Built around solutions</h3><p>We focus on solving space challenges, not simply selling structures.</p></li>
+    </ul>
+    <div class="clarity-cta rv">
+      <p>Have a question before you decide? Ask us anything. The consultation is free.</p>
+      <a class="btn dark" href="#consultation">Get My Free Consultation <span class="arr" aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -1315,7 +1220,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
       <figure class="contact-photo rv"><img src="assets/contact-team.jpg" alt="KIKFIA specialists reviewing floor plans and finishes with a couple during a consultation" width="1600" height="892" loading="lazy" decoding="async"></figure>
       <p class="kick mono rv">Free consultation</p>
       <h2 class="rv">Tell us about your project.</h2>
-      <p class="lede rv">Answer a few quick questions. We'll come back with a recommended design and an all-in price, and the consultation costs you nothing.</p>
+      <p class="lede rv">Answer a few quick questions. We'll come back with a recommended design and a clear estimate, and the consultation costs you nothing.</p>
       <ul class="promises mono rv">
         <li>Free consultation</li>
         <li>No pressure</li>
@@ -1383,12 +1288,12 @@ html:not(.show-placeholders) .slot.empty{display:none}
       </div>
       <p class="proj-sum" id="projSum" aria-live="polite"></p>
       <button class="btn" type="submit">Get My Free Consultation <span class="arr" aria-hidden="true">&rarr;</span></button>
-      <p class="micro">We reply with ideas and an all-in price. Nothing else.</p>
+      <p class="micro">We reply with ideas and a clear estimate. Nothing else.</p>
       <p class="err" role="alert">That didn't send. Please try again in a moment.</p>
       <div class="thanks" aria-live="polite">
         <svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="25" fill="#E3A33B"/><path d="M16 28l7 7 15-15" fill="none" stroke="#1C2520" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3 tabindex="-1">Thank you.</h3>
-        <p class="t-main">We'll come back with ideas and an all-in price for your project.</p>
+        <p class="t-main">We'll come back with ideas and a clear estimate for your project.</p>
         <p class="note"></p>
       </div>
     </form>
@@ -1408,11 +1313,11 @@ html:not(.show-placeholders) .slot.empty{display:none}
         <li><a href="#why">Why KIKFIA</a></li>
         <li><a href="#solutions">Solutions</a></li>
         <li><a href="#problems">Problems we solve</a></li>
-        <li><a href="#stories">Project stories</a></li>
+        <li><a href="#stories">Before and after</a></li>
         <li><a href="#build">What we build</a></li>
         <li><a href="#customize">Customize</a></li>
         <li><a href="#route">How it works</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#clarity">No surprises</a></li>
         <li><a href="#faq">Questions</a></li>
         <li><a href="#consultation">Free consultation</a></li>
       </ul>
@@ -1908,7 +1813,7 @@ const GOALS = {
     need: 'You need secure storage', title: 'Storage or warehouse',
     text: 'Weather-tight space for equipment, inventory, or everything the garage can no longer hold. Quick to install and ready to move when you are.',
     chips: ['Portable warehouses', 'Storage units', 'Container structures'],
-    img: null, illo: 'storage', alt: '',
+    img: 'assets/goal-storage.jpg', alt: 'A modern warehouse with a wide loading door, its owner checking plans on a tablet out front',
     cta: 'Plan my storage space', form: ['storage', 'storage']
   },
   commercial: {
@@ -1959,16 +1864,9 @@ function setGoal(key, focus) {
   gPanel.classList.add('swap');
   clearTimeout(goalT);
   goalT = setTimeout(() => {
-    if (g.img) {
-      gImg.src = g.img;
-      gImg.alt = g.alt;
-      gImg.classList.remove('missing');
-      gPh.classList.remove('illo');
-      gPh.removeAttribute('data-illo');
-    } else {
-      gPh.classList.add('illo');
-      gPh.dataset.illo = g.illo;
-    }
+    gImg.src = g.img;
+    gImg.alt = g.alt;
+    gImg.classList.remove('missing');
     gNeed.textContent = g.need;
     gTitle.textContent = g.title;
     gText.textContent = g.text;
@@ -1996,77 +1894,56 @@ gCta.addEventListener('click', () => {
 // warm the other goal photos once the panel is near, so a switch never flashes empty
 new IntersectionObserver((es, ob) => {
   if (!es[0].isIntersecting) return;
-  Object.values(GOALS).forEach(g => { if (g.img) new Image().src = g.img; });
+  Object.values(GOALS).forEach(g => { new Image().src = g.img; });
   ob.disconnect();
 }, { rootMargin: '600px 0px' }).observe($('#solutions'));
 
-/* ---------- project stories: chapters now, videos when they arrive ---------- */
-// add a story's video by filling `video` (and `poster`), and give each chapter its start time in seconds
-const STORIES = {
-  family: { label: 'Story video placeholder: from empty land to family home', video: '', poster: '',
-    chapters: [['Empty land', 0], ['Consultation', 0], ['Design', 0], ['Construction', 0], ['Finished project', 0], ['Happy family', 0]] },
-  rental: { label: 'Story video placeholder: from idle land to rental income', video: '', poster: '',
-    chapters: [['Need rental income', 0], ['Custom cabin', 0], ['Guests arrive', 0], ['Income generated', 0]] },
-  office: { label: 'Story video placeholder: from kitchen table to office pod', video: '', poster: '',
-    chapters: [['Workspace problem', 0], ['Office pod installed', 0], ['Better work days', 0]] }
+/* ---------- the transformation film: chapters you can jump to ---------- */
+const STORY = {
+  video: 'assets/film-transform.mp4', poster: 'assets/film-transform-poster.jpg',
+  label: 'Film: a crowded house, a backyard ADU being built, and the family enjoying it',
+  chapters: [['The problem', 0], ['The solution', 2.96], ['The better life', 5.96]]
 };
 const storyFrame = $('#storyFrame');
 const storyChapters = $('#storyChapters');
-const storyTabs = $$('.story-tab');
-let storyVideo = null, chapterNow = -1;
+let chapterNow = -1;
 function markChapter(i) {
   if (i === chapterNow) return;
   chapterNow = i;
-  [...storyChapters.children].forEach((li, n) => li.classList.toggle('on', n === i));
-}
-function renderStory(key) {
-  const st = STORIES[key];
-  storyTabs.forEach(t => {
-    const on = t.dataset.story === key;
-    t.setAttribute('aria-selected', String(on));
-    t.tabIndex = on ? 0 : -1;
+  [...storyChapters.children].forEach((li, n) => {
+    li.classList.toggle('on', n === i);
+    li.firstChild.setAttribute('aria-current', n === i ? 'step' : 'false');
   });
-  storyChapters.replaceChildren(...st.chapters.map(([name]) => {
+}
+if (storyFrame && storyChapters) {
+  const storyVideo = document.createElement('video');
+  storyVideo.src = STORY.video;
+  storyVideo.poster = STORY.poster;
+  storyVideo.preload = 'none';
+  storyVideo.playsInline = true;
+  storyVideo.setAttribute('aria-label', STORY.label);
+  storyVideo.addEventListener('timeupdate', () => {
+    let i = 0;
+    STORY.chapters.forEach(([, t], n) => { if (storyVideo.currentTime >= t) i = n; });
+    markChapter(i);
+  });
+  storyVideo.addEventListener('pause', () => storyFrame.classList.remove('playing'));
+  storyVideo.addEventListener('play', () => storyFrame.classList.add('playing'));
+  storyVideo.addEventListener('click', () => { storyVideo.paused ? storyVideo.play().catch(() => {}) : storyVideo.pause(); });
+  storyFrame.prepend(storyVideo);
+  storyChapters.replaceChildren(...STORY.chapters.map(([name, t]) => {
     const li = document.createElement('li');
+    const b = document.createElement('button');
+    b.type = 'button';
     const dot = document.createElement('span');
     dot.className = 'c-dot';
-    li.append(dot, name);
+    b.append(dot, name);
+    b.addEventListener('click', () => { storyVideo.currentTime = t; storyVideo.play().catch(() => {}); });
+    li.append(b);
     return li;
   }));
-  chapterNow = -1;
   markChapter(0);
-  if (!storyFrame) return;
-  const play = $('.story-play', storyFrame);
-  if (storyVideo) { storyVideo.remove(); storyVideo = null; }
-  storyFrame.classList.remove('playing');
-  if (st.video) {
-    storyVideo = document.createElement('video');
-    storyVideo.src = st.video;
-    if (st.poster) storyVideo.poster = st.poster;
-    storyVideo.preload = 'metadata';
-    storyVideo.playsInline = true;
-    storyVideo.setAttribute('aria-label', st.label.replace('Story video placeholder: ', 'Story video: '));
-    storyVideo.addEventListener('timeupdate', () => {
-      let i = 0;
-      st.chapters.forEach(([, t], n) => { if (storyVideo.currentTime >= t) i = n; });
-      markChapter(i);
-    });
-    storyVideo.addEventListener('pause', () => storyFrame.classList.remove('playing'));
-    storyVideo.addEventListener('play', () => storyFrame.classList.add('playing'));
-    storyVideo.addEventListener('click', () => { storyVideo.paused ? storyVideo.play() : storyVideo.pause(); });
-    storyFrame.prepend(storyVideo);
-    storyFrame.classList.remove('empty');
-    play.disabled = false;
-  } else {
-    storyFrame.dataset.label = st.label;
-    storyFrame.classList.add('empty');
-    play.disabled = true;
-  }
-}
-if (storyChapters) {
-  storyTabs.forEach(t => t.addEventListener('click', () => renderStory(t.dataset.story)));
-  if (storyFrame) $('.story-play', storyFrame).addEventListener('click', () => { if (storyVideo) storyVideo.play().catch(() => {}); });
-  renderStory('family');
+  $('.story-play', storyFrame).addEventListener('click', () => storyVideo.play().catch(() => {}));
 }
 
 /* ---------- before and after: drag to compare ---------- */
@@ -2142,8 +2019,9 @@ function closeFilm() {
   if (filmModal.open) filmModal.close();
 }
 $$('[data-film]').forEach(b => b.addEventListener('click', () => {
-  const poster = b.closest('figure').querySelector('img');
-  filmVideo.poster = poster ? poster.currentSrc || poster.src : '';
+  const fig = b.closest('figure');
+  const poster = fig && fig.querySelector('img');
+  filmVideo.poster = b.dataset.poster || (poster ? poster.currentSrc || poster.src : '');
   filmVideo.src = b.dataset.film;
   filmTitle.textContent = b.dataset.title;
   if (typeof filmModal.showModal === 'function') filmModal.showModal(); else filmModal.setAttribute('open', '');
@@ -2172,12 +2050,36 @@ const holdBtn = $('#holdBtn');
 const holdLabel = $('.hb-label');
 const holdStatus = $('#holdStatus');
 let hp = 0, holding = false, landed = false, landedByPin = false, holdRaf = null, holdLast = 0;
+// the film: the house is lowered from 5.0 s to 8.45 s, then the owners celebrate
+const scene = $('.scene', holdSec);
+const scVideo = $('.sc-video', holdSec);
+const SC_FROM = 5.0, SC_TO = 8.45;
+let scReady = false, scBusy = false, scWant = null;
+function scSeek(t) {
+  if (!scReady) return;
+  if (scBusy) { scWant = t; return; }
+  if (Math.abs(scVideo.currentTime - t) < 0.02) return;
+  scBusy = true;
+  scVideo.currentTime = t;
+}
+scVideo.addEventListener('seeked', () => {
+  scBusy = false;
+  if (scWant !== null) { const t = scWant; scWant = null; scSeek(t); }
+});
+scVideo.addEventListener('loadeddata', () => { scReady = true; if (!landed) scSeek(SC_FROM); });
+new IntersectionObserver(([e], ob) => {
+  if (!e.isIntersecting || reduceMQ.matches) return;
+  scVideo.preload = 'auto';
+  scVideo.src = 'assets/film-delivery.mp4';
+  ob.disconnect();
+}, { rootMargin: '500px 0px' }).observe(holdSec);
 function holdTick(now) {
   const dt = Math.min(64, now - (holdLast || now));
   holdLast = now;
   if (holding) hp = Math.min(1, hp + dt / 1700);
   else hp = Math.max(0, hp - (dt / 1000) * (0.35 + hp * 0.9));
   holdSec.style.setProperty('--hp', hp.toFixed(4));
+  if (scReady && !landed) scSeek(SC_FROM + hp * (SC_TO - SC_FROM));
   if (hp >= 1 && !landed) { land(false); }
   if (landed || (!holding && hp <= 0)) { holdRaf = null; holdLast = 0; return; }
   holdRaf = requestAnimationFrame(holdTick);
@@ -2187,6 +2089,7 @@ function startHold() {
   holding = true;
   holdBtn.classList.add('pressing');
   holdLabel.textContent = 'Keep holding...';
+  if (scReady) scene.classList.add('film');
   if (holdRaf === null) holdRaf = requestAnimationFrame(holdTick);
 }
 function endHold() {
@@ -2209,6 +2112,12 @@ function land(byPin) {
   holdBtn.setAttribute('aria-disabled', 'true');
   holdLabel.textContent = 'Landed. Welcome home.';
   holdStatus.textContent = 'Landed. Here is what arrives with your home.';
+  if (!byPin && scReady) {
+    scene.classList.add('film');
+    scWant = null;
+    scVideo.currentTime = SC_TO;
+    scVideo.play().catch(() => {});
+  }
 }
 function unland() {
   landed = false; landedByPin = false; hp = 0;
@@ -2217,6 +2126,8 @@ function unland() {
   holdBtn.removeAttribute('aria-disabled');
   holdLabel.textContent = 'Hold to set it down';
   holdStatus.textContent = '';
+  scVideo.pause();
+  scene.classList.remove('film');
 }
 holdBtn.addEventListener('pointerdown', e => {
   if (e.button !== 0) return;
@@ -2259,8 +2170,8 @@ if (WHATSAPP) {
 function done(mode) {
   const main = $('.t-main', thanks), note = $('.note', thanks);
   main.textContent = mode === 'mail'
-    ? 'Your email app opened with your project details filled in. Press send, and we will come back with ideas and an all-in price.'
-    : 'We will come back with ideas and an all-in price for your project.';
+    ? 'Your email app opened with your project details filled in. Press send, and we will come back with ideas and a clear estimate.'
+    : 'We will come back with ideas and a clear estimate for your project.';
   note.textContent = mode === 'preview' ? 'Preview only: this form is not connected to an inbox yet.' : '';
   form.classList.remove('error');
   form.classList.add('sent');

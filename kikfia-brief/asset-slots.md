@@ -35,7 +35,7 @@ The captions use dark text with a soft light glow, because this film is bright. 
 | `goal-rental.jpg` | Goals: Rental income | A host welcoming guests to a mountain rental cabin (sign, plaque, and folder names removed) |
 | `goal-office.jpg` | Goals: Home office | A remote worker inside a glass office pod in her backyard (name on the glass and mug text removed) |
 | `goal-retreat.jpg` | Goals: Vacation retreat | A couple with coffee on a cabin deck at sunrise |
-| (drawing) | Goals: Storage or warehouse | Line drawing until a photo arrives as `goal-storage.jpg` |
+| `goal-storage.jpg` | Goals: Storage or warehouse | A modern warehouse with a loading door, the owner out front |
 | `goal-commercial.jpg` | Goals: Commercial space, and Real problems: business | Two business owners outside their facility |
 | `goal-parents.jpg` | Goals: Housing for parents | Grandparents with their grandkids in the backyard, the ADU behind them |
 | `goal-custom.jpg` | Goals: Fully custom project | A family on the deck of a custom modern home among the pines |
@@ -43,6 +43,8 @@ The captions use dark text with a soft light glow, because this film is bright. 
 | `contact-team.jpg` | Consultation | The team planning with a couple (the office wall sign is a plain panel: there is no physical office) |
 | `build.jpg` | How it works, step 03 | Builders framing and finishing homes in a build hall (no wording claims a factory) |
 | `delivery.jpg` | How it works, step 04 | A crane setting the home on its foundation while the owners watch |
+| `delivery-day.jpg` | Go on, set it down | Cover photo for the delivery film (a tiny generator label removed) |
+| `ba-before.jpg` + `ba-after.jpg` | See what changed for them | The same backyard before and after, cut from your before/after picture |
 
 ## Films
 
@@ -53,21 +55,18 @@ The captions use dark text with a soft light glow, because this film is bright. 
 | `film-office.mp4` + poster | Real problems: home office | Same player (the remote worker office pod film) |
 | `film-custom.mp4` + poster | Customization | Plays in place with sound when tapped |
 | `film-coffee.mp4` + poster | Life with the right space (new band before the consultation) | Silent loop, only while on screen. Still frame with reduced motion |
+| `film-transform.mp4` + poster | See what changed for them | Plays in place with sound. Chapters: The problem (0 s), The solution (2.96 s), The better life (5.96 s) |
+| `film-delivery.mp4` | Go on, set it down | Holding the button lowers the house (5.0 to 8.45 s of the film), then the owners celebrate. "Watch the whole delivery" plays all 10 s with sound |
 
-## Still waiting on
+## Removed
 
-| File | Section | Shows |
-|---|---|---|
-| `goal-storage.jpg` | Goals: Storage or warehouse | A portable warehouse or storage unit |
-| `ba-before.jpg` + `ba-after.jpg` | Project stories: before and after | The same spot before and after, same camera angle |
-| `case-1.jpg` to `case-3.jpg` | Project stories: case studies | Each finished project with its owners |
-| `review-1.jpg` to `review-3.jpg` | Client reviews | The real reviewer (with permission) |
+- **Client reviews:** removed. Replaced by "No surprises. No guesswork.", six trust cards about planning, communication, and support. No reviews, ratings, or customer names appear anywhere.
+- **Case studies:** removed. They were placeholders for real projects.
 
-## Social proof (real content only)
+## When you have real customers
 
-Project stories and client reviews stay hidden on the live site until real content replaces the placeholders. The dramatized films are not used there, because that section is for real customers. For each real item, send:
+Real reviews and case studies can come back later. For each one, send:
 
 - **Testimonial:** the customer's exact words, first name and last initial, city and state, project type, and their written permission (a photo is optional).
 - **Review rating:** a link to your Google or Facebook reviews page. I show the real rating and count.
 - **Case study:** goal, location, size, timeline, then problem, solution, and result in one or two sentences each, plus photos.
-- **Before and after:** two photos from the same spot and angle.
