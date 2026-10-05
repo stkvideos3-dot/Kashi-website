@@ -6,12 +6,12 @@
 <title>KIKFIA Custom Portable Houses | ADUs, Cabins, Offices and More</title>
 <meta name="description" content="Custom ADUs, guest houses, tiny homes, cabins, home offices, portable offices, and warehouses. KIKFIA designs and delivers portable spaces built around your goals, land, and lifestyle. Get a free consultation.">
 <meta name="theme-color" content="#1C2520">
-<!-- DEPLOY STEP: replace https://example.com/ in og:url and og:image with the live absolute URL -->
+<link rel="canonical" href="https://kikfia.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="KIKFIA Custom Portable Houses">
 <meta property="og:description" content="Custom portable spaces built around your life: ADUs, guest houses, cabins, offices, and more.">
-<meta property="og:url" content="https://example.com/">
-<meta property="og:image" content="https://example.com/assets/hero-ending.jpg">
+<meta property="og:url" content="https://kikfia.com/">
+<meta property="og:image" content="https://kikfia.com/assets/hero-ending.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C2520'/%3E%3Cpath d='M8 15.5 16 8.5l8 7' fill='none' stroke='%23E3A33B' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 14.5v6.5h11v-6.5' fill='none' stroke='%23EDF0E8' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M7 24.5h18' stroke='%23E3A33B' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -584,6 +584,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
 .qform .micro{margin-top:12px;text-align:center;font-size:.86rem;color:var(--ink-2)}
 .qform .err{display:none;margin-top:12px;text-align:center;color:#8A2B12;font-weight:600}
 .qform.error .err{display:block}
+.hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 .thanks{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(28px,4vw,48px);border-radius:24px;background:var(--panel-2);opacity:0;visibility:hidden;transition:opacity .6s var(--ease-out),visibility 0s .6s}
 .qform.sent .thanks{opacity:1;visibility:visible;transition:opacity .6s var(--ease-out)}
 .thanks svg{width:54px;height:54px;margin-bottom:18px}
@@ -1287,6 +1288,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
         <div class="field full"><label for="f-phone">Phone or WhatsApp <small>(optional)</small></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 010-0000"></div>
       </div>
       <p class="proj-sum" id="projSum" aria-live="polite"></p>
+      <div class="hp" aria-hidden="true"><label for="f-website">Leave this empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       <button class="btn" type="submit">Get My Free Consultation <span class="arr" aria-hidden="true">&rarr;</span></button>
       <p class="micro">We reply with ideas and a clear estimate. Nothing else.</p>
       <p class="err" role="alert">That didn't send. Please try again in a moment.</p>
@@ -1347,8 +1349,8 @@ html:not(.show-placeholders) .slot.empty{display:none}
 'use strict';
 
 /* ---------- where quote requests go (set one before going live) ---------- */
-const FORM_ENDPOINT = '';                            // optional form service URL (for example Formspree): requests land straight in the inbox
-const CONTACT_EMAIL = 'kikfiaofficial3@kikfia.com';  // used when no form service is set: the visitor's email app opens with the request filled in
+const FORM_ENDPOINT = 'contact.php';                 // the site's own mail handler on Hostinger: requests land straight in the inbox
+const CONTACT_EMAIL = 'kikfiaofficial3@kikfia.com';  // fallback: if the handler does not answer, the visitor's email app opens with the request filled in
 const WHATSAPP = '923145472429';                     // WhatsApp number in international format, digits only
 
 /* ---------- hero video ---------- */
@@ -2185,10 +2187,20 @@ form.addEventListener('submit', async e => {
   btn.disabled = true;
   try {
     if (FORM_ENDPOINT) {
-      const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
-      if (!r.ok) throw new Error('form ' + r.status);
-      done('sent');
-    } else if (CONTACT_EMAIL) {
+      try {
+        const fd = new FormData(form);
+        // send the readable option labels too, so the email reads like the form
+        [['need', 'f-need'], ['goal', 'f-goal'], ['size', 'f-size'], ['timeline', 'f-time']].forEach(([k, id]) => fd.set(k + '_label', labelOf(id)));
+        const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { Accept: 'application/json' }, body: fd });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || !j.ok) throw new Error('form ' + r.status);
+        done('sent');
+        return;
+      } catch (err) {
+        if (!CONTACT_EMAIL) throw err;   // nothing to fall back to: show the error state
+      }
+    }
+    if (CONTACT_EMAIL) {
       const body = 'Free consultation request from the KIKFIA website\n\n' +
         'What I need: ' + labelOf('f-need') + '\nMy goal: ' + labelOf('f-goal') +
         '\nWhere it will be installed: ' + data.place + '\nPreferred size: ' + labelOf('f-size') +
