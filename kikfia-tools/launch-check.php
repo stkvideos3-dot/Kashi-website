@@ -2,10 +2,13 @@
 // Launch check for kikfia.com. Run it on the Hostinger server (for example from a one-off cron job):
 //   php launch-check.php
 // It fetches the live site over the public internet, checks SSL, redirects, every asset and DNS,
-// sends one real consultation request (first run only), and prints a compact report.
+// sends one real consultation request (first run only), checks it reached the lead log, and prints
+// a compact report.
 $home = getenv('HOME') ?: sys_get_temp_dir();
 $token = 'LT' . gmdate('YmdHis');
-$expectMd5 = '7080e0a414f249d1c2a60a16d1246177';
+$site = $home . '/domains/kikfia.com/public_html';
+$expectMd5 = (string) @md5_file($site . '/index.html');   // what the CDN should serve: the installed page
+$leadLog = $home . '/domains/kikfia.com/kikfia-leads.csv';
 
 function req(string $url, array $opt = []): array
 {
@@ -90,9 +93,33 @@ $rng = req('https://kikfia.com/assets/film-delivery.mp4', [CURLOPT_RANGE => '0-1
 echo '  range request: code=' . $rng['code'] . ' (expect 206) bytes=' . strlen($rng['body']) . ' content-range=' . hv($rng, 'content-range') . "\n";
 
 // 5. small files and things that must stay private
-foreach (['robots.txt' => 200, 'sitemap.xml' => 200, 'contact.php' => 405, 'release/' => 404, 'deploy/kikfia-site.zip' => 404, '.htaccess' => 403, 'default.php' => 404] as $p => $want) {
-    $r = req('https://kikfia.com/' . $p);
-    echo "PATH /{$p} code={$r['code']} want={$want} " . ($r['code'] === $want || ($want === 403 && $r['code'] === 404) ? 'ok' : 'CHECK') . "\n";
+$paths = ['robots.txt' => 200, 'sitemap.xml' => 200, 'privacy.html' => 200, 'kikfia-config.js' => 200, 'kikfia-measure.js' => 200,
+    'favicon.ico' => 200, 'favicon.svg' => 200, 'apple-touch-icon.png' => 200, 'icon-512.png' => 200, 'contact.php' => 405,
+    'release/' => 404, 'deploy/kikfia-site.zip' => 404, '.htaccess' => 403, 'default.php' => 404, 'kikfia-leads.csv' => 404, 'kikfia-mail.ini' => 404];
+$got = [];
+foreach ($paths as $p => $want) {
+    $r = $got[$p] = req('https://kikfia.com/' . $p);
+    echo "PATH /{$p} code={$r['code']} want={$want} type=" . hv($r, 'content-type') . ' ' . ($r['code'] === $want || ($want === 403 && $r['code'] === 404) ? 'ok' : 'CHECK') . "\n";
+}
+// the new pieces are really there
+$hb = $home1['body'];
+echo 'PAGE footer privacy link=' . (str_contains($hb, '<a href="privacy.html">Privacy Policy</a>') ? 'yes' : 'NO')
+    . ' json-ld=' . (str_contains($hb, '"@type":"Organization"') ? 'yes' : 'NO')
+    . ' measure script=' . (str_contains($hb, '<script src="kikfia-measure.js" defer></script>') ? 'yes' : 'NO')
+    . ' favicon files=' . (str_contains($hb, 'href="/favicon.ico"') ? 'yes' : 'NO') . "\n";
+preg_match('/<title>([^<]*)/', $got['privacy.html']['body'], $pt);
+echo 'PRIVACY title=' . ($pt[1] ?? '-') . ' opt-out button=' . (str_contains($got['privacy.html']['body'], 'id="choiceBtn"') ? 'yes' : 'NO') . "\n";
+echo 'SITEMAP lists privacy.html=' . (str_contains($got['sitemap.xml']['body'], 'https://kikfia.com/privacy.html') ? 'yes' : 'NO')
+    . ' ROBOTS sitemap line=' . (str_contains($got['robots.txt']['body'], 'Sitemap: https://kikfia.com/sitemap.xml') ? 'yes' : 'NO') . "\n";
+preg_match_all("/(metaPixelId|ga4MeasurementId|googleAdsId|googleAdsLeadLabel): '([^']*)'/", $got['kikfia-config.js']['body'], $ids, PREG_SET_ORDER);
+echo 'CONFIG ' . implode(' ', array_map(fn($m) => $m[1] . '=' . ($m[2] !== '' ? $m[2] : '(empty)'), $ids))
+    . ' js cache=' . hv($got['kikfia-measure.js'], 'cache-control') . "\n";
+// a private file type dropped in the web root is refused
+$probe = $site . '/zz-private-check-' . $token . '.csv';
+if (@file_put_contents($probe, "private\n") !== false) {
+    $r = req('https://kikfia.com/' . basename($probe));
+    echo "PRIVATE .csv in web root code={$r['code']} " . ($r['code'] === 403 || $r['code'] === 404 ? 'ok (refused)' : 'CHECK (served)') . "\n";
+    @unlink($probe);
 }
 
 // 6. DNS for web and mail
@@ -119,10 +146,16 @@ if (!file_exists($lock)) {
             'place' => 'Launch test', 'size' => 'unsure', 'size_label' => 'Not sure yet', 'timeline' => 'flexible', 'timeline_label' => 'Not sure yet',
             'requirements' => "Automatic end-to-end test of the kikfia.com form. Token {$token}.",
             'name' => 'KIKFIA launch test', 'email' => 'kikfiaofficial3@kikfia.com', 'phone' => '', 'website' => '',
+            'first_source' => 'launch-check', 'first_medium' => 'test', 'first_campaign' => 'ad-readiness', 'first_landing' => '/',
+            'first_time' => gmdate('Y-m-d\TH:i:s\Z'), 'event_id' => 'lead-' . strtolower($token), 'ad_consent' => '0',
         ],
         CURLOPT_HTTPHEADER => ['Accept: application/json'],
     ]);
     echo "FORM POST code={$r['code']} body={$r['body']} token={$token}\n";
+    $log = (string) @file_get_contents($leadLog);
+    echo 'LEAD LOG row with token=' . (str_contains($log, $token) ? 'yes' : 'NO') . ' rows=' . max(0, substr_count($log, "\n") - 1)
+        . ' perms=' . (is_file($leadLog) ? substr(sprintf('%o', fileperms($leadLog)), -3) : '-')
+        . ' source recorded=' . (str_contains($log, 'launch-check') ? 'yes' : 'NO') . "\n";
 } else {
     echo "FORM skipped (already sent on an earlier run)\n";
 }

@@ -25,3 +25,6 @@ TestResults.xml
 kikfia-review/
 ### KIKFIA form: the sending mailbox login lives only on the server
 kikfia-mail.ini
+### KIKFIA leads and the Meta access token stay on the server too
+kikfia-leads.csv
+kikfia-meta.ini

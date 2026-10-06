@@ -8,12 +8,25 @@
 <meta name="theme-color" content="#1C2520">
 <link rel="canonical" href="https://kikfia.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="KIKFIA">
 <meta property="og:title" content="KIKFIA Custom Portable Houses">
 <meta property="og:description" content="Custom portable spaces built around your life: ADUs, guest houses, cabins, offices, and more.">
 <meta property="og:url" content="https://kikfia.com/">
 <meta property="og:image" content="https://kikfia.com/assets/hero-ending.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C2520'/%3E%3Cpath d='M8 15.5 16 8.5l8 7' fill='none' stroke='%23E3A33B' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 14.5v6.5h11v-6.5' fill='none' stroke='%23EDF0E8' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M7 24.5h18' stroke='%23E3A33B' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://kikfia.com/#org","name":"KIKFIA Custom Portable Houses","alternateName":"KIKFIA","url":"https://kikfia.com/","logo":"https://kikfia.com/icon-512.png","email":"kikfiaofficial3@kikfia.com","telephone":"+92-314-5472429",
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","email":"kikfiaofficial3@kikfia.com","telephone":"+92-314-5472429","areaServed":"US","availableLanguage":"en"}},
+ {"@type":"WebSite","@id":"https://kikfia.com/#website","name":"KIKFIA","alternateName":"KIKFIA Custom Portable Houses","url":"https://kikfia.com/","publisher":{"@id":"https://kikfia.com/#org"}}
+]}
+</script>
+<!-- ad and analytics tags: IDs go in kikfia-config.js; kikfia-measure.js loads them and respects opt-outs -->
+<script src="kikfia-config.js" defer></script>
+<script src="kikfia-measure.js" defer></script>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1332,6 +1345,7 @@ html:not(.show-placeholders) .slot.empty{display:none}
     <div class="foot-small">
       <span>&copy; <span id="yr">2026</span> KIKFIA Custom Portable Houses. ADUs, cabins, offices, and custom portable buildings.</span>
       <span>Images are for illustration. Final designs may vary.</span>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -2191,9 +2205,15 @@ form.addEventListener('submit', async e => {
         const fd = new FormData(form);
         // send the readable option labels too, so the email reads like the form
         [['need', 'f-need'], ['goal', 'f-goal'], ['size', 'f-size'], ['timeline', 'f-time']].forEach(([k, id]) => fd.set(k + '_label', labelOf(id)));
+        // where the visitor came from, and one ID shared by the browser and server conversion events
+        const eventId = 'lead-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+        Object.entries(window.kikfiaAttribution ? window.kikfiaAttribution() : {}).forEach(([k, v]) => fd.set(k, v));
+        fd.set('event_id', eventId);
+        fd.set('ad_consent', window.kikfiaPrivacy && window.kikfiaPrivacy.allowed() ? '1' : '0');
         const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { Accept: 'application/json' }, body: fd });
         const j = await r.json().catch(() => ({}));
         if (!r.ok || !j.ok) throw new Error('form ' + r.status);
+        if (window.kikfiaTrack) window.kikfiaTrack('lead', { eventId, need: labelOf('f-need'), goal: labelOf('f-goal'), timeline: labelOf('f-time') });
         done('sent');
         return;
       } catch (err) {

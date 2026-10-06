@@ -1,4 +1,4 @@
-# KIKFIA live site: one address, compression, browser caching, and two safe headers.
+# KIKFIA live site: one address, compression, browser caching, two safe headers, and no private files.
 # Hostinger's own HTTPS redirect handles http to https.
 
 # one address: www.kikfia.com moves to kikfia.com (Hostinger already moves http to https)
@@ -14,6 +14,11 @@
   RedirectMatch 404 /\.git(/|$)
 </IfModule>
 
+# lead logs and settings live outside the web root; if one is ever copied here, it is still never served
+<FilesMatch "\.(csv|ini|log)$">
+  Require all denied
+</FilesMatch>
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/javascript application/json application/xml image/svg+xml
 </IfModule>
@@ -26,9 +31,14 @@
   ExpiresByType image/png "access plus 7 days"
   ExpiresByType image/webp "access plus 7 days"
   ExpiresByType image/svg+xml "access plus 7 days"
+  ExpiresByType image/x-icon "access plus 7 days"
+  ExpiresByType image/vnd.microsoft.icon "access plus 7 days"
   ExpiresByType video/mp4 "access plus 7 days"
   ExpiresByType text/plain "access plus 1 day"
   ExpiresByType application/xml "access plus 1 day"
+  # short, so a new ID in kikfia-config.js reaches visitors within the hour
+  ExpiresByType application/javascript "access plus 1 hour"
+  ExpiresByType text/javascript "access plus 1 hour"
 </IfModule>
 
 <IfModule mod_headers.c>
