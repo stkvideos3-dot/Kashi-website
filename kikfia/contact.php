@@ -290,6 +290,9 @@ $time  = line('timeline_label', 120) ?: 'Not sure yet';
 $reqs  = text('requirements');
 $first = visit('first');
 $last  = visit('last');
+if (implode('', $last) === '') {
+    $last = $first;   // only one visit known
+}
 $eventId = line('event_id', 64);
 if (!preg_match('/^[\w-]{8,64}$/', $eventId)) {
     $eventId = 'lead-' . bin2hex(random_bytes(8));

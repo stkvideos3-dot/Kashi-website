@@ -25,7 +25,8 @@ function req(string $url, array $opt = []): array
             if ($p) $h[strtolower(trim(substr($l, 0, $p)))] = trim(substr($l, $p + 1));
             return strlen($l);
         },
-    ] + $opt);
+    ]);
+    curl_setopt_array($c, $opt);   // per-request options win over the defaults above
     $b = curl_exec($c);
     $r = [
         'code' => curl_getinfo($c, CURLINFO_RESPONSE_CODE),
@@ -113,7 +114,8 @@ echo 'SITEMAP lists privacy.html=' . (str_contains($got['sitemap.xml']['body'], 
     . ' ROBOTS sitemap line=' . (str_contains($got['robots.txt']['body'], 'Sitemap: https://kikfia.com/sitemap.xml') ? 'yes' : 'NO') . "\n";
 preg_match_all("/(metaPixelId|ga4MeasurementId|googleAdsId|googleAdsLeadLabel): '([^']*)'/", $got['kikfia-config.js']['body'], $ids, PREG_SET_ORDER);
 echo 'CONFIG ' . implode(' ', array_map(fn($m) => $m[1] . '=' . ($m[2] !== '' ? $m[2] : '(empty)'), $ids))
-    . ' js cache=' . hv($got['kikfia-measure.js'], 'cache-control') . "\n";
+    . "\n  cache: config=" . hv($got['kikfia-config.js'], 'cache-control') . ' (want no-cache) measure=' . hv($got['kikfia-measure.js'], 'cache-control')
+    . ' (want max-age=3600) cdn=' . hv($got['kikfia-config.js'], 'x-hcdn-cache-status') . '/' . hv($got['kikfia-measure.js'], 'x-hcdn-cache-status') . "\n";
 // a private file type dropped in the web root is refused
 $probe = $site . '/zz-private-check-' . $token . '.csv';
 if (@file_put_contents($probe, "private\n") !== false) {

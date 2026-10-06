@@ -36,12 +36,16 @@
   ExpiresByType video/mp4 "access plus 7 days"
   ExpiresByType text/plain "access plus 1 day"
   ExpiresByType application/xml "access plus 1 day"
-  # short, so a new ID in kikfia-config.js reaches visitors within the hour
   ExpiresByType application/javascript "access plus 1 hour"
+  ExpiresByType application/x-javascript "access plus 1 hour"
   ExpiresByType text/javascript "access plus 1 hour"
 </IfModule>
 
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+  # the ad and analytics IDs: browsers check for a new version on every visit
+  <Files "kikfia-config.js">
+    Header set Cache-Control "no-cache"
+  </Files>
 </IfModule>
