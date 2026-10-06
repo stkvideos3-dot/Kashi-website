@@ -1,5 +1,5 @@
-# KIKFIA live site: compression, browser caching, and two safe headers.
-# No redirects here: Hostinger's own HTTPS redirect handles http to https.
+# KIKFIA live site: one address, compression, browser caching, and two safe headers.
+# Hostinger's own HTTPS redirect handles http to https.
 
 # one address: www.kikfia.com moves to kikfia.com (Hostinger already moves http to https)
 <IfModule mod_rewrite.c>
