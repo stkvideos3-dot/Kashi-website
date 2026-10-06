@@ -16,7 +16,7 @@ $body = "Free consultation request from the KIKFIA website\n\n"
     . "Name: Jordan Lee\nEmail: jordan.lee@example.com\nPhone or WhatsApp: +1 512 555 0142\n\n"
     . 'Sent ' . gmdate('Y-m-d H:i') . " UTC. Reply to this email to answer Jordan Lee directly.\n";
 
-function send(array $cfg, string $to, string $subject, string $body, string $enc, bool $replyTo): string
+function send(array $cfg, string $to, string $subject, string $body, string $enc, string $replyTo): string
 {
     $fp = stream_socket_client('ssl://smtp.hostinger.com:465', $en, $es, 15);
     if (!$fp) return "connect failed: {$es}";
@@ -34,7 +34,7 @@ function send(array $cfg, string $to, string $subject, string $body, string $enc
     else $payload = $crlf;
     $payload = preg_replace('/^\./m', '..', $payload);   // dot-stuffing
     $h = ['Date: ' . date(DATE_RFC2822), 'From: KIKFIA Website <' . $cfg['user'] . '>', 'To: <' . $to . '>'];
-    if ($replyTo) $h[] = 'Reply-To: jordan.lee@example.com';
+    if ($replyTo !== '') $h[] = 'Reply-To: ' . $replyTo;
     $h = array_merge($h, ['Subject: =?UTF-8?B?' . base64_encode($subject) . '?=', 'Message-ID: <' . bin2hex(random_bytes(12)) . '@kikfia.com>',
         'MIME-Version: 1.0', 'Content-Type: text/plain; charset=UTF-8', 'Content-Transfer-Encoding: ' . $enc]);
     $ok = $talk(null, [220]) && $talk('EHLO kikfia.com', [250]) && $talk('AUTH LOGIN', [334])
@@ -46,7 +46,12 @@ function send(array $cfg, string $to, string $subject, string $body, string $enc
     return $ok ? 'sent' : "failed at: {$last}";
 }
 
-foreach ([['A', 'base64', true], ['B', 'quoted-printable', true], ['C', 'quoted-printable', false], ['D', '8bit', true]] as [$v, $enc, $rt]) {
-    $subject = "Free consultation: A guest house, Austin, TX [probe {$v}]";
-    echo "variant {$v} ({$enc}, reply-to " . ($rt ? 'yes' : 'no') . '): ' . send($cfg, $to, $subject, sprintf($body, $v), $enc, $rt) . "\n";
+$top = "Reply to Jordan Lee: jordan.lee@example.com\n\n";
+foreach ([
+    ['E', '"Jordan Lee" <jordan.lee@example.com>', 'A guest house, Austin, TX', ''],
+    ['G', 'jordanlee.austin@gmail.com', 'A guest house, Austin, TX', ''],
+    ['F', '', 'A guest house, Austin, TX, from Jordan Lee', $top],
+] as [$v, $rt, $subj, $prefix]) {
+    $subject = "Free consultation: {$subj} [probe {$v}]";
+    echo "variant {$v} (reply-to " . ($rt !== '' ? $rt : 'none') . '): ' . send($cfg, $to, $subject, $prefix . sprintf($body, $v), 'quoted-printable', $rt) . "\n";
 }
