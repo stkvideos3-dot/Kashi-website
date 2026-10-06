@@ -23,3 +23,5 @@ rad.json
 TestResults.xml
 ### KIKFIA site: raw generations and review frames never ship
 kikfia-review/
+### KIKFIA form: the sending mailbox login lives only on the server
+kikfia-mail.ini
