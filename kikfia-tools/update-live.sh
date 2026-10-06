@@ -11,14 +11,17 @@ SITE="$HOME/domains/kikfia.com/public_html"
 PRIV="$HOME/domains/kikfia.com"
 if [ -f "$PRIV/kikfia-mail.ini" ]; then chmod 600 "$PRIV/kikfia-mail.ini"; LOGIN=present; else LOGIN=MISSING; fi
 if [ -f "$PRIV/kikfia-meta.ini" ]; then chmod 600 "$PRIV/kikfia-meta.ini"; CAPI=on; else CAPI=off; fi
-FILES="contact.php .htaccess index.html privacy.html kikfia-measure.js robots.txt sitemap.xml favicon.ico favicon.svg apple-touch-icon.png icon-512.png"
+# google0789247f424b483a.html proves ownership to Google Search Console: it must stay on the site
+FILES="contact.php .htaccess index.html privacy.html kikfia-measure.js robots.txt sitemap.xml favicon.ico favicon.svg apple-touch-icon.png icon-512.png google0789247f424b483a.html"
 if [ ! -f "$SITE/kikfia-config.js" ] || [ "${2:-}" = "with-config" ]; then FILES="$FILES kikfia-config.js"; fi
 # download everything first, then move into place, so a failed download changes nothing
 for f in $FILES; do curl -fsS -o "$HOME/kikfia-new-$f" "$RAW/kikfia/$f"; done
+# a test lead is sent only when the form handler changes
+if cmp -s "$HOME/kikfia-new-contact.php" "$SITE/contact.php"; then FORM_CHANGED=no; else FORM_CHANGED=yes; fi
 for f in $FILES; do mv "$HOME/kikfia-new-$f" "$SITE/$f"; done
 curl -fsS -o "$HOME/kikfia-launch-check.php" "$RAW/kikfia-tools/launch-check.php"
-# send one test lead per commit, however often the cron job fires
-if [ ! -e "$HOME/.kikfia-installed-$REF" ]; then
+# one test lead per changed form handler, however often the cron job fires
+if [ "$FORM_CHANGED" = yes ] && [ ! -e "$HOME/.kikfia-installed-$REF" ]; then
   rm -f "$HOME/.kikfia-launch-check-sent"
   touch "$HOME/.kikfia-installed-$REF"
 fi

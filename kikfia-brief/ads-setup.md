@@ -2,6 +2,8 @@
 
 Everything is built and live. Each tool switches on when its ID is added. Nothing loads before that.
 
+**Connected:** Google Analytics 4 (`G-VR919FGXSG`, since 2026-10-06). **Waiting for an ID:** Meta Pixel, Google Ads.
+
 ## Where each ID goes
 
 `kikfia/kikfia-config.js` (on the server: `public_html/kikfia-config.js`)
@@ -50,4 +52,6 @@ Meta Events Manager > your pixel > Settings > Conversions API > Generate access 
 
 ## Search Console
 
-Add a Domain property for `kikfia.com`, then add the TXT record it gives you in Hostinger DNS. After verification, submit `https://kikfia.com/sitemap.xml`.
+Property `https://kikfia.com/` is verified with Google's HTML file method: `kikfia/google0789247f424b483a.html` sits at the site root. **Never delete it**: Google rechecks it, and verification is lost without it. The update script reinstalls it on every deploy.
+
+After verifying, submit `sitemap.xml` under Sitemaps. A Domain property (DNS TXT record) can be added later to cover every address of kikfia.com in one view.

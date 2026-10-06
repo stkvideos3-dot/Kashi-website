@@ -116,6 +116,19 @@ preg_match_all("/(metaPixelId|ga4MeasurementId|googleAdsId|googleAdsLeadLabel): 
 echo 'CONFIG ' . implode(' ', array_map(fn($m) => $m[1] . '=' . ($m[2] !== '' ? $m[2] : '(empty)'), $ids))
     . "\n  cache: config=" . hv($got['kikfia-config.js'], 'cache-control') . ' (want no-cache) measure=' . hv($got['kikfia-measure.js'], 'cache-control')
     . ' (want max-age=3600) cdn=' . hv($got['kikfia-config.js'], 'x-hcdn-cache-status') . '/' . hv($got['kikfia-measure.js'], 'x-hcdn-cache-status') . "\n";
+// Google's tag script for the GA4 ID: Google answers 200 with the tag code only for a real stream
+$ga4 = '';
+foreach ($ids as $m) if ($m[1] === 'ga4MeasurementId') $ga4 = $m[2];
+if ($ga4 !== '') {
+    $g = req('https://www.googletagmanager.com/gtag/js?id=' . rawurlencode($ga4));
+    echo "GA4 gtag.js for {$ga4}: code={$g['code']} bytes=" . strlen($g['body']) . ' mentions_id=' . (str_contains($g['body'], $ga4) ? 'yes' : 'NO') . "\n";
+}
+// Search Console verification files: served as-is, exactly the content Google gave
+foreach (glob($site . '/google*.html') ?: [] as $f) {
+    $r = req('https://kikfia.com/' . basename($f));
+    $want = trim((string) file_get_contents($f));
+    echo 'SEARCH CONSOLE /' . basename($f) . " code={$r['code']} content_match=" . (trim($r['body']) === $want ? 'yes' : 'NO') . "\n";
+}
 // a private file type dropped in the web root is refused
 $probe = $site . '/zz-private-check-' . $token . '.csv';
 if (@file_put_contents($probe, "private\n") !== false) {
