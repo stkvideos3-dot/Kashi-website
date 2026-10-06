@@ -79,7 +79,7 @@ function mail_config(): ?array
 }
 
 // a small SMTP client: login, one message, quit. Returns false at the first unexpected reply.
-function smtp_send(array $cfg, string $to, string $subject, string $body, string $replyTo): bool
+function smtp_send(array $cfg, string $to, string $subject, string $body): bool
 {
     $ctx = stream_context_create(['ssl' => ['verify_peer' => true, 'verify_peer_name' => true]]);
     $fp = @stream_socket_client($cfg['remote'] ?? SMTP_REMOTE, $errno, $errstr, 15, STREAM_CLIENT_CONNECT, $ctx);
@@ -105,19 +105,21 @@ function smtp_send(array $cfg, string $to, string $subject, string $body, string
         return true;
     };
     $user = $cfg['user'];
-    // base64 body: plain ASCII lines, so no line can start with a dot
+    // No Reply-To header: tested on 2026-10-06, Hostinger's filter sends any message with one to
+    // Junk. The customer's address leads the body instead.
+    $text = quoted_printable_encode(str_replace("\n", "\r\n", $body));
+    $text = preg_replace('/^\./m', '..', $text);   // SMTP dot-stuffing
     $message = implode("\r\n", [
         'Date: ' . date(DATE_RFC2822),
         'From: KIKFIA Website <' . $user . '>',
         'To: <' . $to . '>',
-        'Reply-To: ' . $replyTo,
         'Subject: =?UTF-8?B?' . base64_encode($subject) . '?=',
         'Message-ID: <' . bin2hex(random_bytes(12)) . '@kikfia.com>',
         'MIME-Version: 1.0',
         'Content-Type: text/plain; charset=UTF-8',
-        'Content-Transfer-Encoding: base64',
+        'Content-Transfer-Encoding: quoted-printable',
         '',
-        rtrim(chunk_split(base64_encode($body), 76, "\r\n")),
+        $text,
     ]);
     $ok = $talk(null, [220])
         && $talk('EHLO kikfia.com', [250])
@@ -160,8 +162,9 @@ if (too_many()) {
     reply(429, ['ok' => false, 'error' => 'rate']);
 }
 
-$subject = 'Free consultation: ' . $need . ', ' . $place;
-$body = "Free consultation request from the KIKFIA website\n\n"
+$subject = 'Free consultation: ' . $need . ', ' . $place . ', from ' . $name;
+$body = "Reply to {$name}: {$email}\n\n"
+    . "Free consultation request from the KIKFIA website\n\n"
     . "What I need: {$need}\n"
     . "My goal: {$goal}\n"
     . "Where it will be installed: {$place}\n"
@@ -171,7 +174,7 @@ $body = "Free consultation request from the KIKFIA website\n\n"
     . "Name: {$name}\n"
     . "Email: {$email}\n"
     . 'Phone or WhatsApp: ' . ($phone !== '' ? $phone : '-') . "\n\n"
-    . 'Sent ' . gmdate('Y-m-d H:i') . " UTC. Reply to this email to answer {$name} directly.\n";
+    . 'Sent ' . gmdate('Y-m-d H:i') . " UTC. To answer {$name}, write to {$email}: the Reply button goes to the website mailbox.\n";
 
 $headers = implode("\r\n", [
     'From: KIKFIA Website <' . FROM_EMAIL . '>',
@@ -182,7 +185,7 @@ $headers = implode("\r\n", [
 ]);
 
 $cfg = mail_config();
-$sent = $cfg !== null && smtp_send($cfg, TO_EMAIL, $subject, $body, $email);
+$sent = $cfg !== null && smtp_send($cfg, TO_EMAIL, $subject, $body);
 if (!$sent) {
     $sent = mail(TO_EMAIL, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers, '-f' . FROM_EMAIL);
 }
